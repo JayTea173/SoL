@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c16f16899582149bf14774f310cdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesMovePerSecond: 4
+  tilesMovePerSecond: 5
   screenNumTilesWidth: 16
   screenNumTilesHeight: 14
   numTilesFromScreenEdgeTillCameraPan: 4
