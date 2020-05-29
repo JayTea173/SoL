@@ -1,4 +1,5 @@
 ﻿using SoL.Actors;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,20 @@ namespace SoL
         {
             Vector2 move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-            transform.position += (Vector3)(move * Time.deltaTime * tilesMovePerSecond);
+            if (actor.CanMove)
+            {
+                actor.Move(move);
+
+                if (Input.GetButtonDown("Attack"))
+                {
+                    actor.Attack();
+                }
+
+                actor.transform.position += (Vector3)(move * Time.deltaTime * tilesMovePerSecond);
+            }
             var cam = Camera.main;
 
-            Vector3 camDeltaPos = transform.position - cam.transform.position;
+            Vector3 camDeltaPos = actor.transform.position - cam.transform.position;
 
             float cameraEdgeX = (screenNumTilesWidth / 2f) - numTilesFromScreenEdgeTillCameraPan;
             float cameraEdgeY = (screenNumTilesHeight / 2f) - numTilesFromScreenEdgeTillCameraPan;
