@@ -238,8 +238,12 @@ namespace SoL.Actors
                 {
                     SetFacing(move.y > 0f ? BaseActor.Facing.Up : BaseActor.Facing.Down);
 
-                    if (!Animation.SetAnimation("Walk_Vertical", false))
-                        Animation.SetAnimation(1);
+
+                    if (!Animation.SetAnimation(move.y > 0f ? "Walk_Up" : "Walk_Down", false))
+                        if (!Animation.SetAnimation("Walk_Vertical", false))
+                            Animation.SetAnimation(1);
+
+
                 }
             }
             else

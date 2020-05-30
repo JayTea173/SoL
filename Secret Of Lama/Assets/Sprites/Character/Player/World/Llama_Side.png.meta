@@ -14,6 +14,57 @@ TextureImporter:
   - first:
       213: 3170017584865327792
     second: Llama_Side_3
+  - first:
+      213: 8094029873009486506
+    second: Llama_Side_0
+  - first:
+      213: -6011740104410072560
+    second: Llama_Side_1
+  - first:
+      213: 5566349171655275326
+    second: Llama_Side_2
+  - first:
+      213: -5778372997217672734
+    second: Llama_Side_3
+  - first:
+      213: 185291534457188050
+    second: Llama_Side_4
+  - first:
+      213: -5628808850466570759
+    second: Llama_Side_5
+  - first:
+      213: 7836279067432584124
+    second: Llama_Side_6
+  - first:
+      213: 2984302853019854445
+    second: Llama_Side_7
+  - first:
+      213: -2671666477659331205
+    second: Llama_Side_8
+  - first:
+      213: 8183571590411716687
+    second: Llama_Side_9
+  - first:
+      213: -5968753324254361753
+    second: Llama_Side_10
+  - first:
+      213: -8386145066672047306
+    second: Llama_Side_11
+  - first:
+      213: 8955581794265242271
+    second: Llama_Side_12
+  - first:
+      213: -1389186403814188145
+    second: Llama_Side_13
+  - first:
+      213: -1485511938569471928
+    second: Llama_Side_14
+  - first:
+      213: 4990796089403425782
+    second: Llama_Side_15
+  - first:
+      213: 346823072334944531
+    second: Llama_Side_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,6 +156,258 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa61261945c35070800000000000000
+      internalID: 8094029873009486506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01afaa20a32029ca0800000000000000
+      internalID: -6011740104410072560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e337d407415af3d40800000000000000
+      internalID: 5566349171655275326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1a129cf581fcfa0800000000000000
+      internalID: -5778372997217672734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de253b3ba9429200800000000000000
+      internalID: 185291534457188050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd7d575c2472e1b0800000000000000
+      internalID: -5628808850466570759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3062f1b4e00cc60800000000000000
+      internalID: 7836279067432584124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66ee6022af5a6920800000000000000
+      internalID: 2984302853019854445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75ebc06e755cead0800000000000000
+      internalID: -2671666477659331205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f480878c003e19170800000000000000
+      internalID: 8183571590411716687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76703e3b97aba2da0800000000000000
+      internalID: -5968753324254361753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b3e1a5e7d6e9b80800000000000000
+      internalID: -8386145066672047306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_12
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 48
         width: 48
         height: 48
@@ -115,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e93578b8c2a3c1e0800000000000000
-      internalID: -2178718811745338904
+      spriteID: f9a9224713e984c70800000000000000
+      internalID: 8955581794265242271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Llama_Side_1
+      name: Llama_Side_13
       rect:
         serializedVersion: 2
         x: 48
@@ -136,14 +439,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72970603f61926500800000000000000
-      internalID: 388032424646310183
+      spriteID: f8b5ad1735e98bce0800000000000000
+      internalID: -1389186403814188145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Llama_Side_2
+      name: Llama_Side_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848f6ff23c6626be0800000000000000
+      internalID: -1485511938569471928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3cc47d99ed24540800000000000000
+      internalID: 4990796089403425782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Llama_Side_16
       rect:
         serializedVersion: 2
         x: 0
@@ -157,29 +502,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2bd1b9f0b4c10c40800000000000000
-      internalID: 5476874886241704747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Llama_Side_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bab3ada23a2efb20800000000000000
-      internalID: 3170017584865327792
+      spriteID: 3191f6a2fb920d400800000000000000
+      internalID: 346823072334944531
       vertices: []
       indices: 
       edges: []
