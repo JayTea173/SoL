@@ -19,7 +19,8 @@ namespace SoL.Actors
             Up
         }
 
-        protected Facing facing = Facing.Down;
+        public Facing facing { get; protected set; }
+
 
         [SerializeField]
         protected EnumTeam team;
@@ -133,7 +134,7 @@ namespace SoL.Actors
 
         public virtual int Damage(int amount, IDamageSource damageSource)
         {
-            if (animation.GetCurrentFrameFlags().HasFlag(SpriteAnimationBehaviour.SpriteFrame.Flags.INVULNERABLE))
+            if (animation.GetCurrentFrameFlags().HasFlag(FrameFlags.INVULNERABLE))
                 return 0;
 
             if (amount > hpMax)
@@ -216,7 +217,7 @@ namespace SoL.Actors
         {
             get
             {
-                return !Animation.GetCurrentFrameFlags().HasFlag(SpriteAnimationBehaviour.SpriteFrame.Flags.MOVEMENT_BLOCKED) && !IsDead;
+                return !Animation.GetCurrentFrameFlags().HasFlag(FrameFlags.MOVEMENT_BLOCKED) && !IsDead;
             }
         }
 
@@ -231,14 +232,14 @@ namespace SoL.Actors
                 if (move.x != 0f)
                 {
                     SetFacing(move.x > 0f ? BaseActor.Facing.Right : BaseActor.Facing.Left);
-                    if (!Animation.SetAnimation("Walk_Horizontal", false))
+                    if (!Animation.SetAnimation("Walk", false))
                         Animation.SetAnimation(1);
                 }
                 else if (move.y != 0f)
                 {
                     SetFacing(move.y > 0f ? BaseActor.Facing.Up : BaseActor.Facing.Down);
 
-                    if (!Animation.SetAnimation("Walk_Vertical", false))
+                    if (!Animation.SetAnimation("Walk", false))
                         Animation.SetAnimation(1);
                 }
             }
@@ -248,12 +249,12 @@ namespace SoL.Actors
                 {
                     case Facing.Down:
                     case Facing.Up:
-                        if (!Animation.SetAnimation("Idle_Vertical", false))
+                        if (!Animation.SetAnimation("Idle", false))
                             Animation.SetAnimation(0);
                         break;
                     case Facing.Left:
                     case Facing.Right:
-                        if (!Animation.SetAnimation("Idle_Horizontal", false))
+                        if (!Animation.SetAnimation("Idle", false))
                             Animation.SetAnimation(0);
 
                         break;
@@ -278,7 +279,7 @@ namespace SoL.Actors
         {
             SortZ();
 
-            if (charging && !animation.GetCurrentFrameFlags().HasFlag(SpriteAnimationBehaviour.SpriteFrame.Flags.CHARGING_BLOCKED))
+            if (charging && !animation.GetCurrentFrameFlags().HasFlag(FrameFlags.CHARGING_BLOCKED))
             {
                 attackCharge += Time.deltaTime * attackChargeSpeed;
                 if (attackCharge >= maxAttackCharge)
