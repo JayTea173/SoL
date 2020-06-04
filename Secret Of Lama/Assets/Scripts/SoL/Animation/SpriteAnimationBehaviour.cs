@@ -39,7 +39,7 @@ namespace SoL.Animation
 
         private void Awake()
         {
-            
+
             sr = GetComponent<SpriteRenderer>();
             actor = GetComponent<BaseActor>();
 
@@ -51,17 +51,21 @@ namespace SoL.Animation
 
         private void Update()
         {
-            
+
             if (currentFrame != null)
             {
                 float sampleTimeX = currentFrame.motion.invertMotionSamplingX ? (1f - currentAnimationFrameProgress) : currentAnimationFrameProgress;
                 float sampleTimeY = currentFrame.motion.invertMotionSamplingY ? (1f - currentAnimationFrameProgress) : currentAnimationFrameProgress;
-                
-                transform.position += (Vector3)actor.TransformForwardX(new Vector2(currentFrame.motion.motionX.Evaluate(sampleTimeX), currentFrame.motion.motionY.Evaluate(sampleTimeY))) * currentFrame.motion.motionMultiplier * Time.deltaTime / Engine.pixelsPerUnit;
+
+                Vector3 delta = (Vector3)actor.TransformForwardX(new Vector2(currentFrame.motion.motionX.Evaluate(sampleTimeX), currentFrame.motion.motionY.Evaluate(sampleTimeY))) * currentFrame.motion.motionMultiplier * Time.deltaTime / Engine.pixelsPerUnit;
+
+                Vector3 targetPosition = transform.position + delta;
+
+                actor.MoveToCheckingCollision(targetPosition);
 
                 if (currentFrame.dealsDamage)
                 {
-                    
+
                     Vector2 offset = actor.TransformDirection(currentFrame.damage.originOffset);
                     var hits = Engine.QuadTree.GetAgentsInRange(transform.position + actor.PhysicsAgent.b.center + (Vector3)offset, currentFrame.damage.radius).Where((h) =>
                     {
@@ -70,7 +74,7 @@ namespace SoL.Animation
                         var a = h.t.GetComponent<IDamagable>();
                         return actor.IsEnemy(a.Team);
                     });
-                    
+
                     foreach (var hit in hits)
                     {
                         var damageable = hit.t.GetComponent<IDamagable>();
@@ -81,11 +85,11 @@ namespace SoL.Animation
                             damageable.Damage(Mathf.FloorToInt(currentFrame.damage.value * actor.GetDamageDealt()), actor);
                         }
                     }
-                    
+
                 }
 
             }
-            
+
         }
 
         /// <summary>
@@ -101,6 +105,8 @@ namespace SoL.Animation
             currentAnimationFrameCount = animations[id].frames.Count;
             if (playFromStart)
                 animationTime = 0f;
+
+            Advance(0f);
             return true;
         }
 
@@ -128,7 +134,6 @@ namespace SoL.Animation
             }
 
             targetsHitWithThisAnimation.Clear();
-
             SetAnimation(index, playFromStart);
             return true;
 
@@ -244,7 +249,10 @@ namespace SoL.Animation
             }
 
             currentFrame = anim.frames[frame];
-            sr.sprite = currentFrame[actor.facing];
+
+            var s = currentFrame[actor.facing];
+            if (sr.sprite != s)
+                sr.sprite = s;
 
             float frameTime = currentFrame.durationMultiplier / anim.fps;
             float prog = t / frameTime;

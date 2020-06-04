@@ -65,9 +65,33 @@ namespace SoL.Actors
             }
         }
 
+        [SerializeField]
+        protected int mp;
+
+        public int Mana
+        {
+            get
+            {
+                return mp;
+            }
+        }
+
+        [SerializeField]
+        protected int mpMax;
+
+        public int ManaMax
+        {
+            get
+            {
+                return mpMax;
+            }
+        }
+
+
+
         private SpriteAnimationBehaviour animation;
-        private float attackCharge = 1f;
-        private bool charging = false;
+        protected float attackCharge = 1f;
+        protected bool charging = false;
         protected float currentAnimationAttackCharge = 0f;
         protected float timeOfDeath = 0f;
         private Physics.QuadTree.Agent physicsAgent;
@@ -79,7 +103,7 @@ namespace SoL.Actors
             }
         }
 
-        public bool Charging
+        public virtual bool Charging
         {
             get { return charging; }
         }
@@ -95,6 +119,10 @@ namespace SoL.Actors
             get
             {
                 return attackCharge;
+            }
+            set
+            {
+                attackCharge = value;
             }
         }
 
@@ -132,19 +160,12 @@ namespace SoL.Actors
             }
         }
 
+
         public virtual int Damage(int amount, IDamageSource damageSource)
         {
             if (animation.GetCurrentFrameFlags().HasFlag(FrameFlags.INVULNERABLE))
                 return 0;
 
-            if (amount > hpMax)
-                amount = hpMax;
-            else if (amount > hp)
-                amount = hp;
-
-
-
-            hp -= amount;
             if (amount > 0)
             {
                 if (onDamageTaken != null)
@@ -156,13 +177,24 @@ namespace SoL.Actors
                     amount = onHealed(amount, damageSource);
             }
 
-            UI.DamageNumber.Display(transform, amount);
+            int originalAmount = amount;
+
+            if (amount > hpMax)
+                amount = hpMax;
+            else if (amount > hp)
+                amount = hp;
+
+
+            hp -= amount;
+
+            UI.DamageNumber.Display(transform, originalAmount);
 
 
 
             if (IsDead)
             {
                 timeOfDeath = Time.time;
+                damageSource.OnKill(this);
                 animation.SetAnimation("Death", true);
             }
             else
@@ -212,6 +244,14 @@ namespace SoL.Actors
 
         protected Vector2 movement;
 
+        public Vector2 movementDirection
+        {
+            get
+            {
+                return movement;
+            }
+        }
+
 
         public bool CanMove
         {
@@ -221,29 +261,45 @@ namespace SoL.Actors
             }
         }
 
+        public void MoveToCheckingCollision(Vector3 targetPoint)
+        {
+            float offset = 1f;
+            Vector3 delta = targetPoint - transform.position;
+            Vector3 vOffset = delta.normalized * offset;
+            var rchit = Physics2D.Raycast(transform.position + vOffset, delta.normalized, delta.magnitude);
+            if (rchit.collider != null)
+            {
+                //Debug.Log("Collided @" + rchit.point + " with " + rchit.collider.gameObject.name + " ! tried to go from " + transform.position + " to " + targetPoint);
+                Vector3 p = new Vector3(rchit.point.x, rchit.point.y, transform.position.z);
+                Vector3 d = (p - transform.position);
+                transform.position = p - (d.normalized * (offset + 0.02f));
+            }
+            else
+                transform.position = targetPoint;
+        }
 
+        protected virtual void PlayMovementAnimation()
+        {
+            if (!Animation.SetAnimation("Walk", false))
+                Animation.SetAnimation(1);
+        }
 
         public void Move(Vector2 move)
         {
-            this.movement = move;
+            if (move != Vector2.zero)
+                this.movement = move;
             if (move.sqrMagnitude > 0f)
             {
                 transform.hasChanged = true;
                 if (move.x != 0f)
-                {
                     SetFacing(move.x > 0f ? BaseActor.Facing.Right : BaseActor.Facing.Left);
-                    if (!Animation.SetAnimation("Walk", false))
-                        Animation.SetAnimation(1);
-                }
                 else if (move.y != 0f)
-                {
                     SetFacing(move.y > 0f ? BaseActor.Facing.Up : BaseActor.Facing.Down);
 
-                    if (!Animation.SetAnimation("Walk", false))
-                        Animation.SetAnimation(1);
-                }
+                PlayMovementAnimation();
+
             }
-            else
+            else if (CanMove)
             {
                 switch (facing)
                 {
@@ -275,10 +331,8 @@ namespace SoL.Actors
             return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
         }
 
-        private void Update()
+        protected virtual void OnUpdate()
         {
-            SortZ();
-
             if (charging && !animation.GetCurrentFrameFlags().HasFlag(FrameFlags.CHARGING_BLOCKED))
             {
                 attackCharge += Time.deltaTime * attackChargeSpeed;
@@ -298,6 +352,12 @@ namespace SoL.Actors
                 if (timeDead > 10f)
                     Destroy(gameObject);
             }
+        }
+
+        private void Update()
+        {
+            SortZ();
+            OnUpdate();
         }
 
 
@@ -347,6 +407,15 @@ namespace SoL.Actors
             Animation.SetAnimation("Attack", true);
 
             //Engine.quadTree.GetAgents();
+        }
+
+        /// <summary>
+        /// called when killed by target
+        /// </summary>
+        /// <param name="target"></param>
+        public virtual void OnKill(IDamagable target)
+        {
+
         }
     }
 }

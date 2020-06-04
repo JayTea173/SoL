@@ -3,9 +3,11 @@ ScriptsOnlyBuild:
     SoL.dll:
     - SoL.AI.DefaultEnemyAI
     - SoL.ActorSpawner
-    - SoL.Actors.BaseActor
     - SoL.Actors.CharacterActor
+    - SoL.Actors.CreatureActor
+    - SoL.Animation.AnimationCollection
     - SoL.Animation.SpriteAnimationBehaviour
+    - SoL.Audio.Soundbank
     - SoL.PlayerController
     - SoL.StaticData
     - SoL.UI.ActorHUD
@@ -61,6 +63,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 109
@@ -72,43 +76,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12122}
     - Class: 114
-      Script: {instanceID: 12138}
+      Script: {instanceID: 12124}
     - Class: 114
-      Script: {instanceID: 12304}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 12306}
     - Class: 114
-      Script: {instanceID: 12650}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 12706}
+      Script: {instanceID: 12652}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12708}
     - Class: 114
-      Script: {instanceID: 12836}
+      Script: {instanceID: 12810}
     - Class: 114
-      Script: {instanceID: 12894}
+      Script: {instanceID: 12840}
     - Class: 114
-      Script: {instanceID: 12998}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 13116}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13494}
+      Script: {instanceID: 13120}
     - Class: 114
-      Script: {instanceID: 13682}
+      Script: {instanceID: 13688}
     - Class: 114
-      Script: {instanceID: 13998}
+      Script: {instanceID: 14004}
     - Class: 114
-      Script: {instanceID: 14018}
+      Script: {instanceID: 14024}
     - Class: 114
-      Script: {instanceID: 14216}
+      Script: {instanceID: 14172}
     - Class: 114
-      Script: {instanceID: 14340}
+      Script: {instanceID: 14224}
     - Class: 114
-      Script: {instanceID: 14444}
+      Script: {instanceID: 14348}
     - Class: 114
-      Script: {instanceID: 14736}
+      Script: {instanceID: 14452}
     - Class: 114
-      Script: {instanceID: 15082}
+      Script: {instanceID: 14746}
+    - Class: 114
+      Script: {instanceID: 15094}
+    - Class: 114
+      Script: {instanceID: 33574}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -126,6 +134,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 19719996
       Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
@@ -200,6 +210,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 5d9604b3a7c52122de049fa49da8cd19
+    assemblyName: SoL.dll
+    namespaceName: SoL.Animation
+    className: AnimationCollection
   - hash:
       serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
@@ -328,13 +344,13 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 961f9c7782f4086e4dc8d804069ba723
+      Hash: 3b9b921021654206e98271812d4f0083
     assemblyName: SoL.dll
     namespaceName: SoL.Animation
     className: SpriteAnimationBehaviour
   - hash:
       serializedVersion: 2
-      Hash: 5a1d370e386c5bd834588e99bcca42a7
+      Hash: abcdbd8856c0f060302fce12ff488175
     assemblyName: SoL.dll
     namespaceName: SoL.Actors
     className: CharacterActor
@@ -430,7 +446,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 085768e9f83a1e351ae496631712d70c
+      Hash: 20c31362c7562f34517a16766c62217a
     assemblyName: SoL.dll
     namespaceName: SoL.Actors
     className: BaseActor
@@ -440,6 +456,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: SoL.Editor.dll
+    namespaceName: SoL.Animation
+    className: AnimationEditorWindow
   - hash:
       serializedVersion: 2
       Hash: f087c23fbfa15475a0d110af46fb0496
@@ -526,6 +548,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 7ad463267bbf503e053b2791be04b4c9
+    assemblyName: SoL.dll
+    namespaceName: SoL.Actors
+    className: CreatureActor
+  - hash:
+      serializedVersion: 2
       Hash: e28b72d7cd6722f20673ac9cc617e5e0
     assemblyName: SoL.dll
     namespaceName: SoL
@@ -554,6 +582,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: SoL.Editor.dll
+    namespaceName: SoL
+    className: StringInputPopup
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -668,6 +702,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5cc39aa38a25e44f3c25dc3251fe9c85
+    assemblyName: SoL.dll
+    namespaceName: SoL.Audio
+    className: Soundbank
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

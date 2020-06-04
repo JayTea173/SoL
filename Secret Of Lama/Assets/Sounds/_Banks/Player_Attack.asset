@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fbafbcf7f30d946b7c115c82560dee, type: 3}
+  m_Name: Player_Attack
+  m_EditorClassIdentifier: 
+  entries:
+  - {fileID: 8300000, guid: 1b1f35080dc7f714ea076b785b7fa455, type: 3}
+  - {fileID: 8300000, guid: 91e4f5212cb7e254590382598ed34afc, type: 3}
+  - {fileID: 8300000, guid: fd4022c2c5d2d104aaa988ff1919c46f, type: 3}
+  - {fileID: 8300000, guid: 994b2490b4d4d1445b0f7262d96362b4, type: 3}
+  - {fileID: 8300000, guid: daa67a74fb4f8ce48a1e9da9bcb57c45, type: 3}
+  - {fileID: 8300000, guid: 721ac4b6ff9cecc41a43201d56232337, type: 3}
+  - {fileID: 8300000, guid: a1232e8d0c8515c4980562855c5fc2c0, type: 3}
+  - {fileID: 8300000, guid: 7bbb6120bacb6ee4d94073a1985a8e24, type: 3}

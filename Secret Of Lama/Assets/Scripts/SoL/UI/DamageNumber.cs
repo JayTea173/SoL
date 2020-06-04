@@ -22,7 +22,21 @@ namespace SoL.UI
         private Transform target;
         
 
-
+        public float FontSize
+        {
+            get
+            {
+                return digits[0].fontSize;
+            }
+            set
+            {
+                int c = digits.Length;
+                for (int i = 0; i < c; i++)
+                {
+                    digits[i].fontSize = value;
+                }
+            }
+        }
 
         private void Awake()
         {
@@ -92,6 +106,16 @@ namespace SoL.UI
             var dn = go.GetComponent<DamageNumber>();
             dn.target = parent;
             dn.SetText(amount.ToString());
+            dn.UpdatePosition();
+        }
+
+        public static void Display(Transform parent, string text)
+        {
+            var go = GameObject.Instantiate(StaticData.Instance.damageNumberPrefab, Engine.MainCanvas.transform);
+            var dn = go.GetComponent<DamageNumber>();
+            dn.target = parent;
+            dn.SetText(text);
+            dn.FontSize *= 0.66f;
             dn.UpdatePosition();
         }
     }

@@ -6,18 +6,18 @@ using UnityEngine;
 
 namespace SoL
 {
-    [RequireComponent(typeof(BaseActor))]
+    [RequireComponent(typeof(CharacterActor))]
     public class PlayerController : MonoBehaviour
     {
-        private BaseActor actor;
+        private CharacterActor actor;
         public float tilesMovePerSecond = 4f;
         public float screenNumTilesWidth = 16f;
         public float screenNumTilesHeight = 14f;
         public int numTilesFromScreenEdgeTillCameraPan = 4;
-        
+
         void Awake()
         {
-            actor = GetComponent<BaseActor>();
+            actor = GetComponent<CharacterActor>();
         }
 
         // Update is called once per frame
@@ -27,6 +27,23 @@ namespace SoL
 
             if (actor.CanMove)
             {
+                if (Input.GetButtonDown("Sprint"))
+                {
+                    if (!actor.sprinting)
+                    {
+                        Debug.Log("SPRINT START");
+                        actor.sprinting = true;
+                        actor.AttackCharge /= 2f;
+                    }
+                }
+
+
+                if (Input.GetButtonUp("Sprint"))
+                    actor.sprinting = false;
+
+                if (move.sqrMagnitude <= 0f && actor.sprinting)
+                    move = actor.TransformDirection(Vector2.right);
+
                 actor.Move(move);
 
                 if (Input.GetButtonDown("Attack"))
@@ -34,7 +51,11 @@ namespace SoL
                     actor.Attack();
                 }
 
-                actor.transform.position += (Vector3)(move * Time.deltaTime * tilesMovePerSecond);
+
+
+
+                actor.MoveToCheckingCollision(transform.position + (Vector3)(move * Time.deltaTime * tilesMovePerSecond * (actor.sprinting ? 2f : 1f)));
+
             }
             var cam = Camera.main;
 

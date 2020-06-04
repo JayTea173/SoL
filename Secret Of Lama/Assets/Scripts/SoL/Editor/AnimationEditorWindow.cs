@@ -89,7 +89,7 @@ namespace SoL.Animation
                 float dt = (float)(editorTime - lastEditorTime);
                 t += dt;
                 lastEditorTime = editorTime;
-                
+
                 int frame = SpriteAnimationBehaviour.GetFrameIndex(ac[currentAnimationId], t);
                 if (frame != currentFrame)
                 {
@@ -104,10 +104,11 @@ namespace SoL.Animation
                     Vector2 move = SpriteAnimationBehaviour.Move(SpriteAnimationBehaviour.SampleMotion(ac[currentAnimationId], t), SpriteAnimationBehaviour.FacingToVector(facing)) * ac[currentAnimationId].frames[currentFrame].motion.motionMultiplier * dt;
                     animationMotionPosition += move;
                 }
-                
+
             }
-            
+
         }
+
 
         private void OnGUI()
         {
@@ -135,10 +136,6 @@ namespace SoL.Animation
                 if (EditorUtility.DisplayDialog("Delete Animation", "Are you sure you want to delete " + n + "? This will also delete the asset.", "Yes", "No"))
                 {
                     List<SpriteAnimation> anims = new List<SpriteAnimation>(ac.animations);
-                    string guid;
-                    long localId;
-                    AssetDatabase.TryGetGUIDAndLocalFileIdentifier(anims[currentAnimationId], out guid, out localId);
-                    AssetDatabase.DeleteAsset(AssetDatabase.GUIDToAssetPath(guid));
                     anims.RemoveAt(currentAnimationId);
                     ac.animations = anims.ToArray();
                     UpdateAnimations();
@@ -152,19 +149,10 @@ namespace SoL.Animation
                 {
                     Array.Resize(ref ac.animations, ac.Count + 1);
 
-                    var a = SpriteAnimation.CreateInstance<SpriteAnimation>();
+                    var a = new SpriteAnimation();
                     a.name = s;
                     a.frames = new List<SpriteFrame>();
                     ac[ac.Count - 1] = a;
-                    string guid;
-                    long localId;
-                    AssetDatabase.TryGetGUIDAndLocalFileIdentifier(ac, out guid, out localId);
-                    string path = AssetDatabase.GUIDToAssetPath(guid).Replace(".asset", "") + "/";
-                    if (!Directory.Exists(path))
-                        Directory.CreateDirectory(path);
-
-                    path += "/" + a.name;
-                    AssetDatabase.CreateAsset(ac[ac.Count - 1], path + ".asset");
 
 
                     UpdateAnimations();
@@ -443,57 +431,79 @@ namespace SoL.Animation
 
                     EditorGUILayout.EndHorizontal();
 
-                    var duration = EditorGUILayout.FloatField("Duration", ac[currentAnimationId].frames[currentFrame].durationMultiplier);
-                    if (controlKey)
-                    {
-                        for (int i = 0; i < c; i++)
-                            ac[currentAnimationId].frames[i].durationMultiplier = duration;
-                    }
-                    else
-                        ac[currentAnimationId].frames[currentFrame].durationMultiplier = duration;
 
-                    var flags = (FrameFlags)EditorGUILayout.EnumFlagsField("Flags", ac[currentAnimationId].frames[currentFrame].flags);
-                    if (controlKey)
+                    EditorGUI.BeginChangeCheck();
+                    var duration = EditorGUILayout.FloatField("Duration", ac[currentAnimationId].frames[currentFrame].durationMultiplier);
+                    if (EditorGUI.EndChangeCheck())
                     {
-                        for (int i = 0; i < c; i++)
-                            ac[currentAnimationId].frames[i].flags = flags;
+                        if (controlKey)
+                        {
+                            for (int i = 0; i < c; i++)
+                                ac[currentAnimationId].frames[i].durationMultiplier = duration;
+                        }
+                        else
+                            ac[currentAnimationId].frames[currentFrame].durationMultiplier = duration;
                     }
-                    else
-                        ac[currentAnimationId].frames[currentFrame].flags = flags;
+
+                    EditorGUI.BeginChangeCheck();
+                    var flags = (FrameFlags)EditorGUILayout.EnumFlagsField("Flags", ac[currentAnimationId].frames[currentFrame].flags);
+                    if (EditorGUI.EndChangeCheck())
+                    {
+                        if (controlKey)
+                        {
+                            for (int i = 0; i < c; i++)
+                                ac[currentAnimationId].frames[i].flags = flags;
+                        }
+                        else
+                            ac[currentAnimationId].frames[currentFrame].flags = flags;
+                    }
 
 
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.LabelField("Motion", GUILayout.Width(48f));
                     showMotion = EditorGUILayout.Toggle("Show", showMotion);
                     EditorGUILayout.EndHorizontal();
+
+                    EditorGUI.BeginChangeCheck();
                     var motionX = EditorGUILayout.CurveField("Forward", ac[currentAnimationId].frames[currentFrame].motion.motionX);
                     var motionY = EditorGUILayout.CurveField("Up", ac[currentAnimationId].frames[currentFrame].motion.motionY);
 
-                    if (controlKey)
+                    if (EditorGUI.EndChangeCheck())
                     {
-                        for (int i = 0; i < c; i++)
-                            ac[currentAnimationId].frames[i].motion.motionX = motionX;
-                    } else
-                        ac[currentAnimationId].frames[currentFrame].motion.motionX = motionX;
+                        if (controlKey)
+                        {
+                            for (int i = 0; i < c; i++)
+                                ac[currentAnimationId].frames[i].motion.motionX = motionX;
+                        }
+                        else
+                            ac[currentAnimationId].frames[currentFrame].motion.motionX = motionX;
 
-                    if (controlKey)
-                    {
-                        for (int i = 0; i < c; i++)
-                            ac[currentAnimationId].frames[i].motion.motionY = motionY;
+
+                        if (controlKey)
+                        {
+                            for (int i = 0; i < c; i++)
+                                ac[currentAnimationId].frames[i].motion.motionY = motionY;
+                        }
+                        else
+                            ac[currentAnimationId].frames[currentFrame].motion.motionY = motionY;
                     }
-                    else
-                        ac[currentAnimationId].frames[currentFrame].motion.motionY = motionY;
+
+
+                    EditorGUI.BeginChangeCheck();
 
                     float motionMultiplier = EditorGUILayout.FloatField("Multiplier", ac[currentAnimationId].frames[currentFrame].motion.motionMultiplier);
-                    if (controlKey)
+
+                    if (EditorGUI.EndChangeCheck())
                     {
-                        for (int i = 0; i < c; i++)
-                            ac[currentAnimationId].frames[i].motion.motionMultiplier = motionMultiplier;
+                        if (controlKey)
+                        {
+                            for (int i = 0; i < c; i++)
+                                ac[currentAnimationId].frames[i].motion.motionMultiplier = motionMultiplier;
+                        }
+                        else
+                            ac[currentAnimationId].frames[currentFrame].motion.motionMultiplier = motionMultiplier;
+
                     }
-                    else
-                        ac[currentAnimationId].frames[currentFrame].motion.motionMultiplier = motionMultiplier;
-
-
                     EditorGUILayout.EndVertical();
 
 

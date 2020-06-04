@@ -8,9 +8,9 @@ using UnityEngine;
 namespace SoL.Animation
 {
     [Serializable]
-    [CreateAssetMenu(fileName = "SpriteAnimation", menuName = "Animation/Single")]
-    public class SpriteAnimation : ScriptableObject
+    public class SpriteAnimation
     {
+        public string name;
         public List<SpriteFrame> frames;
 
         public Mirroring[] mirroring;
