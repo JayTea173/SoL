@@ -10,13 +10,26 @@ namespace SoL
     public class PlayerController : MonoBehaviour
     {
         private CharacterActor actor;
+        public PlayerData playerData;
         public float tilesMovePerSecond = 4f;
         public float screenNumTilesWidth = 16f;
         public float screenNumTilesHeight = 14f;
         public int numTilesFromScreenEdgeTillCameraPan = 4;
 
+
+        private static PlayerController instance;
+
+        public static PlayerController Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
         void Awake()
         {
+            instance = this;
             actor = GetComponent<CharacterActor>();
         }
 
@@ -29,7 +42,7 @@ namespace SoL
             {
                 if (Input.GetButtonDown("Sprint"))
                 {
-                    if (!actor.sprinting)
+                    if (!actor.sprinting && actor.AttackCharge <= 1f)
                     {
                         Debug.Log("SPRINT START");
                         actor.sprinting = true;
@@ -48,13 +61,29 @@ namespace SoL
 
                 if (Input.GetButtonDown("Attack"))
                 {
-                    actor.Attack();
+                    if (actor.AttackCharge <= 1f)
+                    {
+                        actor.weaponCharging = true;
+                        actor.Attack();
+                    }
                 }
 
+                if (Input.GetButtonUp("Attack"))
+                {
+                    if (actor.weaponCharging)
+                    {
+                        if (actor.AttackCharge > 1f)
+                            actor.Attack();
+                        actor.weaponCharging = false;
+                    }
+                }
+
+                if (actor.weaponCharging)
+                    actor.weaponCharging = Input.GetButton("Attack");
 
 
 
-                actor.MoveToCheckingCollision(transform.position + (Vector3)(move * Time.deltaTime * tilesMovePerSecond * (actor.sprinting ? 2f : 1f)));
+                actor.MoveToCheckingCollision(transform.position + (Vector3)(move * Time.deltaTime * tilesMovePerSecond * (actor.sprinting ? 2f : 1f) * (actor.AttackCharge > 1f ? 0.5f : 1f)));
 
             }
             var cam = Camera.main;

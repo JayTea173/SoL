@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbe6109dfb5e6042a3886b81e19e58e, type: 3}
+  m_Name: Grass
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -6125614670109843157, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  sprites:
+  - {fileID: -6125614670109843157, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: -4699875304515859481, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 7478911043325092172, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  fps: 4
+  destroyedTile: {fileID: 11400000, guid: 6e27b618b45a17d41b40354a5ece2497, type: 2}
+  sharedRoundingId: 0
+  tl:
+  - {fileID: 3837052318447924180, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 7014569820884127277, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 848192550732972117, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  t:
+  - {fileID: 6932231761800044086, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 6094476571987001105, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 1914731643055110699, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  tr:
+  - {fileID: 9066434092650231891, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: -2706111242090479859, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 6128597395750099599, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  l:
+  - {fileID: -7865080907866266221, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 2390202535394020982, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 34588348594147905, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  r:
+  - {fileID: 2921767415292464942, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: -2412788835394502703, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: -3659095388211237531, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  bl:
+  - {fileID: 2876044281163077514, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: -5662589290544569815, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 3275368880396966523, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  b:
+  - {fileID: -1809724821873082774, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 8189667008946655102, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: -5508711681712648254, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  br:
+  - {fileID: 1470787953825477663, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: -4440350817887748052, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}
+  - {fileID: 7213735738623078267, guid: d5d868fc215ddcf4f8f6c13e34559390, type: 3}

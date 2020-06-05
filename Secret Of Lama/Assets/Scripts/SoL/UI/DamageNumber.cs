@@ -20,6 +20,8 @@ namespace SoL.UI
         public float padding = 8f;
 
         private Transform target;
+
+        private float baseSize;
         
 
         public float FontSize
@@ -38,9 +40,28 @@ namespace SoL.UI
             }
         }
 
+        public Color Color
+        {
+            get
+            {
+                return digits[0].color;
+            }
+            set
+            {
+                int c = digits.Length;
+                for (int i = 0; i < c; i++)
+                {
+                    digits[i].color = value;
+                }
+            }
+        }
+
+
+
         private void Awake()
         {
             digitPrefab.gameObject.SetActive(false);
+            baseSize = digitPrefab.fontSize;
         }
 
         private void UpdatePosition()
@@ -114,8 +135,10 @@ namespace SoL.UI
             var go = GameObject.Instantiate(StaticData.Instance.damageNumberPrefab, Engine.MainCanvas.transform);
             var dn = go.GetComponent<DamageNumber>();
             dn.target = parent;
+            dn.Color = Color.green;
             dn.SetText(text);
-            dn.FontSize *= 0.66f;
+            dn.FontSize *= .66f;
+            dn.padding *= .66f;
             dn.UpdatePosition();
         }
     }

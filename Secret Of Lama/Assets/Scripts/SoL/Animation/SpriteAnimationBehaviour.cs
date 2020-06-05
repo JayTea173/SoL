@@ -21,6 +21,7 @@ namespace SoL.Animation
         public int currentAnimationId = 0;
         private int currentAnimationFrameCount;
         private float currentAnimationFrameProgress = 0f;
+        private AnimationCollection currentCollection = null;
 
 
         private float animationTime = 0f;
@@ -46,8 +47,11 @@ namespace SoL.Animation
             foreach (SpriteAnimation anim in animations)
                 anim.CalculateDuration();
 
+            currentCollection = animations;
+
         }
 
+        private bool frameChanged = false;
 
         private void Update()
         {
@@ -57,37 +61,18 @@ namespace SoL.Animation
                 float sampleTimeX = currentFrame.motion.invertMotionSamplingX ? (1f - currentAnimationFrameProgress) : currentAnimationFrameProgress;
                 float sampleTimeY = currentFrame.motion.invertMotionSamplingY ? (1f - currentAnimationFrameProgress) : currentAnimationFrameProgress;
 
-                Vector3 delta = (Vector3)actor.TransformForwardX(new Vector2(currentFrame.motion.motionX.Evaluate(sampleTimeX), currentFrame.motion.motionY.Evaluate(sampleTimeY))) * currentFrame.motion.motionMultiplier * Time.deltaTime / Engine.pixelsPerUnit;
 
+
+                Vector3 delta = (Vector3)actor.TransformForwardX(new Vector2(currentFrame.motion.motionX.Evaluate(sampleTimeX), currentFrame.motion.motionY.Evaluate(sampleTimeY))) * currentFrame.motion.motionMultiplier * Time.deltaTime / Engine.pixelsPerUnit;
                 Vector3 targetPosition = transform.position + delta;
 
                 actor.MoveToCheckingCollision(targetPosition);
 
                 if (currentFrame.dealsDamage)
                 {
-
-                    Vector2 offset = actor.TransformDirection(currentFrame.damage.originOffset);
-                    var hits = Engine.QuadTree.GetAgentsInRange(transform.position + actor.PhysicsAgent.b.center + (Vector3)offset, currentFrame.damage.radius).Where((h) =>
-                    {
-                        if (h.t == transform)
-                            return false;
-                        var a = h.t.GetComponent<IDamagable>();
-                        return actor.IsEnemy(a.Team);
-                    });
-
-                    foreach (var hit in hits)
-                    {
-                        var damageable = hit.t.GetComponent<IDamagable>();
-
-                        if (!targetsHitWithThisAnimation.Contains(damageable))
-                        {
-                            targetsHitWithThisAnimation.Add(damageable);
-                            damageable.Damage(Mathf.FloorToInt(currentFrame.damage.value * actor.GetDamageDealt()), actor);
-                        }
-                    }
-
+                    actor.HandleDamageFrame(currentFrame, targetsHitWithThisAnimation, frameChanged);
                 }
-
+                frameChanged = false;
             }
 
         }
@@ -99,10 +84,16 @@ namespace SoL.Animation
         /// <returns></returns>
         public bool SetAnimation(int id, bool playFromStart = false)
         {
-            if (id == currentAnimationId)
+            return SetAnimation(animations, id, playFromStart);
+        }
+
+        public bool SetAnimation(AnimationCollection animations, int id, bool playFromStart = false)
+        {
+            if (id == currentAnimationId && currentCollection == animations)
                 return false;
             currentAnimationId = id;
-            currentAnimationFrameCount = animations[id].frames.Count;
+            currentCollection = animations;
+            currentAnimationFrameCount = currentCollection[id].frames.Count;
             if (playFromStart)
                 animationTime = 0f;
 
@@ -110,11 +101,13 @@ namespace SoL.Animation
             return true;
         }
 
+
+
         public SpriteAnimation CurrentAnimation
         {
             get
             {
-                return animations[currentAnimationId];
+                return currentCollection[currentAnimationId];
             }
         }
         /// <summary>
@@ -126,7 +119,7 @@ namespace SoL.Animation
         public bool SetAnimation(string name, bool playFromStart = true)
         {
             int hc = name.GetHashCode();
-            int index = animations.GetIndexByName(name);
+            int index = currentCollection.GetIndexByName(name);
             if (index < 0)
             {
                 //Debug.LogError("Unable to find an animation called " + name + " on " + gameObject.name);
@@ -138,6 +131,24 @@ namespace SoL.Animation
             return true;
 
         }
+
+        public bool SetAnimation(AnimationCollection animations, string name, bool playFromStart = true)
+        {
+            int hc = name.GetHashCode();
+            int index = animations.GetIndexByName(name);
+            if (index < 0)
+            {
+                Debug.LogError("Unable to find an animation called " + name + " in " + animations.name);
+                return false;
+            }
+
+            targetsHitWithThisAnimation.Clear();
+            SetAnimation(animations, index, playFromStart);
+            return true;
+
+        }
+
+
 
         protected List<IDamagable> targetsHitWithThisAnimation = new List<IDamagable>();
 
@@ -233,10 +244,16 @@ namespace SoL.Animation
                 return;
 
             int frame = 0;
-            var anim = animations[currentAnimationId];
+            var anim = currentCollection[currentAnimationId];
             float d = anim.Duration;
+            if (d <= 0f)
+            {
+                anim.CalculateDuration();
+                d = anim.Duration;
+            }
             float t = animationTime % d;
             float frameDuration = 0f;
+
 
             while ((frameDuration = anim.frames[frame].durationMultiplier / anim.fps) < t)
             {
@@ -252,7 +269,15 @@ namespace SoL.Animation
 
             var s = currentFrame[actor.facing];
             if (sr.sprite != s)
+            {
                 sr.sprite = s;
+                frameChanged = true;
+                if (currentFrame.flags.HasFlag(FrameFlags.SWAP_FACING))
+                {
+                    actor.SetFacing(BaseActor.InvertFacing(actor.facing));
+                    actor.Move(-actor.movementDirection);
+                }
+            }
 
             float frameTime = currentFrame.durationMultiplier / anim.fps;
             float prog = t / frameTime;

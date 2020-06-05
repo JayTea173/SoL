@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -7076966661436829979, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c16f16899582149bf14774f310cdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData:
+    gp: 0
   tilesMovePerSecond: 6
   screenNumTilesWidth: 16
   screenNumTilesHeight: 14
@@ -132,9 +134,9 @@ MonoBehaviour:
   hpMax: 50
   mp: 0
   mpMax: 0
-  maxAttackCharge: 1
   attackChargeSpeed: 0.46
   position: {x: 0, y: 0, z: 0}
+  id: 0
   level: 1
   xp: 0
   xpNext: 00000000100000002f00000069000000cc0000006b0100005a020000b10300008a05000001080000360b00004a0f000062140000a31a000037220000482b000003360000994200003a5100001b62000071750000758b000061a4000071c00000e4df0000fa020100f62901001c550100b384010003b9010057f20100fb3002003e75020070bf0200e30f0300ec660300e1c40300192a0400ef960400be0b0500e4880500c00e0600b49d06002336070072d80700078508004c3c0900aafe09008ecc0a0066a60b00a18c0c00b27f0d000b800e00218e0f006caa100063d51100810f13004259140024b31500a61d17004a99180092261a0003c61b0023781d007a3d1f0091162100f403230030062500d41d27006f4b2900948f2b00d7ea2d00cc5d30000be932002c8d3500ca4a380080223b00eb143e00ab224100604c4400ad92470035f64a009e774e008f175200b1d65500aeb5590032b55d00ead5610086186600b67d6a002c066f009cb27300bb837800407a7d00e496820060da870070458d00d1d8920042959800
@@ -145,7 +147,7 @@ MonoBehaviour:
   wisdom: 5
   equipmentDefense: 3
   equipmentMagicDefense: 1
-  weaponDamage: 3
+  weapon: {fileID: 11400000, guid: ee9b62a4d87d18b41ab94ee5d74b4296, type: 2}
   attack: 0
   hitChance: 0
   defense: 0
@@ -158,4 +160,4 @@ MonoBehaviour:
   wisdomGain: 0.71428573
   maxHpGain: 9.683674
   maxMpGain: 0
-  attackSound: {fileID: 11400000, guid: 8b56d947291055e42baa82d9a9677f71, type: 2}
+  weaponCharging: 0

@@ -71,9 +71,5 @@ namespace SoL.UI
                 timeGaugeAtFull = 0f;
             }
         }
-
-
-
-
     }
 }

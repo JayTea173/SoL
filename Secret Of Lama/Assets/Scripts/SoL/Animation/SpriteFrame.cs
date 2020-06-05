@@ -96,7 +96,8 @@ namespace SoL.Animation
     {
         MOVEMENT_BLOCKED = 1 << 0,
         CHARGING_BLOCKED = 1 << 1,
-        INVULNERABLE = 1 << 2
+        INVULNERABLE = 1 << 2,
+        SWAP_FACING = 1 << 3,
     }
 
     [Serializable]

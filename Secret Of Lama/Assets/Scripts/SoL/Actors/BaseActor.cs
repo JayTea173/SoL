@@ -1,4 +1,5 @@
 ﻿using SoL.Animation;
+using SoL.Tiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,31 @@ namespace SoL.Actors
             Up
         }
 
+        public static Facing InvertFacing(Facing facing)
+        {
+            switch (facing)
+            {
+                case Facing.Left:
+                    return Facing.Right;
+                case Facing.Right:
+                    return Facing.Left;
+                case Facing.Down:
+                    return Facing.Up;
+                case Facing.Up:
+                    return Facing.Down;
+            }
+            return Facing.Left;
+        }
+
         public Facing facing { get; protected set; }
+
+        protected virtual bool CanDestroyTiles
+        {
+            get
+            {
+                return false;
+            }
+        }
 
 
         [SerializeField]
@@ -94,6 +119,7 @@ namespace SoL.Actors
         protected bool charging = false;
         protected float currentAnimationAttackCharge = 0f;
         protected float timeOfDeath = 0f;
+
         private Physics.QuadTree.Agent physicsAgent;
         public Physics.QuadTree.Agent PhysicsAgent
         {
@@ -126,14 +152,11 @@ namespace SoL.Actors
             }
         }
 
-        [SerializeField]
-        private float maxAttackCharge = 1f;
-
-        public float MaxAttackCharge
+        public virtual float MaxAttackCharge
         {
             get
             {
-                return maxAttackCharge;
+                return 1f;
             }
         }
 
@@ -165,6 +188,7 @@ namespace SoL.Actors
         {
             if (animation.GetCurrentFrameFlags().HasFlag(FrameFlags.INVULNERABLE))
                 return 0;
+
 
             if (amount > 0)
             {
@@ -207,7 +231,7 @@ namespace SoL.Actors
 
         public void SortZ()
         {
-            position.z = position.y * 0.01f;
+            transform.position = new Vector3(transform.position.x, transform.position.y, (transform.position.y * 0.001f));
         }
 
         public Vector2 TransformForwardX(Vector2 d)
@@ -284,12 +308,17 @@ namespace SoL.Actors
                 Animation.SetAnimation(1);
         }
 
+        protected virtual void PlayAttackAnimation()
+        {
+            if (!Animation.SetAnimation("Attack", false))
+                Animation.SetAnimation(0);
+        }
+
         public void Move(Vector2 move)
         {
-            if (move != Vector2.zero)
-                this.movement = move;
             if (move.sqrMagnitude > 0f)
             {
+                this.movement = move;
                 transform.hasChanged = true;
                 if (move.x != 0f)
                     SetFacing(move.x > 0f ? BaseActor.Facing.Right : BaseActor.Facing.Left);
@@ -325,6 +354,52 @@ namespace SoL.Actors
 
         }
 
+
+        public virtual void HandleDamageFrame(SpriteFrame frame, List<IDamagable> targetsHitWithThisAnimation, bool isStartOfFrame)
+        {
+            Vector2 offset = TransformDirection(frame.damage.originOffset);
+            Vector3 center = transform.position + PhysicsAgent.b.center + (Vector3)offset;
+            var hits = Engine.QuadTree.GetAgentsInRange(center, frame.damage.radius).Where((h) =>
+            {
+                if (h.t == transform)
+                    return false;
+                var a = h.t.GetComponent<IDamagable>();
+                return IsEnemy(a.Team);
+            });
+
+            foreach (var hit in hits)
+            {
+                var damageable = hit.t.GetComponent<IDamagable>();
+
+                if (!damageable.IsDead)
+                {
+                    if (!targetsHitWithThisAnimation.Contains(damageable))
+                    {
+                        targetsHitWithThisAnimation.Add(damageable);
+                        damageable.Damage(Mathf.FloorToInt(frame.damage.value * GetDamageDealt()), this);
+                    }
+                }
+            }
+
+            if (isStartOfFrame)
+            {
+                if (CanDestroyTiles)
+                {
+                    var positions = World.Instance.GetTilesInRadius(0, center, Mathf.Max(frame.damage.radius, 0f));
+                    var tm = World.Instance.tilemapLayers[0];
+                    foreach (var p in positions)
+                    {
+                        var tile = tm.GetTile(p);
+                        if (tile is DestructibleTile)
+                        {
+                            (tile as DestructibleTile).Kill(p, tm);
+                        }
+                    }
+
+                }
+            }
+        }
+
         public Vector2 TransformDirection(Vector2 originOffset)
         {
             float angle = Mathf.Atan2(movement.y, movement.x);
@@ -336,9 +411,9 @@ namespace SoL.Actors
             if (charging && !animation.GetCurrentFrameFlags().HasFlag(FrameFlags.CHARGING_BLOCKED))
             {
                 attackCharge += Time.deltaTime * attackChargeSpeed;
-                if (attackCharge >= maxAttackCharge)
+                if (attackCharge >= MaxAttackCharge)
                 {
-                    attackCharge = maxAttackCharge;
+                    attackCharge = MaxAttackCharge;
                     charging = false;
                 }
             }
@@ -401,10 +476,10 @@ namespace SoL.Actors
         public virtual void Attack()
         {
             currentAnimationAttackCharge = attackCharge;
+
+            PlayAttackAnimation();
             attackCharge = 0f;
             charging = true;
-
-            Animation.SetAnimation("Attack", true);
 
             //Engine.quadTree.GetAgents();
         }

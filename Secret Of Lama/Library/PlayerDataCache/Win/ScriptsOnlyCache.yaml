@@ -8,15 +8,18 @@ ScriptsOnlyBuild:
     - SoL.Animation.AnimationCollection
     - SoL.Animation.SpriteAnimationBehaviour
     - SoL.Audio.Soundbank
+    - SoL.Items.Weapon
     - SoL.PlayerController
     - SoL.StaticData
+    - SoL.Tiles.DestructibleTile
+    - SoL.Tiles.RoundedTile
     - SoL.UI.ActorHUD
     - SoL.UI.DamageNumber
+    - SoL.World
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -70,8 +73,6 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 626}
-    - Class: 114
       Script: {instanceID: 11760}
     - Class: 114
       Script: {instanceID: 12122}
@@ -92,31 +93,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12840}
     - Class: 114
-      Script: {instanceID: 12898}
+      Script: {instanceID: 12892}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12902}
     - Class: 114
-      Script: {instanceID: 13120}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13688}
+      Script: {instanceID: 13124}
     - Class: 114
-      Script: {instanceID: 14004}
+      Script: {instanceID: 13694}
     - Class: 114
-      Script: {instanceID: 14024}
+      Script: {instanceID: 14014}
     - Class: 114
-      Script: {instanceID: 14172}
+      Script: {instanceID: 14034}
     - Class: 114
-      Script: {instanceID: 14224}
+      Script: {instanceID: 14072}
     - Class: 114
-      Script: {instanceID: 14348}
+      Script: {instanceID: 14184}
     - Class: 114
-      Script: {instanceID: 14452}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 14746}
+      Script: {instanceID: 14360}
     - Class: 114
-      Script: {instanceID: 15094}
+      Script: {instanceID: 14464}
     - Class: 114
-      Script: {instanceID: 33574}
+      Script: {instanceID: 14546}
+    - Class: 114
+      Script: {instanceID: 14760}
+    - Class: 114
+      Script: {instanceID: 15112}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -350,7 +355,7 @@ ScriptsOnlyBuild:
     className: SpriteAnimationBehaviour
   - hash:
       serializedVersion: 2
-      Hash: abcdbd8856c0f060302fce12ff488175
+      Hash: 79bf1ae2ef9f6a6232d146ad9579ebf4
     assemblyName: SoL.dll
     namespaceName: SoL.Actors
     className: CharacterActor
@@ -380,6 +385,18 @@ ScriptsOnlyBuild:
     className: SpriteShape
   - hash:
       serializedVersion: 2
+      Hash: c73a1dbd679a2bff18cb4829ba325cfc
+    assemblyName: SoL.dll
+    namespaceName: SoL.Items
+    className: Weapon
+  - hash:
+      serializedVersion: 2
+      Hash: 921d8bb77de02f50ec41d4684402dadf
+    assemblyName: SoL.dll
+    namespaceName: SoL.Tiles
+    className: DestructibleTile
+  - hash:
+      serializedVersion: 2
       Hash: 5cc439bf63c0539d39588e69465ac2ab
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -404,7 +421,7 @@ ScriptsOnlyBuild:
     className: DefaultEnemyAI
   - hash:
       serializedVersion: 2
-      Hash: 24de190419b9513acf4cbc9dbc54b627
+      Hash: 0640095bcbe8d95d7af39f7406699474
     assemblyName: SoL.dll
     namespaceName: SoL
     className: PlayerController
@@ -446,7 +463,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 20c31362c7562f34517a16766c62217a
+      Hash: 28bf1d06cbf4add9e8fdfef2309e3f20
     assemblyName: SoL.dll
     namespaceName: SoL.Actors
     className: BaseActor
@@ -480,6 +497,12 @@ ScriptsOnlyBuild:
     assemblyName: SoL.dll
     namespaceName: SoL.UI
     className: ActorHUD
+  - hash:
+      serializedVersion: 2
+      Hash: 608c161670295f7f16a60b10e059d7ef
+    assemblyName: SoL.dll
+    namespaceName: SoL.Tiles
+    className: RoundedTile
   - hash:
       serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
@@ -542,13 +565,19 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: a23d8a80598f050783af0860be7609a8
+    assemblyName: SoL.dll
+    namespaceName: SoL
+    className: World
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 7ad463267bbf503e053b2791be04b4c9
+      Hash: afbe9cf54238ece9ff5bd1cd35ef44a2
     assemblyName: SoL.dll
     namespaceName: SoL.Actors
     className: CreatureActor
@@ -588,6 +617,12 @@ ScriptsOnlyBuild:
     assemblyName: SoL.Editor.dll
     namespaceName: SoL
     className: StringInputPopup
+  - hash:
+      serializedVersion: 2
+      Hash: 5cc39aa38a25e44f3c25dc3251fe9c85
+    assemblyName: SoL.dll
+    namespaceName: SoL.Audio
+    className: Soundbank
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -704,10 +739,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 5cc39aa38a25e44f3c25dc3251fe9c85
+      Hash: 4ebfa49b2af916fe279f2efde5718b7f
     assemblyName: SoL.dll
-    namespaceName: SoL.Audio
-    className: Soundbank
+    namespaceName: SoL.Tiles
+    className: AnimatedTile
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

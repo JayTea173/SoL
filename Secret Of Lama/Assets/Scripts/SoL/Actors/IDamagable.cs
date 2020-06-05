@@ -14,6 +14,11 @@ namespace SoL.Actors
         {
             get;
         }
+
+        bool IsDead
+        {
+            get;
+        }
     }
 
     public enum EnumTeam

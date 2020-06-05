@@ -53,6 +53,8 @@ namespace SoL.Animation
         bool controlKey = false;
         bool allKey = false;
 
+        private static SpriteAnimation clipboardAnimation;
+
         bool showMotion = false;
 
 
@@ -143,6 +145,8 @@ namespace SoL.Animation
                 }
 
             }
+
+
             if (GUILayout.Button("+", GUILayout.Width(20f)))
             {
                 StringInputPopup.Display((s) =>
@@ -159,6 +163,14 @@ namespace SoL.Animation
 
 
                 }, defaultAnimationNames[System.Math.Min(ac.Count, defaultAnimationNames.Length - 1)], "Enter new animation name.");
+            }
+            if (GUILayout.Button("copy", GUILayout.Width(40f)))
+            {
+                clipboardAnimation = ac.animations[currentAnimationId];
+            }
+            if (GUILayout.Button("paste", GUILayout.Width(40f)))
+            {
+                ac.animations[currentAnimationId] = clipboardAnimation.Copy();
             }
 
             EditorGUI.BeginChangeCheck();

@@ -48,5 +48,18 @@ namespace SoL.Animation
             for (int i = 0; i < 4; i++)
                 mirroring[i] = new Mirroring(false, false);
         }
+
+        public SpriteAnimation Copy()
+        {
+            SpriteAnimation copy = new SpriteAnimation();
+            copy.name = name;
+            copy.frames = new List<SpriteFrame>();
+            foreach (var f in frames)
+                copy.frames.Add(f);
+            for (int i = 0; i < 4; i++)
+                copy.mirroring[i].value = mirroring[i].value;
+
+            return copy;
+        }
     }
 }

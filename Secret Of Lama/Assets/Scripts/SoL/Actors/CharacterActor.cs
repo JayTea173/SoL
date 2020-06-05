@@ -1,14 +1,19 @@
-﻿using System;
+﻿using SoL.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using SoL.Animation;
 
 namespace SoL.Actors
 {
     public class CharacterActor : BaseActor
     {
+        [Tooltip("Used to keep track of character specific data on other objects")]
+        public int id;
+
         [Header("Level & XP")]
         public byte level;
         public uint xp;
@@ -21,7 +26,15 @@ namespace SoL.Actors
         [Header("Equipment")]
         public ushort equipmentDefense;
         public ushort equipmentMagicDefense;
-        public ushort weaponDamage;
+        public Weapon weapon;
+
+        public ushort weaponDamage
+        {
+            get
+            {
+                return weapon.damage;
+            }
+        }
 
         [Header("Calculated Stats")]
         public ushort attack;
@@ -41,8 +54,6 @@ namespace SoL.Actors
 
         protected bool sprint;
 
-        public Audio.Soundbank attackSound;
-
         public bool sprinting
         {
             get
@@ -55,6 +66,18 @@ namespace SoL.Actors
                 charging = !sprint;
             }
         }
+
+        public override float MaxAttackCharge
+        {
+            get
+            {
+                if (weapon != null && weaponCharging && attackCharge != 1f)
+                    return (weapon.characterData[id].SkillLevel + 1f);
+                return base.MaxAttackCharge;
+            }
+        }
+
+        public bool weaponCharging;
 
         protected override void Initialize()
         {
@@ -73,6 +96,14 @@ namespace SoL.Actors
             }
         }
 
+        protected override bool CanDestroyTiles
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         protected override void PlayMovementAnimation()
         {
             if (sprinting)
@@ -82,6 +113,28 @@ namespace SoL.Actors
             }
             else
                 base.PlayMovementAnimation();
+        }
+
+        protected override void PlayAttackAnimation()
+        {
+            if (weapon == null)
+                base.PlayAttackAnimation();
+            else
+            {
+                int chargeLevel = Mathf.FloorToInt(attackCharge) - 1;
+
+                if (chargeLevel < 1)
+                    Animation.SetAnimation(weapon.characterData[id].animations, "Attack", true);
+                else
+                {
+                    while (!Animation.SetAnimation(weapon.characterData[id].animations, "Charge" + chargeLevel.ToString(), true) && chargeLevel > 0)
+                        chargeLevel--;
+
+                    if (chargeLevel < 1)
+                        Animation.SetAnimation(weapon.characterData[id].animations, "Attack", true);
+                }
+            }
+            //base.PlayAttackAnimation();
         }
 
         protected virtual void CalculateStats()
@@ -108,15 +161,22 @@ namespace SoL.Actors
                 CreatureActor creature = damageSource as CreatureActor;
                 Move(-creature.movementDirection);
             }
-           
+
             int dmg = System.Math.Max(amount - (int)defense, 0);
             return base.Damage(dmg, damageSource);
         }
 
+
         public override int GetDamageDealt()
         {
-            
-            return Mathf.RoundToInt(attack * (currentAnimationAttackCharge * currentAnimationAttackCharge));
+
+            float chargeMultiplier = currentAnimationAttackCharge;
+            if (chargeMultiplier <= 1f)
+                chargeMultiplier *= chargeMultiplier;
+            else
+                chargeMultiplier = 1f + Mathf.Floor(chargeMultiplier - 1f) / 2f;
+
+            return Mathf.RoundToInt(attack * chargeMultiplier);
         }
 
         protected override void OnUpdate()
@@ -136,22 +196,22 @@ namespace SoL.Actors
                 if (!sprinting)
                     charging = true;
             }
-
             base.OnUpdate();
         }
 
         public override void Attack()
         {
             base.Attack();
-            AudioSource.PlayClipAtPoint(attackSound.GetRandom(), transform.position, 1f);
-            
+            AudioSource.PlayClipAtPoint(weapon.attackSound.GetRandom(), transform.position, 1f);
+
         }
 
         private void LevelUp()
         {
             float l = (float)level;
-            if (level > 1) {
-                strength -= (byte)Mathf.RoundToInt((l-1) * strengthGain);
+            if (level > 1)
+            {
+                strength -= (byte)Mathf.RoundToInt((l - 1) * strengthGain);
                 agility -= (byte)Mathf.RoundToInt((l - 1) * agilityGain);
                 constitution -= (byte)Mathf.RoundToInt((l - 1) * constitutionGain);
                 intelligence -= (byte)Mathf.RoundToInt((l - 1) * intelligenceGain);
@@ -176,13 +236,17 @@ namespace SoL.Actors
             while (xp > xpNext[level - 1] && level < 99)
             {
                 LevelUp();
-                
+
             }
 
             if (level != ogLevel)
             {
                 UI.DamageNumber.Display(transform, "Lvl UP!");
                 CalculateStats();
+
+                //onDamageTaken forces the UI to be updated to display a change in hp
+                if (onDamageTaken != null)
+                    onDamageTaken.Invoke(0, null);
             }
         }
 
@@ -193,8 +257,22 @@ namespace SoL.Actors
             {
                 CreatureActor creature = target as CreatureActor;
                 AwardXP(creature.ExpAward);
-
+                if (weapon != null)
+                {
+                    if (weapon.characterData[id].GainSkill())
+                    {
+                        UI.DamageNumber.Display(transform, "Wpn UP!");
+                    }
+                }
+                PlayerController.Instance.playerData.gp += creature.GpAward;
             }
+        }
+
+        //Debug only
+        private void OnGUI()
+        {
+            GUILayout.Label("XP : " + xp + " / " + xpNext[level - 1]);
+            GUILayout.Label("Wpn: " + weapon.characterData[id].SkillProgress.ToString("0.00"));
         }
     }
 }
