@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Waterfall_b
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -4099381932085305496, guid: b4f159f38488eb449b10d7023cbc1725, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_Transform:
     e00: 1
     e01: 0

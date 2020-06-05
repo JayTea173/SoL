@@ -33,7 +33,7 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 1
+  m_ColliderType: 0
   sprites:
   - {fileID: 1378430546443170511, guid: 4be4f1f5137b3c94690db3a09641be03, type: 3}
   - {fileID: 492663303763328549, guid: 4be4f1f5137b3c94690db3a09641be03, type: 3}
