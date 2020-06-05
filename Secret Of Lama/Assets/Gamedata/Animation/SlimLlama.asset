@@ -1,0 +1,1082 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781a50e1c5f9c484c9b809da41c926df, type: 3}
+  m_Name: SlimLlama
+  m_EditorClassIdentifier: 
+  animations:
+  - name: Idle
+    frames:
+    - left:
+        sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -2165186292028474456, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1523444218738115916, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    mirroring:
+    - value: 1
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
+  - name: Walk
+    frames:
+    - left:
+        sprite: {fileID: 3401712690424167018, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 3401712690424167018, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 8602055323049005576, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -5874743607707711097, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: 2946135839926348323, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 2946135839926348323, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 8602055323049005576, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -5029405660662030066, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -6685301186564192506, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -6685301186564192506, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 2556955243155707820, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -5874743607707711097, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -2649586108002721157, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -2649586108002721157, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 2556955243155707820, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1523444218738115916, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: 925178556413978738, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 925178556413978738, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 1315997620251525431, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1885771377047108441, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -4364034991355607221, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -4364034991355607221, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 1315997620251525431, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 374612124382870055, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -1955998156967815339, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -1955998156967815339, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -2165186292028474456, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1885771377047108441, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: 411217852228852040, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 411217852228852040, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -2165186292028474456, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1523444218738115916, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    mirroring:
+    - value: 1
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
+  - name: Attack
+    frames:
+    - left:
+        sprite: {fileID: -934548276168847118, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -934548276168847118, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -6854424189214908378, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1120207128290905758, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 3
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -8141659952138215382, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -8141659952138215382, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 3405139677047773885, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 2830485404645493802, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 3
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: 1
+        originOffset: {x: 1, y: 0}
+        radius: 1.22
+    - left:
+        sprite: {fileID: -7732095536427937690, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -7732095536427937690, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 3965330093480132469, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 2327773353400215954, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 3
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: 1
+        originOffset: {x: 1.75, y: 0.5}
+        radius: 1.33
+    - left:
+        sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 5341627953312478744, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1523444218738115916, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    mirroring:
+    - value: 1
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
+  - name: Hurt
+    frames:
+    - left:
+        sprite: {fileID: 4881730363608626500, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 4881730363608626500, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 3326594898743561712, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1014133331262204258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 2
+      flags: 3
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: -1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: -1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 128
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -4545133569898938739, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -4545133569898938739, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 3859585090309970161, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 3
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: -1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 2
+            outSlope: 2
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 5341627953312478744, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1523444218738115916, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 3
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 2556955243155707820, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1523444218738115916, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 2
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    mirroring:
+    - value: 1
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
+  - name: Death
+    frames:
+    - left:
+        sprite: {fileID: -5744224205490318823, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 0}
+      down:
+        sprite: {fileID: 0}
+      up:
+        sprite: {fileID: 0}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    mirroring:
+    - value: 0
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
+  - name: Sprint
+    frames:
+    - left:
+        sprite: {fileID: 8422906849951735919, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 8422906849951735919, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 4284492697665200878, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -146549433779632420, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -452740835619884764, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -452740835619884764, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -4878670095143272376, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -5029405660662030066, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -846675211739738947, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -846675211739738947, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -6382038489626819091, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1885771377047108441, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: 6760574914775220397, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 6760574914775220397, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -5481312415273214748, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 374612124382870055, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 1
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    mirroring:
+    - value: 1
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
+  - name: Dodge
+    frames:
+    - left:
+        sprite: {fileID: -6569085115419798033, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -6569085115419798033, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: 5717966634123777289, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1746498383361397632, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 2
+      flags: 5
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -7847207290846648294, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1095213896294712745, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 2
+      flags: 5
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    - left:
+        sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      right:
+        sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      down:
+        sprite: {fileID: -6235066415849433948, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: 1523444218738115916, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 2
+      flags: 0
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+    mirroring:
+    - value: 1
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
