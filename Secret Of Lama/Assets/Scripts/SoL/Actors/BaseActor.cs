@@ -1,5 +1,6 @@
 ﻿using SoL.Animation;
 using SoL.Tiles;
+using SoL.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -285,6 +286,25 @@ namespace SoL.Actors
             }
         }
 
+        public void LookAt(Vector3 position)
+        {
+            float dX = position.x - transform.position.x;
+            float dY = position.y - transform.position.y;
+            //if (dX > dY)
+            //{
+                SetFacing(dX > 0f ? Facing.Right : Facing.Left);
+            /* }
+             else
+             {
+                 SetFacing(dY > 0f ? Facing.Up : Facing.Down);
+             }*/
+
+            movement = GetFacingDirectionVector();
+            Animation.SetAnimation(0, false);
+            Move(GetFacingDirectionVector());
+            Move(Vector2.zero);
+        }
+
         public void MoveToCheckingCollision(Vector3 targetPoint)
         {
             float offset = 1f;
@@ -473,6 +493,10 @@ namespace SoL.Actors
             return Mathf.RoundToInt(8f * (currentAnimationAttackCharge * currentAnimationAttackCharge));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>true if attack went off</returns>
         public virtual void Attack()
         {
             currentAnimationAttackCharge = attackCharge;

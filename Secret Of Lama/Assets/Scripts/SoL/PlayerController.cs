@@ -61,7 +61,11 @@ namespace SoL
 
                 if (Input.GetButtonDown("Attack"))
                 {
-                    if (actor.AttackCharge <= 1f)
+                    if (UI.DialogUI.Instance.visible)
+                    {
+                        UI.DialogUI.Instance.OnNextDown();
+                    }
+                    else if (actor.AttackCharge <= 1f)
                     {
                         actor.weaponCharging = true;
                         actor.Attack();
@@ -70,7 +74,11 @@ namespace SoL
 
                 if (Input.GetButtonUp("Attack"))
                 {
-                    if (actor.weaponCharging)
+                    if (UI.DialogUI.Instance.visible)
+                    {
+                        UI.DialogUI.Instance.OnNextUp();
+                    }
+                    else if (actor.weaponCharging)
                     {
                         if (actor.AttackCharge > 1f)
                             actor.Attack();

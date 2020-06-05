@@ -201,6 +201,31 @@ namespace SoL.Actors
 
         public override void Attack()
         {
+
+            Vector2 offset = TransformDirection(Vector2.right);
+            Vector3 center = transform.position + PhysicsAgent.b.center + PhysicsAgent.b.extents.x * (Vector3)offset;
+            var hits = Engine.QuadTree.GetAgentsInRange(center, 1f).Where((h) =>
+            {
+                if (h.t == transform)
+                    return false;
+                var a = h.t.GetComponent<IDamagable>();
+                return !IsEnemy(a.Team);
+            });
+
+            foreach (var hit in hits)
+            {
+                var dialogPartner = hit.t.GetComponent<DialogPartner>();
+
+                if (dialogPartner != null)
+                {
+                    if (dialogPartner.dialog != null)
+                    {
+                        if (!UI.DialogUI.Instance.visible)
+                            dialogPartner.StartDialog(GetComponent<DialogPartner>());
+                        return;
+                    }
+                }
+            }
             base.Attack();
             AudioSource.PlayClipAtPoint(weapon.attackSound.GetRandom(), transform.position, 1f);
 
