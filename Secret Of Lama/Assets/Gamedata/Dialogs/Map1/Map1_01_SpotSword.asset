@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd04c0de85c59e4489962a9f5fd6c6d, type: 3}
+  m_Name: Map1_01_SpotSword
+  m_EditorClassIdentifier: 
+  pages:
+  - text: Interesting. Theres some random shiny sword stuck in that rock conveniently
+      placed in the middle of that pond.
+    delivererId: 0
+    actions:
+    - action: 1
+      actionIntValue: 3
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.25
+      actionDeliverer: 1
+      managedCallback:
+        m_PersistentCalls:
+          m_Calls: []
+  - text: Better not mess with it, it's probably cursed or poisoned or some crap.
+    delivererId: 0
+    actions: []
+  - text: But... swords are so cool...
+    delivererId: 0
+    actions: []
+  - text: I need to focus on getting some help to get home again.
+    delivererId: 0
+    actions: []

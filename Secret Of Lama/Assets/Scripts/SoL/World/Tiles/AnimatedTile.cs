@@ -28,6 +28,6 @@ namespace SoL.Tiles
             return true;
         }
 
-        
+
     }
 }

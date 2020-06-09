@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd04c0de85c59e4489962a9f5fd6c6d, type: 3}
+  m_Name: Map1_00_Fall
+  m_EditorClassIdentifier: 
+  pages:
+  - text: Ugh.|.|.|||Yeah, I think I deserved that.|| What's this|| serene feeling?
+      |Am I|| dead?
+    delivererId: 0
+    actions:
+    - action: 1
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2
+      actionDeliverer: 0
+    - action: 1
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2.4
+      actionDeliverer: 0
+    - action: 1
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2.8
+      actionDeliverer: 0
+  - text: Frick! I think I broke my &&&&&&.
+    delivererId: 0
+    actions: []
+  - text: I've gotta try to move. Maybe somebody's nearby to help me.
+    delivererId: 0
+    actions: []

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace SoL
 {
@@ -13,6 +14,27 @@ namespace SoL
         private const string gameObjectName = "Engine";
         private static Engine instance;
         private static System.Random r;
+
+        public static int actorLayer;
+        public static int airborneActorLayer;
+
+        public LevelManager levelManager;
+
+        private void Awake()
+        {
+            actorLayer = LayerMask.NameToLayer("Actor");
+            airborneActorLayer = LayerMask.NameToLayer("AirborneActor");
+
+            if (SceneManager.sceneCount <= 1)
+                levelManager.NewGame();
+
+            DontDestroyOnLoad(gameObject);
+
+            instance = this;
+            r = new System.Random();
+            qt = new QuadTree(256, 16);
+        }
+
         public static Engine Instance
         {
             get
@@ -38,26 +60,6 @@ namespace SoL
             }
         }
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-        public static void Init()
-        {
-            var go = GameObject.Find(gameObjectName);
-            if (go == null)
-                go = new GameObject(gameObjectName);
-
-            DontDestroyOnLoad(go);
-
-            
-
-            
-            instance = go.GetComponent<Engine>();
-            r = new System.Random();
-            if (instance == null)
-                instance = go.AddComponent<Engine>();
-
-            instance.qt = new QuadTree(256, 16);
-
-        }
 
         public static Vector3 AlignToPixelGrid(Vector3 v)
         {

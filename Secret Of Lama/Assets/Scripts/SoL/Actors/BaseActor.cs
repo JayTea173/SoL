@@ -1,4 +1,5 @@
 ﻿using SoL.Animation;
+using SoL.Audio;
 using SoL.Tiles;
 using SoL.UI;
 using System;
@@ -10,7 +11,7 @@ using UnityEngine;
 
 namespace SoL.Actors
 {
-    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D), typeof(AudioSource))]
     public class BaseActor : MonoBehaviour, IDamagable, IDamageSource
     {
         public enum Facing
@@ -61,12 +62,12 @@ namespace SoL.Actors
 
         public bool IsEnemy(EnumTeam other)
         {
-            return team != other;
+            return team != other && other != EnumTeam.TRIGGER && team != EnumTeam.TRIGGER;
         }
 
         public bool IsEnemy(BaseActor other)
         {
-            return team != other.Team;
+            return IsEnemy(other.team);
         }
 
         [SerializeField]
@@ -116,10 +117,39 @@ namespace SoL.Actors
 
 
         private SpriteAnimationBehaviour animation;
+        protected Rigidbody2D rb;
+
+        public Rigidbody2D Rigidbody
+        {
+            get
+            {
+                return rb;
+            }
+        }
+
+        protected Collider2D collider;
+        public Collider2D Collider
+        {
+            get
+            {
+                return collider;
+            }
+        }
+
+        [Header("Sound")]
+        public Soundbank soundHurt;
+        public Soundbank soundDodge;
+
+        protected AudioSource audioSource;
+
+
+        [SerializeField]
         protected float attackCharge = 1f;
         protected bool charging = false;
         protected float currentAnimationAttackCharge = 0f;
         protected float timeOfDeath = 0f;
+
+        public float flyingHeight = 0f;
 
         private Physics.QuadTree.Agent physicsAgent;
         public Physics.QuadTree.Agent PhysicsAgent
@@ -161,6 +191,18 @@ namespace SoL.Actors
             }
         }
 
+        public bool RenderShadow
+        {
+            get
+            {
+                return shadowRenderer.enabled;
+            }
+            set
+            {
+                shadowRenderer.enabled = value;
+            }
+        }
+
         [SerializeField]
         private float attackChargeSpeed = .5f;
 
@@ -183,6 +225,8 @@ namespace SoL.Actors
                 return hp <= 0;
             }
         }
+
+        protected SpriteRenderer shadowRenderer;
 
 
         public virtual int Damage(int amount, IDamageSource damageSource)
@@ -225,14 +269,9 @@ namespace SoL.Actors
             else
                 animation.SetAnimation("Hurt");
 
-
+            UpdateLiquid();
 
             return amount;
-        }
-
-        public void SortZ()
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, (transform.position.y * 0.001f));
         }
 
         public Vector2 TransformForwardX(Vector2 d)
@@ -261,6 +300,10 @@ namespace SoL.Actors
         protected virtual void Initialize()
         {
             animation = GetComponent<SpriteAnimationBehaviour>();
+            rb = GetComponent<Rigidbody2D>();
+            collider = GetComponent<Collider2D>();
+            audioSource = GetComponent<AudioSource>();
+            shadowRenderer = GetComponent<SpriteRenderer>();
             position = transform.position;
 
             physicsAgent = new Physics.QuadTree.Agent(transform, GetComponent<SpriteRenderer>().sprite.bounds, Engine.QuadTree);
@@ -278,11 +321,32 @@ namespace SoL.Actors
         }
 
 
-        public bool CanMove
+        public virtual bool CanMove
         {
             get
             {
+                if (Animation == null)
+                    return false;
                 return !Animation.GetCurrentFrameFlags().HasFlag(FrameFlags.MOVEMENT_BLOCKED) && !IsDead;
+            }
+        }
+
+        public virtual bool CanAttack
+        {
+            get
+            {
+                return canAttack;
+            }
+        }
+
+        protected bool canAttack = true;
+
+        private bool moving = false;
+        public bool IsMoving
+        {
+            get
+            {
+                return moving;
             }
         }
 
@@ -292,7 +356,7 @@ namespace SoL.Actors
             float dY = position.y - transform.position.y;
             //if (dX > dY)
             //{
-                SetFacing(dX > 0f ? Facing.Right : Facing.Left);
+            SetFacing(dX > 0f ? Facing.Right : Facing.Left);
             /* }
              else
              {
@@ -300,35 +364,66 @@ namespace SoL.Actors
              }*/
 
             movement = GetFacingDirectionVector();
-            Animation.SetAnimation(0, false);
+
+            Animation?.SetAnimation(0, false);
             Move(GetFacingDirectionVector());
             Move(Vector2.zero);
         }
 
-        public void MoveToCheckingCollision(Vector3 targetPoint)
-        {
-            float offset = 1f;
-            Vector3 delta = targetPoint - transform.position;
-            Vector3 vOffset = delta.normalized * offset;
-            var rchit = Physics2D.Raycast(transform.position + vOffset, delta.normalized, delta.magnitude);
+        protected bool colliding = false;
+
+        public bool MoveToCheckingCollision(Vector3 targetPoint)
+        {/*
+            Vector2 delta = (Vector2)(targetPoint - transform.position);
+            Vector2 vOffset = delta.normalized;
+            if (animation.spriteRenderer == null)
+                return true;
+
+            Vector3 size = animation.spriteRenderer.bounds.size * 0.02f;
+            var rchit = Physics2D.BoxCast((Vector2)transform.position, size, 0f, delta.normalized, vOffset.magnitude * 0.5f, World.Instance.collisionLayer);
             if (rchit.collider != null)
             {
-                //Debug.Log("Collided @" + rchit.point + " with " + rchit.collider.gameObject.name + " ! tried to go from " + transform.position + " to " + targetPoint);
-                Vector3 p = new Vector3(rchit.point.x, rchit.point.y, transform.position.z);
-                Vector3 d = (p - transform.position);
-                transform.position = p - (d.normalized * (offset + 0.02f));
+                colliding = true;
+                var rchit0 = Physics2D.Raycast((Vector2)transform.position, delta.x > 0f ? Vector3.right : Vector3.left, delta.x, World.Instance.collisionLayer);
+                if (rchit0.collider == null)
+                    transform.position = new Vector3(targetPoint.x - delta.x * 0.51f, transform.position.y, transform.position.z);
+                //else
+                //    transform.position = new Vector3(targetPoint.x - delta.x * 1f, transform.position.y, transform.position.z);
+
+                
+                rchit0 = Physics2D.Raycast((Vector2)transform.position, delta.y > 0f ? Vector3.up : Vector3.down, delta.y, World.Instance.collisionLayer);
+                if (rchit0.collider == null)
+                    transform.position = new Vector3(transform.position.x, targetPoint.y - delta.y * 0.51f, transform.position.z);
+                    
+
             }
             else
+            {
                 transform.position = targetPoint;
+                colliding = false;
+                return true;
+            }
+            return false;
+            */
+
+            if (rb != null)
+            {
+                rb.MovePosition(targetPoint);
+            }
+            return true;
+
+
         }
 
         protected virtual void PlayMovementAnimation()
         {
+            if (Animation == null)
+                return;
             if (!Animation.SetAnimation("Walk", false))
                 Animation.SetAnimation(1);
         }
 
-        protected virtual void PlayAttackAnimation()
+        public virtual void PlayAttackAnimation()
         {
             if (!Animation.SetAnimation("Attack", false))
                 Animation.SetAnimation(0);
@@ -338,6 +433,7 @@ namespace SoL.Actors
         {
             if (move.sqrMagnitude > 0f)
             {
+                moving = true;
                 this.movement = move;
                 transform.hasChanged = true;
                 if (move.x != 0f)
@@ -350,6 +446,7 @@ namespace SoL.Actors
             }
             else if (CanMove)
             {
+                moving = false;
                 switch (facing)
                 {
                     case Facing.Down:
@@ -364,13 +461,14 @@ namespace SoL.Actors
 
                         break;
                 }
-                transform.position = Engine.AlignToPixelGrid(transform.position);
+                if (!colliding)
+                    transform.position = Engine.AlignToPixelGrid(transform.position);
             }
 
             if (move.x > 0f)
-                transform.eulerAngles = new Vector3(0f, 0f, 0f);
+                Animation.spriteRenderer.flipX = false;
             else if (move.x < 0f)
-                transform.eulerAngles = new Vector3(180f, 0f, 180f);
+                Animation.spriteRenderer.flipX = true;
 
         }
 
@@ -397,6 +495,7 @@ namespace SoL.Actors
                     {
                         targetsHitWithThisAnimation.Add(damageable);
                         damageable.Damage(Mathf.FloorToInt(frame.damage.value * GetDamageDealt()), this);
+                        audioSource.PlayOneShot(soundHurt.GetRandom());
                     }
                 }
             }
@@ -444,14 +543,32 @@ namespace SoL.Actors
             if (IsDead)
             {
                 float timeDead = Time.time - timeOfDeath;
+                rb.isKinematic = true;
                 if (timeDead > 10f)
                     Destroy(gameObject);
             }
+
+            if (moving)
+            {
+                UpdateLiquid();
+
+            }
+        }
+
+        public void UpdateLiquid()
+        {
+            var liquids = World.Instance.GetDataTiles<LiquidTile>(transform.position);
+            float height = -100f;
+            foreach (var liquid in liquids)
+            {
+                height = -0.57f;
+            }
+            if (animation != null)
+                animation.spriteRenderer.material.SetFloat("_TintHeight", height);
         }
 
         private void Update()
         {
-            SortZ();
             OnUpdate();
         }
 
@@ -499,6 +616,8 @@ namespace SoL.Actors
         /// <returns>true if attack went off</returns>
         public virtual void Attack()
         {
+            if (!CanAttack)
+                return;
             currentAnimationAttackCharge = attackCharge;
 
             PlayAttackAnimation();

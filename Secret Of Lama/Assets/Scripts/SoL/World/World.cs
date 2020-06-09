@@ -11,6 +11,9 @@ namespace SoL
     public class World : MonoBehaviour
     {
         public Tilemap[] tilemapLayers;
+        public Tilemap[] dataLayers;
+        protected List<Tilemap> collidingLayers;
+        public LayerMask collisionLayer;
 
         private static World instance;
         public static World Instance
@@ -20,11 +23,16 @@ namespace SoL
                 return instance;
             }
         }
-        
+
 
         private void Awake()
         {
             instance = this;
+
+            collidingLayers = new List<Tilemap>();
+            foreach (var tm in tilemapLayers)
+                if (tm.gameObject.layer == (tm.gameObject.layer | 1 << collisionLayer))
+                    collidingLayers.Add(tm);
         }
 
         public IEnumerable<Vector3Int> GetTilesInRadius(int layer, Vector3 point, float radius)
@@ -38,7 +46,7 @@ namespace SoL
             int ddF_y = -2 * iRadius;
             int x = 0;
             int y = iRadius;
-            
+
             while (x < y)
             {
                 if (f >= 0)
@@ -53,7 +61,7 @@ namespace SoL
                 data[iRadius - y] = x;
                 data[iRadius - x] = y;
             }
-            
+
             Vector2Int center = new Vector2Int(Mathf.RoundToInt(point.x), Mathf.RoundToInt(point.y));
             int x0 = center.x;
             int y0 = center.y - iRadius;
@@ -68,6 +76,33 @@ namespace SoL
                 }
             }
 
+        }
+
+        public IEnumerable<T> GetDataTiles<T>(Vector3 position) where T : TileBase
+        {
+            position.z = 0f;
+            foreach (var l in dataLayers)
+            {
+                var t = l.GetTile(position.ToInt());
+                if (t != null)
+                    if (t is T)
+                        yield return (T)t;
+            }
+        }
+
+        public IEnumerable<T> GetTiles<T>(Vector3 position) where T : TileBase
+        {
+            position.z = 0f;
+            foreach (var l in tilemapLayers)
+            {
+
+                //var t = l.GetTile<T>(position.ToInt());
+                
+                var t = l.GetTile(position.ToInt());
+                if (t != null)
+                    if (t is T)
+                        yield return (T)t;
+            }
         }
     }
 }

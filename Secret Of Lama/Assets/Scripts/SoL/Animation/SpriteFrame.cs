@@ -98,6 +98,7 @@ namespace SoL.Animation
         CHARGING_BLOCKED = 1 << 1,
         INVULNERABLE = 1 << 2,
         SWAP_FACING = 1 << 3,
+        IGNORE_ACTOR_COLLISIONS = 1 << 4
     }
 
     [Serializable]
@@ -126,21 +127,25 @@ namespace SoL.Animation
             }
         }
 
-        public void Apply(Transform t)
+        public void Apply(SpriteRenderer sr)
         {
             switch (value)
             {
                 case 0:
-                    t.rotation = Quaternion.identity;
+                    sr.flipX = false;
+                    sr.flipY = false;
                     break;
                 case 1:
-                    t.rotation = Quaternion.Euler(0f, 180f, 0f);
+                    sr.flipX = true;
+                    sr.flipY = false;
                     break;
                 case 2:
-                    t.rotation = Quaternion.Euler(180f, 0f, 0f);
+                    sr.flipX = false;
+                    sr.flipY = true;
                     break;
                 case 3:
-                    t.rotation = Quaternion.Euler(180f, 180f, 0f);
+                    sr.flipX = true;
+                    sr.flipY = true;
                     break;
             }
         }

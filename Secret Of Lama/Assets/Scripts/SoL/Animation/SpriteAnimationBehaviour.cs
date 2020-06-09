@@ -23,6 +23,8 @@ namespace SoL.Animation
         private float currentAnimationFrameProgress = 0f;
         private AnimationCollection currentCollection = null;
 
+        public float neutralHeight = 0f;
+
 
         private float animationTime = 0f;
         private SpriteFrame currentFrame;
@@ -35,14 +37,16 @@ namespace SoL.Animation
             }
         }
 
-        private SpriteRenderer sr;
+        public SpriteRenderer spriteRenderer;
         private BaseActor actor;
 
         private void Awake()
         {
-
-            sr = GetComponent<SpriteRenderer>();
+           
             actor = GetComponent<BaseActor>();
+
+            neutralHeight = spriteRenderer.transform.localPosition.y;
+            actor.flyingHeight = neutralHeight;
 
             foreach (SpriteAnimation anim in animations)
                 anim.CalculateDuration();
@@ -53,27 +57,43 @@ namespace SoL.Animation
 
         private bool frameChanged = false;
 
-        private void Update()
+        private void FixedUpdate()
         {
-
             if (currentFrame != null)
             {
                 float sampleTimeX = currentFrame.motion.invertMotionSamplingX ? (1f - currentAnimationFrameProgress) : currentAnimationFrameProgress;
                 float sampleTimeY = currentFrame.motion.invertMotionSamplingY ? (1f - currentAnimationFrameProgress) : currentAnimationFrameProgress;
 
+                float rootMotionMultiplier = currentFrame.motion.motionMultiplier * Time.fixedDeltaTime / Engine.pixelsPerUnit;
 
+                Vector3 delta = (Vector3)actor.TransformForwardX(new Vector2(currentFrame.motion.motionX.Evaluate(sampleTimeX), 0f));
 
-                Vector3 delta = (Vector3)actor.TransformForwardX(new Vector2(currentFrame.motion.motionX.Evaluate(sampleTimeX), currentFrame.motion.motionY.Evaluate(sampleTimeY))) * currentFrame.motion.motionMultiplier * Time.deltaTime / Engine.pixelsPerUnit;
-                Vector3 targetPosition = transform.position + delta;
+                Vector3 targetPosition = transform.position + delta * rootMotionMultiplier;
+
+                float flyDelta = currentFrame.motion.motionY.Evaluate(sampleTimeY) * rootMotionMultiplier;
+                if (flyDelta == 0f)
+                    actor.flyingHeight = Mathf.MoveTowards(actor.flyingHeight, neutralHeight, Time.fixedDeltaTime * 16f);
+
+                actor.flyingHeight += flyDelta;
+                spriteRenderer.transform.localPosition = new Vector3(0f, actor.flyingHeight, 0f);
+
 
                 actor.MoveToCheckingCollision(targetPosition);
 
+
+                
                 if (currentFrame.dealsDamage)
                 {
                     actor.HandleDamageFrame(currentFrame, targetsHitWithThisAnimation, frameChanged);
                 }
                 frameChanged = false;
             }
+        }
+
+        private void Update()
+        {
+
+            
 
         }
 
@@ -268,9 +288,9 @@ namespace SoL.Animation
             currentFrame = anim.frames[frame];
 
             var s = currentFrame[actor.facing];
-            if (sr.sprite != s)
+            if (spriteRenderer.sprite != s)
             {
-                sr.sprite = s;
+                spriteRenderer.sprite = s;
                 frameChanged = true;
                 if (currentFrame.flags.HasFlag(FrameFlags.SWAP_FACING))
                 {
@@ -278,6 +298,15 @@ namespace SoL.Animation
                     actor.Move(-actor.movementDirection);
                 }
             }
+
+            if (currentFrame.flags.HasFlag(FrameFlags.IGNORE_ACTOR_COLLISIONS))
+            {
+                if (actor.gameObject.layer == Engine.actorLayer)
+                    actor.gameObject.layer = Engine.airborneActorLayer;
+
+            }
+            else if (actor.gameObject.layer == Engine.airborneActorLayer)
+                actor.gameObject.layer = Engine.actorLayer;
 
             float frameTime = currentFrame.durationMultiplier / anim.fps;
             float prog = t / frameTime;

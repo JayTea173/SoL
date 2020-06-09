@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using System.Collections;
 using SoL.Actors;
+using SoL.Animation;
 
 namespace SoL.UI
 {
@@ -16,7 +17,7 @@ namespace SoL.UI
         [Range(4f, 100f)]
         public float charsPerSecond = 20f;
         public AudioSource audioSource;
-        
+
         private CanvasGroup cg;
         private Vector3 originalSize;
 
@@ -26,6 +27,13 @@ namespace SoL.UI
         private bool animatingPage = false;
         private int pagePosition = 0;
         private DialogPartner initiator, initiated;
+
+        public DialogPartner GetInvolved(int id)
+        {
+            return id == 0 ? initiator : initiated;
+        }
+
+        [SerializeField]
         private DialogPartner currentSpeaking;
 
         private static DialogUI instance;
@@ -55,19 +63,36 @@ namespace SoL.UI
             originalSize = transform.localScale;
             cg = GetComponent<CanvasGroup>();
             SetVisibility(false, false);
-           
+
         }
 
         public void Display(Dialog dialog, DialogPartner initiator, DialogPartner initiated, int startingPage = 0)
         {
             if (animatingOpenClose)
                 return;
+
+            forceFacing = false;
+
+            BaseActor actor = null;
+            if (initiator != null)
+            {
+                actor = initiator.GetComponent<BaseActor>();
+                if (actor != null)
+                    actor.Move(Vector2.zero);
+            }
+            if (initiated != null)
+            {
+                actor = initiated.GetComponent<BaseActor>();
+                if (actor != null)
+                    actor.Move(Vector2.zero);
+            }
+
             this.dialog = dialog;
             SetVisibility(true);
             this.initiated = initiated;
             this.initiator = initiator;
             DisplayPage(startingPage);
-            
+
         }
 
         private bool skip = false;
@@ -95,6 +120,16 @@ namespace SoL.UI
             SetVisibility(false);
         }
 
+        protected SpriteAnimationBehaviour SpeakingAnimator
+        {
+            get
+            {
+                if (currentSpeaking == null)
+                    return null;
+                return currentSpeaking.GetComponent<Animation.SpriteAnimationBehaviour>();
+            }
+        }
+
         protected void DisplayPage(int pageId)
         {
             if (pageId >= dialog.pages.Count)
@@ -105,8 +140,18 @@ namespace SoL.UI
             animatingPage = true;
             pagePosition = 0;
             currentSpeaking = currentPage.delivererId == 0 ? initiated : initiator;
+
+            var anim = SpeakingAnimator;
+            if (anim != null)
+                anim.SetAnimation("Talk", true);
+
+            currentPage.RunActions(this);
+            currentPage.PostProcess(initiated, initiator);
+
             StartCoroutine(AnimateTextCoroutine());
         }
+
+        public bool forceFacing;
 
         private int updates;
         private void Update()
@@ -117,29 +162,52 @@ namespace SoL.UI
                 if (updates > 10)
                 {
                     updates -= 10;
-                    if (Engine.RandomFloat() < 0.2f)
+                    if (forceFacing)
                     {
-                        initiated.GetComponent<BaseActor>().LookAt(initiator.transform.position);
+                        if (Engine.RandomFloat() < 0.2f)
+                        {
+                            initiated.GetComponent<BaseActor>().LookAt(initiator.transform.position);
+                        }
                     }
                 }
+
+                if (currentPage != null)
+                {
+                    string t = currentPage.ProcessedText;
+                    if (t.Contains('&'))
+                    {
+                        int i = 0;
+                        while ((i = t.IndexOf('&')) >= 0)
+                        {
+                            t = t.Substring(0, i) + (char)UnityEngine.Random.Range(48, 122) + t.Substring(i + 1);
+                        }
+                        textField.text = currentSpeaking.displayName.ToUpper() + ": " + t.Insert(chars, "<color=#00000000>").Replace("|", "") + "</color>";
+                    }
+                }
+
+
             }
+
         }
 
+        private int chars;
 
         private IEnumerator AnimateTextCoroutine()
         {
+            chars = 0;
+
             while (animatingOpenClose)
                 yield return new WaitForEndOfFrame();
 
             yield return new WaitForSeconds(0.2f);
             if (animatingPage)
             {
-                int l = currentPage.text.Length;
+                int l = currentPage.ProcessedText.Length;
                 float timePerChar = (1f / charsPerSecond);
 
                 while (pagePosition < l)
                 {
-                    char c = currentPage.text[pagePosition];
+                    char c = currentPage.ProcessedText[pagePosition];
                     pagePosition++;
                     float waitMultiplier = 1f;
                     switch (c)
@@ -155,12 +223,13 @@ namespace SoL.UI
                             waitMultiplier = 3f;
                             break;
                         case ',':
+                        case '|':
+                            waitMultiplier = 12f;
                             waitMultiplier = 8f;
                             break;
                         case '.':
                         case '!':
                         case '?':
-                            waitMultiplier = 12f;
                             break;
                         default:
                             audioSource.pitch = (float)Engine.Gaussian(1.0d, 0.01d) + Mathf.Sin(Time.time * 0.7f) * 0.05f;
@@ -171,13 +240,17 @@ namespace SoL.UI
                     }
                     if (skip)
                         waitMultiplier *= 0.5f;
-                    int chars = System.Math.Min(pagePosition, l);
+                    chars = System.Math.Min(pagePosition, l);
                     if (chars >= l)
                         animatingPage = false;
 
-                    textField.text = currentSpeaking.gameObject.name + ": " + currentPage.text.Insert(chars, "<color=#00000000>") + "</color>";
+                    textField.text = currentSpeaking.displayName.ToUpper() + ": " + currentPage.ProcessedText.Insert(System.Math.Min(chars, l), "<color=#00000000>").Replace("|", "") + "</color>";
                     yield return new WaitForSeconds(1f / charsPerSecond * waitMultiplier);
                 }
+
+                var anim = SpeakingAnimator;
+                if (anim != null)
+                    anim.SetAnimation("Idle", true);
 
 
             }

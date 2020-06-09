@@ -63,9 +63,9 @@ MonoBehaviour:
   - name: Walk
     frames:
     - left:
-        sprite: {fileID: 3401712690424167018, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: 3401712690424167018, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: 8602055323049005576, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -75,7 +75,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -94,7 +112,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -102,9 +120,9 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
     - left:
-        sprite: {fileID: 2946135839926348323, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: 2946135839926348323, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: 8602055323049005576, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -114,7 +132,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -133,7 +169,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -141,9 +177,9 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
     - left:
-        sprite: {fileID: -6685301186564192506, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: -6685301186564192506, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: 2556955243155707820, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -153,7 +189,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -172,7 +226,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -180,9 +234,9 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
     - left:
-        sprite: {fileID: -2649586108002721157, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: -2649586108002721157, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: 2556955243155707820, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -192,7 +246,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -211,7 +283,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -219,9 +291,9 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
     - left:
-        sprite: {fileID: 925178556413978738, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -4834111966767559229, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: 925178556413978738, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -4834111966767559229, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: 1315997620251525431, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -231,7 +303,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -250,7 +340,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -258,9 +348,9 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
     - left:
-        sprite: {fileID: -4364034991355607221, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -1966146695396787531, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: -4364034991355607221, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -1966146695396787531, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: 1315997620251525431, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -270,7 +360,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -289,7 +397,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -297,9 +405,9 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
     - left:
-        sprite: {fileID: -1955998156967815339, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -4834111966767559229, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: -1955998156967815339, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -4834111966767559229, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: -2165186292028474456, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -309,7 +417,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -328,7 +454,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -336,9 +462,9 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
     - left:
-        sprite: {fileID: 411217852228852040, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
-        sprite: {fileID: 411217852228852040, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+        sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       down:
         sprite: {fileID: -2165186292028474456, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
@@ -348,7 +474,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -367,7 +511,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 80
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:

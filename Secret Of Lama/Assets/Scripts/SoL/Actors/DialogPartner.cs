@@ -11,6 +11,7 @@ namespace SoL.Actors
     public class DialogPartner : MonoBehaviour
     {
         public Dialog dialog;
+        public string displayName;
         public AudioClip voice;
 
         public void StartDialog(DialogPartner partner)

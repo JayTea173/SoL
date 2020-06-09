@@ -6,11 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using SoL.Animation;
+using UnityEngine.Tilemaps;
+using SoL.Tiles;
 
 namespace SoL.Actors
 {
     public class CharacterActor : BaseActor
     {
+
         [Tooltip("Used to keep track of character specific data on other objects")]
         public int id;
 
@@ -51,6 +54,9 @@ namespace SoL.Actors
 
         protected const byte maxLevel = 99;
 
+        private IEnumerable<TileBase> tilesStandingOn;
+        private Vector3 tileEnterPosition;
+
 
         protected bool sprint;
 
@@ -64,6 +70,14 @@ namespace SoL.Actors
             {
                 sprint = value;
                 charging = !sprint;
+            }
+        }
+
+        public override bool CanMove
+        {
+            get
+            {
+                return base.CanMove && timeLeftRooted <= 0f;
             }
         }
 
@@ -115,10 +129,10 @@ namespace SoL.Actors
                 base.PlayMovementAnimation();
         }
 
-        protected override void PlayAttackAnimation()
+        public override void PlayAttackAnimation()
         {
             if (weapon == null)
-                base.PlayAttackAnimation();
+                return;
             else
             {
                 int chargeLevel = Mathf.FloorToInt(attackCharge) - 1;
@@ -148,20 +162,23 @@ namespace SoL.Actors
 
         public override int Damage(int amount, IDamageSource damageSource)
         {
-            byte rnd = (byte)UnityEngine.Random.Range(0, 100);
-            if (rnd < evadeChance)
+            if (timeLeftRooted < 0f)
             {
-                Animation.SetAnimation("Dodge", true);
-                UI.DamageNumber.Display(transform, "dodge");
-                return 0;
-            }
+                byte rnd = (byte)UnityEngine.Random.Range(0, 100);
+                if (rnd < evadeChance)
+                {
+                    Animation.SetAnimation("Dodge", true);
+                    UI.DamageNumber.Display(transform, "dodge");
+                    audioSource.PlayOneShot(soundDodge.GetRandom());
+                    return 0;
+                }
 
-            if (damageSource is CreatureActor)
-            {
-                CreatureActor creature = damageSource as CreatureActor;
-                Move(-creature.movementDirection);
+                if (damageSource is CreatureActor)
+                {
+                    CreatureActor creature = damageSource as CreatureActor;
+                    Move(-creature.movementDirection);
+                }
             }
-
             int dmg = System.Math.Max(amount - (int)defense, 0);
             return base.Damage(dmg, damageSource);
         }
@@ -179,8 +196,29 @@ namespace SoL.Actors
             return Mathf.RoundToInt(attack * chargeMultiplier);
         }
 
+        private Vector3Int lastTilePosition;
+        private Vector3 lastPosition;
+
+        private float timeLeftRooted = 0f;
+
+        public void RootForSeconds(float seconds, bool playIdle = true)
+        {
+            timeLeftRooted = seconds;
+            sprint = false;
+            if (playIdle)
+                Animation.SetAnimation("Idle", true);
+        }
+
         protected override void OnUpdate()
         {
+            if (timeLeftRooted > 0f)
+            {
+                timeLeftRooted -= Time.deltaTime;
+                if (CanMove)
+                    if (attackCharge < 1f)
+                        charging = true;
+            }
+
             if (sprinting)
             {
 
@@ -196,7 +234,65 @@ namespace SoL.Actors
                 if (!sprinting)
                     charging = true;
             }
+
+            if (IsMoving)
+            {
+
+                if (lastTilePosition != transform.position.ToInt())
+                {
+                    //Debug.Log("Tile position changed to " + transform.position.ToInt());
+                    lastTilePosition = transform.position.ToInt();
+                    tileEnterPosition = transform.position;
+
+                    this.tilesStandingOn = World.Instance.GetTiles<TileBase>(transform.position.ToInt());
+                    //Debug.Log("Now standing on " + tilesStandingOn.Count() + " tiles");
+
+
+                }
+                foreach (var t in tilesStandingOn)
+                {
+                    if (t is StairTile)
+                    {
+                        var stair = t as StairTile;
+                        Vector3Int v0 = transform.position.ToInt();
+                        Vector3 localTilePosition = transform.position - new Vector3(v0.x, v0.y, v0.z);
+
+                        if (localTilePosition.y < stair.localStairStartMax && localTilePosition.y >= stair.localStairStartMin)
+                        {
+                            Vector3 lastLocalTilePosition = lastPosition - lastTilePosition;
+
+                            if (stair.upDirection.x != 0f)
+                            {
+                                float sizePerStep = (1f / (float)stair.numSteps);
+                                int step = Mathf.FloorToInt(localTilePosition.x / sizePerStep);
+                                int lastStep = Mathf.FloorToInt((lastPosition.x - lastTilePosition.x) / sizePerStep);
+                                if (step != lastStep)
+                                {
+                                    int deltaStep = step - lastStep;
+                                    //Vector3 oldPosition = transform.position;
+                                    transform.Translate(0f, deltaStep * sizePerStep * stair.upDirection.x, 0f);
+                                    //if (!MoveToCheckingCollision(transform.position + Vector3.up * deltaStep * sizePerStep * stair.upDirection.x))
+                                    //   transform.position = oldPosition;
+                                    RootForSeconds(1f / 60f * 5f);
+                                    if (stair.stepSound != null)
+                                    {
+
+                                        if (audioSource != null)
+                                            audioSource.PlayOneShot(stair.stepSound.GetRandom());
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
             base.OnUpdate();
+            lastPosition = transform.position;
+
         }
 
         public override void Attack()
@@ -226,8 +322,10 @@ namespace SoL.Actors
                     }
                 }
             }
+            
             base.Attack();
-            AudioSource.PlayClipAtPoint(weapon.attackSound.GetRandom(), transform.position, 1f);
+            if (audioSource != null && weapon != null)
+                audioSource.PlayOneShot(weapon.attackSound.GetRandom(), 1f);
 
         }
 
@@ -258,7 +356,7 @@ namespace SoL.Actors
         {
             xp += amount;
             int ogLevel = level;
-            while (xp > xpNext[level - 1] && level < 99)
+            while (xp > xpNext[level] && level < 99)
             {
                 LevelUp();
 
@@ -294,10 +392,12 @@ namespace SoL.Actors
         }
 
         //Debug only
+        /*
         private void OnGUI()
         {
-            GUILayout.Label("XP : " + xp + " / " + xpNext[level - 1]);
+            GUILayout.Label("XP : " + xp + " / " + xpNext[level]);
             GUILayout.Label("Wpn: " + weapon.characterData[id].SkillProgress.ToString("0.00"));
         }
+        */
     }
 }

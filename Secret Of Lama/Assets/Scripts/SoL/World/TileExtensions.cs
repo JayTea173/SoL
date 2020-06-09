@@ -41,5 +41,45 @@ namespace SoL
         {
             return new Vector3Int(v.x - 1, v.y - 1, v.z);
         }
+
+        public static Vector3Int ToInt(this Vector3 v)
+        {
+            return new Vector3Int(Mathf.FloorToInt(v.x), Mathf.FloorToInt(v.y), Mathf.FloorToInt(v.z));
+        }
+
+
+
+        public static Vector2Int MoveRight(this Vector2Int v)
+        {
+            return new Vector2Int(v.x + 1, v.y);
+        }
+        public static Vector2Int MoveLeft(this Vector2Int v)
+        {
+            return new Vector2Int(v.x - 1, v.y);
+        }
+        public static Vector2Int MoveUp(this Vector2Int v)
+        {
+            return new Vector2Int(v.x, v.y + 1);
+        }
+        public static Vector2Int MoveDown(this Vector2Int v)
+        {
+            return new Vector2Int(v.x, v.y - 1);
+        }
+        public static Vector2Int MoveUpRight(this Vector2Int v)
+        {
+            return new Vector2Int(v.x + 1, v.y + 1);
+        }
+        public static Vector2Int MoveUpLeft(this Vector2Int v)
+        {
+            return new Vector2Int(v.x - 1, v.y + 1);
+        }
+        public static Vector2Int MoveDownRight(this Vector2Int v)
+        {
+            return new Vector2Int(v.x + 1, v.y - 1);
+        }
+        public static Vector2Int MoveDownLeft(this Vector2Int v)
+        {
+            return new Vector2Int(v.x - 1, v.y - 1);
+        }
     }
 }

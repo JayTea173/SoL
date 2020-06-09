@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd04c0de85c59e4489962a9f5fd6c6d, type: 3}
+  m_Name: IntroDialog
+  m_EditorClassIdentifier: 
+  pages:
+  - text: Hey, $Name1! Get a move on!
+    delivererId: 0
+    actions:
+    - action: 1
+      actionIntValue: 2
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: -6569085115419798033, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 0
+      actionDeliverer: 0
+  - text: What?! I can't hear you! The waterfall is too loud!
+    delivererId: 1
+    actions:
+    - action: 5
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 0.5
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: 3401712690424167018, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 0
+      actionDeliverer: 0
+  - text: Get over here! I want to show you something.
+    delivererId: 0
+    actions:
+    - action: 7
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.5
+      actionDeliverer: 1
+    - action: 8
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 1.1
+      actionDeliverer: 1
+  - text: These heights are making my head spin, I think I'm gonna vomit.
+    delivererId: 1
+    actions:
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 0.5
+      actionDeliverer: 0
+    - action: 1
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 0.1
+      actionDeliverer: 0
+  - text: Here take a look at this graph!
+    delivererId: 0
+    actions: []
+  - text: Why did we even come here? ||Huh?| What is this for?
+    delivererId: 1
+    actions:
+    - action: 7
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 1.5
+      actionDeliverer: 1
+    - action: 8
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2.1
+      actionDeliverer: 1
+    - action: 8
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2.3
+      actionDeliverer: 0
+    - action: 1
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2.4
+      actionDeliverer: 0
+  - text: These few pages contain the most inspiring concept art you've ever seen.
+    delivererId: 0
+    actions: []
+  - text: Concept art? Let me take a look... Oh,| uhm,| well this|... this isn't
+      what I'd call concept art.
+    delivererId: 1
+    actions:
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 3859585090309970161, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 2.5
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 3.8
+      actionDeliverer: 0
+  - text: Ah, yeah, I guess you could also call this "Programmer Art", maybe?
+    delivererId: 0
+    actions: []
+  - text: '"Pro|gram|mer Art"|?| But| you''re neither a programmer nor an artist.'
+    delivererId: 1
+    actions:
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 3859585090309970161, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 0
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 3326594898743561712, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 2.8
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 3859585090309970161, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 3.4
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 3.6
+      actionDeliverer: 0
+  - text: Think so? Check out this one then!
+    delivererId: 0
+    actions: []
+  - text: So you are actually serious about this? Uhm, this isn't "Programmer Art".
+    delivererId: 1
+    actions: []
+  - text: It feels like low effort to me, where's all the detail?
+    delivererId: 1
+    actions: []
+  - text: It's not done yet! It's a prototype for a big thing I'm planning.
+    delivererId: 0
+    actions: []
+  - text: Well, to me this looks like <b>SHIT</b>| ART!
+    delivererId: 1
+    actions:
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 5341627953312478744, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.2
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 3.2
+      actionDeliverer: 0
+  - text: What?! $Name1 you take that back right now!
+    delivererId: 0
+    actions:
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 5341627953312478744, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.2
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.7
+      actionDeliverer: 0
+  - text: What you're gonna do? Kick my ass?
+    delivererId: 1
+    actions:
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 1014133331262204258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.2
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.7
+      actionDeliverer: 0
+  - text: Yup.
+    delivererId: 0
+    actions:
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 1172398085379306001, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 0.8
+      actionDeliverer: 0
+    - action: 5
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 5717966634123777289, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.5
+      actionDeliverer: 0
+    - action: 9
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.5
+      actionDeliverer: 0
+    - action: 10
+      actionIntValue: 16
+      actionStringValue: 
+      actionObjectValue: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      delay: 1.4
+      actionDeliverer: 0

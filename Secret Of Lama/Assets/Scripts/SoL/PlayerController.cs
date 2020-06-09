@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoL.UI;
 
 namespace SoL
 {
@@ -10,6 +11,13 @@ namespace SoL
     public class PlayerController : MonoBehaviour
     {
         private CharacterActor actor;
+        public CharacterActor Actor
+        {
+            get
+            {
+                return actor;
+            }
+        }
         public PlayerData playerData;
         public float tilesMovePerSecond = 4f;
         public float screenNumTilesWidth = 16f;
@@ -31,6 +39,13 @@ namespace SoL
         {
             instance = this;
             actor = GetComponent<CharacterActor>();
+            var p = GetComponent<DialogPartner>();
+            p.displayName = System.Environment.UserName;
+        }
+
+        public void ForceCenter()
+        {
+            Camera.main.transform.position = new Vector3(actor.Animation.spriteRenderer.transform.position.x, actor.Animation.spriteRenderer.transform.position.y, Camera.main.transform.position.z);
         }
 
         // Update is called once per frame
@@ -40,24 +55,28 @@ namespace SoL
 
             if (actor.CanMove)
             {
-                if (Input.GetButtonDown("Sprint"))
+
+                if (!DialogUI.Instance.visible)
                 {
-                    if (!actor.sprinting && actor.AttackCharge <= 1f)
+                    if (Input.GetButtonDown("Sprint"))
                     {
-                        Debug.Log("SPRINT START");
-                        actor.sprinting = true;
-                        actor.AttackCharge /= 2f;
+                        if (!actor.sprinting && actor.AttackCharge <= 1f)
+                        {
+                            actor.sprinting = true;
+                            actor.AttackCharge /= 2f;
+                        }
                     }
+
+
+                    if (Input.GetButtonUp("Sprint"))
+                        actor.sprinting = false;
+
+                    if (move.sqrMagnitude <= 0f && actor.sprinting)
+                        move = actor.TransformDirection(Vector2.right);
+
+                    actor.Move(move);
                 }
 
-
-                if (Input.GetButtonUp("Sprint"))
-                    actor.sprinting = false;
-
-                if (move.sqrMagnitude <= 0f && actor.sprinting)
-                    move = actor.TransformDirection(Vector2.right);
-
-                actor.Move(move);
 
                 if (Input.GetButtonDown("Attack"))
                 {
@@ -91,25 +110,26 @@ namespace SoL
 
 
 
-                actor.MoveToCheckingCollision(transform.position + (Vector3)(move * Time.deltaTime * tilesMovePerSecond * (actor.sprinting ? 2f : 1f) * (actor.AttackCharge > 1f ? 0.5f : 1f)));
+                //actor.MoveToCheckingCollision(transform.position + (Vector3)(move * Time.deltaTime * tilesMovePerSecond * (actor.sprinting ? 2f : 1f) * (actor.AttackCharge > 1f ? 0.5f : 1f)));
 
             }
             var cam = Camera.main;
 
-            Vector3 camDeltaPos = actor.transform.position - cam.transform.position;
+            var targetPos = actor.Animation.spriteRenderer.transform.position;
+            Vector3 camDeltaPos = targetPos - cam.transform.position;
 
             float cameraEdgeX = (screenNumTilesWidth / 2f) - numTilesFromScreenEdgeTillCameraPan;
             float cameraEdgeY = (screenNumTilesHeight / 2f) - numTilesFromScreenEdgeTillCameraPan;
 
             if (camDeltaPos.x < -cameraEdgeX)
-                Camera.main.transform.position = new Vector3(transform.position.x + cameraEdgeX, Camera.main.transform.position.y, Camera.main.transform.position.z);
+                Camera.main.transform.position = new Vector3(targetPos.x + cameraEdgeX, Camera.main.transform.position.y, Camera.main.transform.position.z);
             else if (camDeltaPos.x > cameraEdgeX)
-                Camera.main.transform.position = new Vector3(transform.position.x - cameraEdgeX, Camera.main.transform.position.y, Camera.main.transform.position.z);
+                Camera.main.transform.position = new Vector3(targetPos.x - cameraEdgeX, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
             if (camDeltaPos.y < -cameraEdgeY)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, transform.position.y + cameraEdgeY, Camera.main.transform.position.z);
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, targetPos.y + cameraEdgeY, Camera.main.transform.position.z);
             else if (camDeltaPos.y > cameraEdgeY)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, transform.position.y - cameraEdgeY, Camera.main.transform.position.z);
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, targetPos.y - cameraEdgeY, Camera.main.transform.position.z);
 
 
         }
