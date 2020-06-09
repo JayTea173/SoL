@@ -18,10 +18,10 @@ namespace SoL
 
         public void Load(string name, bool fadeInAndOut = false)
         {
-            if (DialogUI.Instance.visible)
-            {
-                DialogUI.Instance.visible = false;
-            }
+            if (DialogUI.Instance != null)
+                if (DialogUI.Instance.visible)
+                    DialogUI.Instance.visible = false;
+
 
             if (fadeInAndOut)
                 StartCoroutine(TransitionedLoad(name));
