@@ -42,7 +42,7 @@ namespace SoL.Animation
 
         private void Awake()
         {
-
+           
             actor = GetComponent<BaseActor>();
 
             neutralHeight = spriteRenderer.transform.localPosition.y;
@@ -81,7 +81,7 @@ namespace SoL.Animation
                 actor.MoveToCheckingCollision(targetPosition);
 
 
-
+                
                 if (currentFrame.dealsDamage)
                 {
                     actor.HandleDamageFrame(currentFrame, targetsHitWithThisAnimation, frameChanged);
@@ -93,7 +93,7 @@ namespace SoL.Animation
         private void Update()
         {
 
-
+            
 
         }
 
@@ -111,7 +111,6 @@ namespace SoL.Animation
         {
             if (id == currentAnimationId && currentCollection == animations)
                 return false;
-
             currentAnimationId = id;
             currentCollection = animations;
             currentAnimationFrameCount = currentCollection[id].frames.Count;
@@ -143,10 +142,9 @@ namespace SoL.Animation
             int index = currentCollection.GetIndexByName(name);
             if (index < 0)
             {
-                Debug.LogError("Unable to find an animation called " + name + " on " + gameObject.name);
+                //Debug.LogError("Unable to find an animation called " + name + " on " + gameObject.name);
                 return false;
             }
-
 
             targetsHitWithThisAnimation.Clear();
             SetAnimation(index, playFromStart);
@@ -165,7 +163,6 @@ namespace SoL.Animation
             }
 
             targetsHitWithThisAnimation.Clear();
-
             SetAnimation(animations, index, playFromStart);
             return true;
 

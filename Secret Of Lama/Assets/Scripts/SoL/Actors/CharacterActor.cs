@@ -249,44 +249,43 @@ namespace SoL.Actors
 
 
                 }
-                if (tilesStandingOn != null)
-                    foreach (var t in tilesStandingOn)
+                foreach (var t in tilesStandingOn)
+                {
+                    if (t is StairTile)
                     {
-                        if (t is StairTile)
+                        var stair = t as StairTile;
+                        Vector3Int v0 = transform.position.ToInt();
+                        Vector3 localTilePosition = transform.position - new Vector3(v0.x, v0.y, v0.z);
+
+                        if (localTilePosition.y < stair.localStairStartMax && localTilePosition.y >= stair.localStairStartMin)
                         {
-                            var stair = t as StairTile;
-                            Vector3Int v0 = transform.position.ToInt();
-                            Vector3 localTilePosition = transform.position - new Vector3(v0.x, v0.y, v0.z);
+                            Vector3 lastLocalTilePosition = lastPosition - lastTilePosition;
 
-                            if (localTilePosition.y < stair.localStairStartMax && localTilePosition.y >= stair.localStairStartMin)
+                            if (stair.upDirection.x != 0f)
                             {
-                                Vector3 lastLocalTilePosition = lastPosition - lastTilePosition;
-
-                                if (stair.upDirection.x != 0f)
+                                float sizePerStep = (1f / (float)stair.numSteps);
+                                int step = Mathf.FloorToInt(localTilePosition.x / sizePerStep);
+                                int lastStep = Mathf.FloorToInt((lastPosition.x - lastTilePosition.x) / sizePerStep);
+                                if (step != lastStep)
                                 {
-                                    float sizePerStep = (1f / (float)stair.numSteps);
-                                    int step = Mathf.FloorToInt(localTilePosition.x / sizePerStep);
-                                    int lastStep = Mathf.FloorToInt((lastPosition.x - lastTilePosition.x) / sizePerStep);
-                                    if (step != lastStep)
+                                    int deltaStep = step - lastStep;
+                                    //Vector3 oldPosition = transform.position;
+                                    transform.Translate(0f, deltaStep * sizePerStep * stair.upDirection.x, 0f);
+                                    //if (!MoveToCheckingCollision(transform.position + Vector3.up * deltaStep * sizePerStep * stair.upDirection.x))
+                                    //   transform.position = oldPosition;
+                                    RootForSeconds(1f / 60f * 5f);
+                                    if (stair.stepSound != null)
                                     {
-                                        int deltaStep = step - lastStep;
-                                        //Vector3 oldPosition = transform.position;
-                                        transform.Translate(0f, deltaStep * sizePerStep * stair.upDirection.x, 0f);
-                                        //if (!MoveToCheckingCollision(transform.position + Vector3.up * deltaStep * sizePerStep * stair.upDirection.x))
-                                        //   transform.position = oldPosition;
-                                        RootForSeconds(1f / 60f * 5f);
-                                        if (stair.stepSound != null)
-                                        {
 
-                                            if (audioSource != null)
-                                                audioSource.PlayOneShot(stair.stepSound.GetRandom());
-                                        }
+                                        if (audioSource != null)
+                                            audioSource.PlayOneShot(stair.stepSound.GetRandom());
                                     }
-
                                 }
+
                             }
                         }
                     }
+                }
             }
 
 
@@ -323,7 +322,7 @@ namespace SoL.Actors
                     }
                 }
             }
-
+            
             base.Attack();
             if (audioSource != null && weapon != null)
                 audioSource.PlayOneShot(weapon.attackSound.GetRandom(), 1f);

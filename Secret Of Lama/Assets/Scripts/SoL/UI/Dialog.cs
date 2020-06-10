@@ -162,10 +162,6 @@ namespace SoL.UI
                     case DialogActionEnum.CAMERA_SHAKE:
                         CameraController.Instance.Shake(actionIntValue);
                         break;
-                    case DialogActionEnum.ROOT_ACTOR:
-                        if (actor is CharacterActor)
-                            (actor as CharacterActor).RootForSeconds((actionIntValue) / 60f);
-                        break;
                     
                     
                 }
@@ -187,12 +183,9 @@ namespace SoL.UI
             STOP_MOVING,
             FALL,
             CAMERA_SHAKE,
-            ROOT_ACTOR
         }
 
-        public bool repeatable;
         public List<Page> pages;
-
 
     }
 }

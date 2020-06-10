@@ -59,13 +59,13 @@ namespace SoL.UI
 
         private void Awake()
         {
+            Debug.Log("DialogUI init");
             instance = this;
             originalSize = transform.localScale;
             cg = GetComponent<CanvasGroup>();
             SetVisibility(false, false);
 
         }
-
 
         public void Display(Dialog dialog, DialogPartner initiator, DialogPartner initiated, int startingPage = 0)
         {
@@ -113,7 +113,10 @@ namespace SoL.UI
         protected void NextPage()
         {
             currentPageId++;
-            DisplayPage(currentPageId);
+            if (currentPageId >= dialog.pages.Count)
+                Close();
+            else
+                DisplayPage(currentPageId);
         }
 
         protected void Close()
@@ -208,8 +211,7 @@ namespace SoL.UI
 
                 while (pagePosition < l)
                 {
-                    if (pagePosition >= currentPage.ProcessedText.Length)
-                        break;
+                    
                     char c = currentPage.ProcessedText[pagePosition];
                     pagePosition++;
                     float waitMultiplier = 1f;
@@ -249,7 +251,9 @@ namespace SoL.UI
 
                     textField.text = currentSpeaking.displayName.ToUpper() + ": " + currentPage.ProcessedText.Insert(System.Math.Min(chars, l), "<color=#00000000>").Replace("|", "") + "</color>";
                     yield return new WaitForSeconds(1f / charsPerSecond * waitMultiplier);
+                    
                 }
+
 
                 var anim = SpeakingAnimator;
                 if (anim != null)

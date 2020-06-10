@@ -27,7 +27,7 @@ namespace SoL.ScriptedAnimations
 
         protected IEnumerator Play()
         {
-            player.RootForSeconds(2f, false);
+            player.RootForSeconds(2f);
             player.weapon = null;
             player.Rigidbody.isKinematic = true;
 
@@ -46,7 +46,7 @@ namespace SoL.ScriptedAnimations
                 speed += diff.normalized * Time.deltaTime * 4f;
                 player.Animation.spriteRenderer.transform.Translate(speed * Time.deltaTime);
                 yield return new WaitForEndOfFrame();
-                player.RootForSeconds(2f, false);
+                player.RootForSeconds(2f);
                 diff = (player.transform.position - player.Animation.spriteRenderer.transform.position);
             }
             

@@ -25,7 +25,7 @@ namespace SoL.Triggers
             TipBehaviour.Instance.SetVisibility(true);
         }
 
-        private void OnTriggerExit2D(Collider2D collider)
+        private void OTriggerExit2D(Collider2D collider)
         {
             if (collider.GetComponent<CharacterActor>() == null)
                 return;

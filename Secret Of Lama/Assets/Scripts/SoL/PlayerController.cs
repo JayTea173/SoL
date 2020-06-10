@@ -22,6 +22,7 @@ namespace SoL
         public float tilesMovePerSecond = 4f;
         public float screenNumTilesWidth = 16f;
         public float screenNumTilesHeight = 14f;
+        public int numTilesFromScreenEdgeTillCameraPan = 4;
 
 
         private static PlayerController instance;
@@ -117,10 +118,8 @@ namespace SoL
             var targetPos = actor.Animation.spriteRenderer.transform.position;
             Vector3 camDeltaPos = targetPos - cam.transform.position;
 
-            int panWhen = World.Instance.numTilesFromScreenEdgeTillCameraPan;
-
-            float cameraEdgeX = (screenNumTilesWidth / 2f) - panWhen;
-            float cameraEdgeY = (screenNumTilesHeight / 2f) - panWhen;
+            float cameraEdgeX = (screenNumTilesWidth / 2f) - numTilesFromScreenEdgeTillCameraPan;
+            float cameraEdgeY = (screenNumTilesHeight / 2f) - numTilesFromScreenEdgeTillCameraPan;
 
             if (camDeltaPos.x < -cameraEdgeX)
                 Camera.main.transform.position = new Vector3(targetPos.x + cameraEdgeX, Camera.main.transform.position.y, Camera.main.transform.position.z);

@@ -18,26 +18,16 @@ namespace SoL
 
         public void Load(string name, bool fadeInAndOut = false)
         {
-            if (DialogUI.Instance != null)
-                if (DialogUI.Instance.visible)
-                    DialogUI.Instance.visible = false;
-
+           
+            if (DialogUI.Instance.visible)
+            {
+                DialogUI.Instance.visible = false;
+            }
 
             if (fadeInAndOut)
                 StartCoroutine(TransitionedLoad(name));
             else
                 LoadAction(name);
-        }
-
-        private void Awake()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        private void OnSceneLoaded(Scene sc, LoadSceneMode m)
-        {
-            if (sc.name != "Game")
-                loaded = sc;
         }
 
         private void LoadAction(string name)
@@ -46,10 +36,8 @@ namespace SoL
                 if (loaded.IsValid())
                     SceneManager.UnloadSceneAsync(loaded);
 
-            var op = SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
-            
+            SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
         }
-       
 
         public IEnumerator TransitionedLoad(string name)
         {
@@ -63,6 +51,7 @@ namespace SoL
 
         public void NewGame()
         {
+            Debug.Log("LevelManager NEWGAME");
             Load(newGameSceneName);
         }
     }

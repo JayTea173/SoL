@@ -20,8 +20,6 @@ namespace SoL.Triggers
             if (p != null)
             {
                 DialogUI.Instance.Display(dialog, partner == null ? p : partner, p, 0);
-                if (!dialog.repeatable)
-                    dialog = null;
             }
         }
     }
