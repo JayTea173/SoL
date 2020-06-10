@@ -66,6 +66,7 @@ namespace SoL.UI
 
         }
 
+
         public void Display(Dialog dialog, DialogPartner initiator, DialogPartner initiated, int startingPage = 0)
         {
             if (animatingOpenClose)
@@ -207,6 +208,8 @@ namespace SoL.UI
 
                 while (pagePosition < l)
                 {
+                    if (pagePosition >= currentPage.ProcessedText.Length)
+                        break;
                     char c = currentPage.ProcessedText[pagePosition];
                     pagePosition++;
                     float waitMultiplier = 1f;

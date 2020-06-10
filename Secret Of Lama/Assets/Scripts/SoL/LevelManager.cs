@@ -29,14 +29,27 @@ namespace SoL
                 LoadAction(name);
         }
 
+        private void Awake()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene sc, LoadSceneMode m)
+        {
+            if (sc.name != "Game")
+                loaded = sc;
+        }
+
         private void LoadAction(string name)
         {
             if (loaded != null)
                 if (loaded.IsValid())
                     SceneManager.UnloadSceneAsync(loaded);
 
-            SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
+            var op = SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
+            
         }
+       
 
         public IEnumerator TransitionedLoad(string name)
         {

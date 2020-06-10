@@ -110,7 +110,7 @@ MonoBehaviour:
       up:
         sprite: {fileID: 0}
       durationMultiplier: 2
-      flags: 3
+      flags: 1
       motion:
         motionX:
           serializedVersion: 2
@@ -176,7 +176,7 @@ MonoBehaviour:
       up:
         sprite: {fileID: 0}
       durationMultiplier: 2
-      flags: 3
+      flags: 1
       motion:
         motionX:
           serializedVersion: 2
@@ -242,7 +242,7 @@ MonoBehaviour:
       up:
         sprite: {fileID: 0}
       durationMultiplier: 1
-      flags: 3
+      flags: 1
       motion:
         motionX:
           serializedVersion: 2
@@ -351,7 +351,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 192
+        motionMultiplier: 128
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -432,7 +432,7 @@ MonoBehaviour:
         sprite: {fileID: 0}
       up:
         sprite: {fileID: 0}
-      durationMultiplier: 3
+      durationMultiplier: 2
       flags: 3
       motion:
         motionX:
@@ -483,7 +483,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 192
+        motionMultiplier: 128
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -498,7 +498,7 @@ MonoBehaviour:
         sprite: {fileID: 0}
       up:
         sprite: {fileID: 0}
-      durationMultiplier: 3
+      durationMultiplier: 1
       flags: 3
       motion:
         motionX:
@@ -549,7 +549,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 192
+        motionMultiplier: 128
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -615,7 +615,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 192
+        motionMultiplier: 128
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -654,7 +654,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 192
+        motionMultiplier: 128
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
@@ -693,7 +693,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 192
+        motionMultiplier: 128
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:

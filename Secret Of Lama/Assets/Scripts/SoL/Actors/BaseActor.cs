@@ -425,7 +425,7 @@ namespace SoL.Actors
 
         public virtual void PlayAttackAnimation()
         {
-            if (!Animation.SetAnimation("Attack", false))
+            if (!Animation.SetAnimation("Attack", true))
                 Animation.SetAnimation(0);
         }
 
@@ -602,6 +602,12 @@ namespace SoL.Actors
         public void SetFacing(Facing facing)
         {
             this.facing = facing;
+            if (Animation != null)
+                Animation.Advance(0f);
+            if (facing != Facing.Left)
+                Animation.spriteRenderer.flipX = false;
+            else
+                Animation.spriteRenderer.flipX = true;
         }
 
 
