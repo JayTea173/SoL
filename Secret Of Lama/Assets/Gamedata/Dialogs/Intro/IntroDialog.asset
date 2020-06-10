@@ -236,3 +236,9 @@ MonoBehaviour:
       actionObjectValue: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.4
       actionDeliverer: 0
+    - action: 11
+      actionIntValue: 180
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 1.4
+      actionDeliverer: 0

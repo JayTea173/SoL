@@ -201,11 +201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agressiveness: 0.5
-  annoyance: 0.1
+  annoyance: 0
   caution: 1
   targetingRadius: 8.7
-  attackRange: 6.25
-  attackAimYOffset: -0.25
+  attackRange: 4
+  attackAimYOffset: 0
   pathingTargetLeeway: 1
 --- !u!114 &562290361
 MonoBehaviour:

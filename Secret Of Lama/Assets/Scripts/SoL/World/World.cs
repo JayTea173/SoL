@@ -15,6 +15,8 @@ namespace SoL
         protected List<Tilemap> collidingLayers;
         public LayerMask collisionLayer;
 
+        public int numTilesFromScreenEdgeTillCameraPan = 4;
+
         private static World instance;
         public static World Instance
         {

@@ -17,6 +17,8 @@ namespace SoL.Actors
         public void StartDialog(DialogPartner partner)
         {
             DialogUI.Instance.Display(dialog, partner, this);
+            if (!dialog.repeatable)
+                this.dialog = null;
         }
     }
 }

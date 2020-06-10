@@ -20,6 +20,6 @@ namespace SoL.Tiles
             if (!UnityEditor.EditorApplication.isPlaying)
                 tileData.sprite = paletteSprite;
         }
-    }
 #endif
+    }
 }

@@ -603,7 +603,7 @@ MonoBehaviour:
       damage:
         value: 1
         originOffset: {x: 1, y: 0}
-        radius: 1.22
+        radius: 1.66
     - left:
         sprite: {fileID: -7732095536427937690, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -642,7 +642,7 @@ MonoBehaviour:
       damage:
         value: 1
         originOffset: {x: 1.75, y: 0.5}
-        radius: 1.33
+        radius: 1.88
     - left:
         sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1007,7 +1007,25 @@ MonoBehaviour:
       motion:
         motionX:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -1026,7 +1044,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        motionMultiplier: 16
+        motionMultiplier: 192
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
