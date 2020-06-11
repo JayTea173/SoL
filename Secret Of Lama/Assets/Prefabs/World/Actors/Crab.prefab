@@ -288,6 +288,11 @@ MonoBehaviour:
   flyingHeight: 0
   attackChargeSpeed: 0.88
   position: {x: 0, y: 0, z: 0}
+  killMessages:
+  - clawed your eyes out
+  - pinched off parts of your neck
+  - shot you in the head multiple times
+  - blew you to bits
   exp: 4
   gp: 6
   element: 0

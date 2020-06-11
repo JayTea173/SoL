@@ -11,3 +11,7 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
+- path: Assets/Scenes/Map_1_Scene.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0

@@ -7,10 +7,7 @@ using UnityEngine;
 
 namespace SoL.Physics
 {
-    public class QuadTreeAgentBehaviour : MonoBehaviour
-    {
-        public int node = -1;
-    }
+
 
     public class QuadTree
     {

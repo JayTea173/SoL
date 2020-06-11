@@ -76,13 +76,13 @@ namespace SoL.UI
                         varName = varName.Substring(0, varName.Length - 1);
                     }
 
-                    
+
                     if (varName == "name")
                     {
                         sb.Append(partners[arrIndex].displayName);
                     }
 
-                    
+
                     i = indexEnd;
                     lasti = i;
                 }
@@ -90,7 +90,7 @@ namespace SoL.UI
                 sb.Append(processedText.Substring(lasti));
 
                 processedText = sb.ToString();
-               
+
             }
 
 
@@ -134,7 +134,13 @@ namespace SoL.UI
                         if (actor is CharacterActor)
                         {
                             var ch = actor as CharacterActor;
-                            ch.weapon = Items.WeaponDatabase.Instance.weapons[actionIntValue];
+                            var w = Items.WeaponDatabase.Instance.weapons[actionIntValue];
+                            if (ch.inventory.weapons == null)
+                                ch.inventory.weapons = new List<Items.Weapon>();
+                            if (!ch.inventory.weapons.Contains(w))
+                                ch.inventory.weapons.Add(w);
+                            if (ch.weapon == null)
+                                ch.weapon = w;
                         }
                         break;
                     case DialogActionEnum.ATTACK:
@@ -162,12 +168,12 @@ namespace SoL.UI
                     case DialogActionEnum.CAMERA_SHAKE:
                         CameraController.Instance.Shake(actionIntValue);
                         break;
-                    
-                    
+
+
                 }
 
             }
-  
+
         }
 
         public enum DialogActionEnum

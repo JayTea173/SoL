@@ -26,7 +26,6 @@ namespace SoL.Animation.FrameEvents
         public override void OnFrameEnter(SpriteAnimationBehaviour animated, SpriteFrame frame)
         {
 
-            Debug.Log("ENTER SPAWN FRAME");
             animated.StartCoroutine(SpawnProjectilesCoroutine(animated, frame, prefab.GetComponent<HomingProjectileBehaviour>() != null));
 
         }

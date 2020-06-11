@@ -9,5 +9,10 @@ namespace SoL.Actors
     public interface IDamageSource
     {
         void OnKill(IDamagable target);
+
+        string[] killMessages
+        {
+            get;
+        }
     }
 }

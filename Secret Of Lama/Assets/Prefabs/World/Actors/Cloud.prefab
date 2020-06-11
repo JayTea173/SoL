@@ -237,6 +237,8 @@ MonoBehaviour:
   flyingHeight: 0
   attackChargeSpeed: 0.375
   position: {x: 0, y: 0, z: 0}
+  killMessages:
+  - evaporated you with lightning
   exp: 4
   gp: 6
   element: 0

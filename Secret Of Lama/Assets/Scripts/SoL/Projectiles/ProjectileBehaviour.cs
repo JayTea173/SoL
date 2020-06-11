@@ -20,6 +20,18 @@ namespace SoL.Projectiles
 
         private float timeAlive;
 
+        public string[] killMessages
+        {
+            get
+            {
+                var a = owner.GetComponent<BaseActor>();
+                if (a == null)
+                    return new string[] { " hit you in the head." };
+                else
+                    return a.killMessages;
+            }
+        }
+
         public static ProjectileBehaviour Fire(GameObject prefab, GameObject owner, Vector3 position, Vector3 direction, int damage)
         {
             var go = Instantiate(prefab, position, Quaternion.identity);
@@ -28,7 +40,6 @@ namespace SoL.Projectiles
             if (proj.initializeInVelocityDirection)
                 go.transform.right = direction;
 
-            Debug.Log("Initial damage for proj: " + damage);
             proj.damageDealt += damage;
             proj.owner = owner;
             var rb = proj.GetComponent<Rigidbody2D>();
