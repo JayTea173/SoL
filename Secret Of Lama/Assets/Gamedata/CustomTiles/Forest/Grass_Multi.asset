@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbe6109dfb5e6042a3886b81e19e58e, type: 3}
+  m_Name: Grass_Multi
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2668181890688131989, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  sprites:
+  - {fileID: -2668181890688131989, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  fps: 0
+  destroyedTile: {fileID: 11400000, guid: 6e27b618b45a17d41b40354a5ece2497, type: 2}
+  sharedRoundingId: 0
+  tl:
+  - {fileID: -603703154432770373, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  t:
+  - {fileID: 3591359386223680099, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  tr:
+  - {fileID: -3491324120740432048, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  l:
+  - {fileID: 8911284308219778454, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  r:
+  - {fileID: -2517001127469874520, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  bl:
+  - {fileID: 3623069462681797778, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  b:
+  - {fileID: 1464769833822502361, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
+  br:
+  - {fileID: -2140303146884093106, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
