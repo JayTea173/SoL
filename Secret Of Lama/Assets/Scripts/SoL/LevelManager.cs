@@ -54,5 +54,16 @@ namespace SoL
             Debug.Log("LevelManager NEWGAME");
             Load(newGameSceneName);
         }
+
+        private void Awake()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene sc, LoadSceneMode m)
+        {
+            if (sc.name != "Game")
+                loaded = sc;
+        }
     }
 }

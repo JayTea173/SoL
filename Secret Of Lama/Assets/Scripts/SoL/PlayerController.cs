@@ -52,6 +52,8 @@ namespace SoL
         void Update()
         {
             Vector2 move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            if (move.sqrMagnitude < 0.2f)
+                move = Vector2.zero;
 
             if (actor.CanMove)
             {
@@ -74,6 +76,7 @@ namespace SoL
                     if (move.sqrMagnitude <= 0f && actor.sprinting)
                         move = actor.TransformDirection(Vector2.right);
 
+                    //Debug.Log("Moving towards" + actor.movementDirection + actor.IsMoving);
                     actor.Move(move);
                 }
 

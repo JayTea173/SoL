@@ -17,7 +17,11 @@ namespace SoL.UI
         [SerializeField]
         private Actors.CharacterActor actor;
         public TMP_Text hpDisplay;
-        public TMP_Text attackGauge;
+        public TMP_Text levelDisplay;
+        public Image attackGaugeImage;
+        public RectTransform attackGaugeRect;
+        public GameObject attackGauge;
+        public Transform attackGaugeParent;
 
         private float timeGaugeAtFull = 0f;
 
@@ -29,7 +33,12 @@ namespace SoL.UI
         {
             cg = GetComponent<CanvasGroup>();
             SetActor(actor, true);
-            chargingTextColor = attackGauge.color;
+            for (int i = 0; i < 10; i++)
+            {
+                var go = Instantiate(attackGauge, attackGaugeParent);
+                go.transform.localScale = new Vector3(attackGaugeRect.localScale.x, 1.5f + (i / 2f), attackGaugeRect.localScale.z);
+                go.GetComponent<Image>().color = new Color(1f-(i/3f), Mathf.Clamp(1f - ((i-3) / 3f),0f,1f), Mathf.Clamp(1f - ((i-6) / 3f),0f,1f));
+            }
         }
 
         public void SetActor(Actors.CharacterActor actor, bool skipCallbackClear = false)
@@ -57,28 +66,47 @@ namespace SoL.UI
         {
             yield return new WaitForEndOfFrame();
             hpDisplay.text = actor.Hitpoints.ToString() + "/" + actor.HitpointsMax.ToString();
+            levelDisplay.text = actor.level.ToString();
+
         }
 
         private void Update()
         {
+            float chargeLevel = 0f;
             cg.alpha = actor.weapon == null ? 0f : 1f;
             if (actor.AttackCharge > 0f)
-                attackGauge.text = actor.AttackCharge.ToString("0.%");
-            else
-                attackGauge.text = string.Empty;
-            if (actor.AttackCharge >= 1f)
             {
-                attackGauge.color = chargedTextColor;
+                attackGaugeImage.fillAmount = actor.AttackCharge;
+            }
+            else
+            {
+                attackGaugeImage.fillAmount = 0f;
+                attackGaugeImage.color = new Color(1,1,1);
+            }          
+            if (actor.AttackCharge >= 1f)
+            {   
+                chargeLevel = actor.AttackCharge-1;
+                int c = attackGaugeParent.childCount;
+
                 timeGaugeAtFull += Time.deltaTime;
                 if (timeGaugeAtFull > 0.5f && !actor.Charging)
                 {
-                    attackGauge.text = string.Empty;
+                    attackGaugeImage.fillAmount = 0f;
                 }
+                for (int i = 0;i < c;i++)
+                {
+                    var I = attackGaugeParent.GetChild(i).GetComponent<Image>();
+                    I.fillAmount = Mathf.Max(Mathf.Min(chargeLevel,1f),0);  
+                    chargeLevel--;
+                }
+
+                    
+                    //Debug.Log("attack Charge: " + actor.AttackCharge);                                             
+                                                                                                      
             }
             else if (actor.Charging)
             {
-                attackGauge.color = chargingTextColor;
-                timeGaugeAtFull = 0f;
+                timeGaugeAtFull = 0f;                
             }
         }
     }
