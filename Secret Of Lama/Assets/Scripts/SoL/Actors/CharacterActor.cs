@@ -129,7 +129,7 @@ namespace SoL.Actors
                 base.PlayMovementAnimation();
         }
 
-        public override void PlayAttackAnimation()
+        public override void PlayAttackAnimation(string animationName = "Attack")
         {
             if (weapon == null)
                 return;
@@ -295,7 +295,7 @@ namespace SoL.Actors
 
         }
 
-        public override void Attack()
+        public override void Attack(string animationName = "Attack")
         {
 
             Vector2 offset = TransformDirection(Vector2.right);

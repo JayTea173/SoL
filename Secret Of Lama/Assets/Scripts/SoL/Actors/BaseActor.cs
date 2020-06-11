@@ -253,6 +253,8 @@ namespace SoL.Actors
             else if (amount > hp)
                 amount = hp;
 
+            if (amount > 0)
+                audioSource.PlayOneShot(soundHurt.GetRandom());
 
             hp -= amount;
 
@@ -423,9 +425,9 @@ namespace SoL.Actors
                 Animation.SetAnimation(1);
         }
 
-        public virtual void PlayAttackAnimation()
+        public virtual void PlayAttackAnimation(string animationName)
         {
-            if (!Animation.SetAnimation("Attack", false))
+            if (!Animation.SetAnimation(animationName, true))
                 Animation.SetAnimation(0);
         }
 
@@ -495,12 +497,13 @@ namespace SoL.Actors
                     {
                         targetsHitWithThisAnimation.Add(damageable);
                         damageable.Damage(Mathf.FloorToInt(frame.damage.value * GetDamageDealt()), this);
-                        audioSource.PlayOneShot(soundHurt.GetRandom());
+                        if (frame.frameEvent != null)
+                            frame.frameEvent.OnDamageTarget(this.Animation, frame, damageable);
                     }
                 }
             }
 
-            if (isStartOfFrame)
+            if (isStartOfFrame && frame.damage.radius > 0.1f)
             {
                 if (CanDestroyTiles)
                 {
@@ -519,10 +522,11 @@ namespace SoL.Actors
             }
         }
 
-        public Vector2 TransformDirection(Vector2 originOffset)
+        public virtual Vector2 TransformDirection(Vector2 originOffset)
         {
             float angle = Mathf.Atan2(movement.y, movement.x);
-            return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            Vector2 transformed = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            return transformed * originOffset.x + Vector2.up * originOffset.y;
         }
 
         protected virtual void OnUpdate()
@@ -614,13 +618,13 @@ namespace SoL.Actors
         /// 
         /// </summary>
         /// <returns>true if attack went off</returns>
-        public virtual void Attack()
+        public virtual void Attack(string animationName = "Attack")
         {
             if (!CanAttack)
                 return;
             currentAnimationAttackCharge = attackCharge;
 
-            PlayAttackAnimation();
+            PlayAttackAnimation(animationName);
             attackCharge = 0f;
             charging = true;
 

@@ -1,7 +1,133 @@
 fileFormatVersion: 2
 guid: 6c242beb9ecaf2843bff1389a1da735e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -9046705973614912752
+    second: Angry_Cloud_Boss_0
+  - first:
+      213: 4366153225459561610
+    second: Angry_Cloud_Boss_1
+  - first:
+      213: 3344313336836657452
+    second: Angry_Cloud_Boss_2
+  - first:
+      213: -8200391359473272079
+    second: Angry_Cloud_Boss_3
+  - first:
+      213: 6009030484746794290
+    second: Angry_Cloud_Boss_4
+  - first:
+      213: -6569848463612222506
+    second: Angry_Cloud_Boss_5
+  - first:
+      213: 4100121157141756319
+    second: Angry_Cloud_Boss_6
+  - first:
+      213: 4978655328320830358
+    second: Angry_Cloud_Boss_7
+  - first:
+      213: -2988614319560817193
+    second: Angry_Cloud_Boss_8
+  - first:
+      213: 2311644883760918988
+    second: Angry_Cloud_Boss_9
+  - first:
+      213: 1663571028499950669
+    second: Angry_Cloud_Boss_10
+  - first:
+      213: 5304633613175580941
+    second: Angry_Cloud_Boss_11
+  - first:
+      213: -3533785993585598615
+    second: Angry_Cloud_Boss_12
+  - first:
+      213: 1672754514961926462
+    second: Angry_Cloud_Boss_13
+  - first:
+      213: -4798791001789324073
+    second: Angry_Cloud_Boss_14
+  - first:
+      213: -5830338662625589885
+    second: Angry_Cloud_Boss_15
+  - first:
+      213: -2320970114555310461
+    second: Angry_Cloud_Boss_16
+  - first:
+      213: 45081237843296011
+    second: Angry_Cloud_Boss_17
+  - first:
+      213: 8460692491825327059
+    second: Angry_Cloud_Boss_18
+  - first:
+      213: 8416503340484830391
+    second: Angry_Cloud_Boss_19
+  - first:
+      213: 8278793169606955916
+    second: Angry_Cloud_Boss_20
+  - first:
+      213: -8331297805160554822
+    second: Angry_Cloud_Boss_0
+  - first:
+      213: 5987218770667641353
+    second: Angry_Cloud_Boss_1
+  - first:
+      213: -6625909983163661503
+    second: Angry_Cloud_Boss_2
+  - first:
+      213: 4204034403296063169
+    second: Angry_Cloud_Boss_3
+  - first:
+      213: 2123062750620423172
+    second: Angry_Cloud_Boss_4
+  - first:
+      213: -8187521777083553821
+    second: Angry_Cloud_Boss_5
+  - first:
+      213: 3261241982760816804
+    second: Angry_Cloud_Boss_6
+  - first:
+      213: -3773791386677410646
+    second: Angry_Cloud_Boss_7
+  - first:
+      213: 9100092031803449497
+    second: Angry_Cloud_Boss_8
+  - first:
+      213: 5731706018706963556
+    second: Angry_Cloud_Boss_9
+  - first:
+      213: -8894051431119368305
+    second: Angry_Cloud_Boss_10
+  - first:
+      213: -384765134533072882
+    second: Angry_Cloud_Boss_11
+  - first:
+      213: 2261968270047174209
+    second: Angry_Cloud_Boss_12
+  - first:
+      213: 8598349951381193084
+    second: Angry_Cloud_Boss_13
+  - first:
+      213: -4072225504556919370
+    second: Angry_Cloud_Boss_14
+  - first:
+      213: -8323522091687409977
+    second: Angry_Cloud_Boss_15
+  - first:
+      213: -7493544793200721799
+    second: Angry_Cloud_Boss_16
+  - first:
+      213: 4546044828134828639
+    second: Angry_Cloud_Boss_17
+  - first:
+      213: 1475469146172889783
+    second: Angry_Cloud_Boss_18
+  - first:
+      213: 3342080445099606836
+    second: Angry_Cloud_Boss_19
+  - first:
+      213: -2898561937024292998
+    second: Angry_Cloud_Boss_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -87,7 +213,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abed96d89c8416c80800000000000000
+      internalID: -8331297805160554822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a123210cfd61350800000000000000
+      internalID: 5987218770667641353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143c0d3d9f90c04a0800000000000000
+      internalID: -6625909983163661503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ceabff040bb75a30800000000000000
+      internalID: 4204034403296063169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404189eb252a67d10800000000000000
+      internalID: 2123062750620423172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7e826b254106e80800000000000000
+      internalID: -8187521777083553821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a09c05fd42424d20800000000000000
+      internalID: 3261241982760816804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa40aac6abcc0abc0800000000000000
+      internalID: -3773791386677410646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990e1031d750a4e70800000000000000
+      internalID: 9100092031803449497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c3ff1914c1b8f40800000000000000
+      internalID: 5731706018706963556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f431a985bf19480800000000000000
+      internalID: -8894051431119368305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e086332162a09aaf0800000000000000
+      internalID: -384765134533072882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14edd5d3820246f10800000000000000
+      internalID: 2261968270047174209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71c29a89b9735770800000000000000
+      internalID: 8598349951381193084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_14
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5599baa7c8c77c0800000000000000
+      internalID: -4072225504556919370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c60bdce1c8ec7c80800000000000000
+      internalID: -8323522091687409977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9700bcc86b4910890800000000000000
+      internalID: -7493544793200721799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a6af96fabc61f30800000000000000
+      internalID: 4546044828134828639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba1faefe5be97410800000000000000
+      internalID: 1475469146172889783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43301fc2574716e20800000000000000
+      internalID: 3342080445099606836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_Cloud_Boss_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77e238864d36c7d0800000000000000
+      internalID: -2898561937024292998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

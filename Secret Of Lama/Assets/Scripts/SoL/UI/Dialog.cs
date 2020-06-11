@@ -138,7 +138,7 @@ namespace SoL.UI
                         }
                         break;
                     case DialogActionEnum.ATTACK:
-                        actor.PlayAttackAnimation();
+                        actor.PlayAttackAnimation("Attack");
                         break;
 
                     case DialogActionEnum.SET_SPRITE:

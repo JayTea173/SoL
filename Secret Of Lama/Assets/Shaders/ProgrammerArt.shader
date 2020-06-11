@@ -88,6 +88,7 @@
 
 
 						float2 vp = ceil(spritePos) * pow(2, ceil(n * 10.0 * (1 - _UVDownsampling)));
+						
 						//float2 vp = ceil(spritePos) *  * floor(n * 16.0);
 
 						uv = floor(uv * vp) / vp;
