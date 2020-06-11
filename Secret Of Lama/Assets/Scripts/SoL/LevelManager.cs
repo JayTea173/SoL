@@ -16,9 +16,17 @@ namespace SoL
 
         protected Scene loaded;
 
+        public Scene Loaded
+        {
+            get
+            {
+                return loaded;
+            }
+        }
+
         public void Load(string name, bool fadeInAndOut = false)
         {
-           
+
             if (DialogUI.Instance.visible)
             {
                 DialogUI.Instance.visible = false;
@@ -62,8 +70,14 @@ namespace SoL
 
         public void NewGame()
         {
-            Debug.Log("LevelManager NEWGAME");
+
             Load(newGameSceneName);
+        }
+
+        public void NewGame(string startingScene)
+        {
+            PlayerController.Instance.Actor.Revive();
+            Load(startingScene);
         }
     }
 }
