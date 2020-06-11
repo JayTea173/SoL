@@ -11,7 +11,6 @@ namespace SoL.Animation
 {
     [Serializable]
     [RequireComponent(typeof(SpriteRenderer))]
-    [RequireComponent(typeof(BaseActor))]
     public class SpriteAnimationBehaviour : MonoBehaviour
     {
 
@@ -42,10 +41,11 @@ namespace SoL.Animation
 
         private void Awake()
         {
-           
+
             actor = GetComponent<BaseActor>();
 
             neutralHeight = spriteRenderer.transform.localPosition.y;
+            if (actor != null)
             actor.flyingHeight = neutralHeight;
 
             foreach (SpriteAnimation anim in animations)
@@ -81,7 +81,7 @@ namespace SoL.Animation
                 actor.MoveToCheckingCollision(targetPosition);
 
 
-                
+
                 if (currentFrame.dealsDamage)
                 {
                     actor.HandleDamageFrame(currentFrame, targetsHitWithThisAnimation, frameChanged);
@@ -93,7 +93,7 @@ namespace SoL.Animation
         private void Update()
         {
 
-            
+
 
         }
 
@@ -139,6 +139,8 @@ namespace SoL.Animation
         public bool SetAnimation(string name, bool playFromStart = true)
         {
             int hc = name.GetHashCode();
+            if (currentCollection == null)
+                currentCollection = animations;
             int index = currentCollection.GetIndexByName(name);
             if (index < 0)
             {
@@ -285,12 +287,32 @@ namespace SoL.Animation
 
             }
 
-            currentFrame = anim.frames[frame];
+
+            if (anim.frames[frame] != currentFrame)
+            {
+                if (currentFrame != null)
+                    if (currentFrame.frameEvent != null)
+                        currentFrame.frameEvent.OnFrameExit(this, currentFrame);
+                currentFrame = anim.frames[frame];
+                if (currentFrame.frameEvent != null)
+                {
+                    Debug.Log("Call On Frame Enter of " + currentFrame.frameEvent.name);
+                    currentFrame.frameEvent.OnFrameEnter(this, currentFrame);
+                }
+            }
 
             var s = currentFrame[actor.facing];
             if (spriteRenderer.sprite != s)
             {
                 spriteRenderer.sprite = s;
+
+                var collider = spriteRenderer.GetComponent<PolygonCollider2D>();
+                if (collider != null)
+                {
+                    Destroy(collider);
+                    spriteRenderer.gameObject.AddComponent<PolygonCollider2D>().isTrigger = true;
+
+                }
                 frameChanged = true;
                 if (currentFrame.flags.HasFlag(FrameFlags.SWAP_FACING))
                 {

@@ -39,9 +39,20 @@ namespace SoL.Actors
         [SerializeField]
         protected int attack = 20;
 
+        [SerializeField]
+        protected int defense = 0;
+
         public override int GetDamageDealt()
         {
             return attack;
+        }
+
+        public override int Damage(int amount, IDamageSource damageSource)
+        {
+            amount -= defense;
+            if (amount < 0)
+                amount = 0;
+            return base.Damage(amount, damageSource);
         }
     }
 

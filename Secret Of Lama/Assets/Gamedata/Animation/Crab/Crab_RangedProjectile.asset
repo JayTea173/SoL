@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24843325db6a55d4bbf655172e587484, type: 3}
+  m_Name: Crab_RangedProjectile
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4044093208365952579, guid: dcc15c0803bc3d04ba7629820b119fc2, type: 3}
+  count: 8
+  timeouts:
+  - 0.04
+  soundOnFirstProjectile: {fileID: 8300000, guid: 5223afd3d104fb141b27163f8b934db0, type: 3}
+  offset: {x: 0.7, y: 0.2}

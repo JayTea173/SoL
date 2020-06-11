@@ -24,6 +24,7 @@ namespace SoL.Actors
     public enum EnumTeam
     {
         WILD,
+        WILD_OTHER,
         PLAYER,
         TRIGGER
     }

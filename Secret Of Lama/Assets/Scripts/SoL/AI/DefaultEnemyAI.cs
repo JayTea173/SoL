@@ -14,6 +14,16 @@ namespace SoL.AI
     [RequireComponent(typeof(SpriteAnimationBehaviour))]
     public class DefaultEnemyAI : MonoBehaviour
     {
+        [Serializable]
+        public class Attack
+        {
+            public string[] animationNames = new string[] { "Attack" };
+            public float chargeCost = 1f;
+            public float minChargeUse = 0f;
+            public float rangeMin = 0f;
+            public float rangeMax = 2f;
+        }
+
         [Header("Behaviour")]
         [Range(0f, 1f)]
         public float agressiveness = 0.5f;
@@ -25,8 +35,7 @@ namespace SoL.AI
         public float targetingRadius = 16f;
 
         [Header("Attack")]
-        public float attackRange = 4f;
-        public float attackAimYOffset = 0f;
+        public List<Attack> attacks;
 
         [Range(0.1f, 2f)]
         public float pathingTargetLeeway = 0.5f;
@@ -42,6 +51,14 @@ namespace SoL.AI
         protected Path pathToTarget = null;
 
         protected BaseActor target;
+
+        public BaseActor Target
+        {
+            get
+            {
+                return target;
+            }
+        }
 
         private void Awake()
         {
@@ -104,16 +121,30 @@ namespace SoL.AI
                     {
                         //var diff = ((target.transform.position + target.PhysicsAgent.b.center) - transform.position);
                         Vector3 targetPosition = pathToTarget != null ? pathToTarget.GetCurrentTargetPosition() : (target.transform.position + target.PhysicsAgent.b.center);
-                        
+
                         var diff = targetPosition - transform.position;
+                        var diffToTarget = (target.transform.position + target.PhysicsAgent.b.center) - transform.position;
                         moveDirection = diff.normalized;
 
                         //Debug.Log("Target dir: " + moveDirection + " :: " + transform.position + " -> " + pathToTarget.GetCurrentTargetPosition());
 
                         bool attacking = false;
-                        if (diff.magnitude <= attackRange)
-                        {
+                        Attack bestAttack = null;
 
+                        float d = diffToTarget.magnitude;
+
+                        foreach (var attack in attacks)
+                        {
+                            if (d <= attack.rangeMax && d > attack.rangeMin)
+                            {
+                                bestAttack = attack;
+                                break;
+                            }
+                        }
+
+                        string pickedAnim = null;
+                        if (bestAttack != null)
+                        {
                             if (UnityEngine.Random.value < 0.65f * agressiveness)
                             {
                                 if (actor.Charging)
@@ -121,20 +152,23 @@ namespace SoL.AI
                                     if (UnityEngine.Random.value < annoyance)
                                         attacking = true;
                                     else if (UnityEngine.Random.value < caution)
-                                        moveDirection = -((target.transform.position + target.PhysicsAgent.b.center + Vector3.up * attackAimYOffset) - transform.position).normalized;
+                                        moveDirection = -((target.transform.position + target.PhysicsAgent.b.center + Vector3.up * 0f) - transform.position).normalized;
                                 }
                                 else
                                     attacking = true;
                             }
+                            pickedAnim = bestAttack.animationNames[Engine.RandomInt(0, bestAttack.animationNames.Length)];
                         }
 
+                        
 
-                        if (attacking && actor.Animation.CurrentAnimation.name != "Attack")
+                        if (attacking && actor.Animation.CurrentAnimation.name != pickedAnim)
                         {
-                            moveDirection = ((target.transform.position + target.PhysicsAgent.b.center + Vector3.up * attackAimYOffset) - transform.position).normalized;
+                            moveDirection = ((target.transform.position + target.PhysicsAgent.b.center + Vector3.up * 0f) - transform.position).normalized;
                             actor.Move(moveDirection);
-                            actor.Attack();
-
+                            Debug.Log("Attack with " + pickedAnim);
+                            actor.Attack(pickedAnim);
+                            actor.AttackCharge -= bestAttack.chargeCost - 1f;
                             canMove = false;
                         }
 
@@ -143,7 +177,7 @@ namespace SoL.AI
             }
             if (canMove)
                 if (moveDirection.sqrMagnitude > 0f)
-                actor.Move(moveDirection);
+                    actor.Move(moveDirection);
 
             if (target == null)
             {

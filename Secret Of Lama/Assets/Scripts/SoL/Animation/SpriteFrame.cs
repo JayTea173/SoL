@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SoL.Animation
 {
@@ -42,6 +43,7 @@ namespace SoL.Animation
         public FrameFlags flags;
         public Motion motion;
         public DamageFrame damage;
+        public FrameEventAsset frameEvent;
 
         public bool dealsDamage
         {

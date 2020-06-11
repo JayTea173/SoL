@@ -54,6 +54,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 2946135839926348323, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -176,6 +178,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -6685301186564192506, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -233,6 +236,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -2649586108002721157, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -290,6 +294,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 925178556413978738, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -347,6 +352,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -4364034991355607221, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -404,6 +410,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -1955998156967815339, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -461,6 +468,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 411217852228852040, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -518,6 +526,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -565,6 +574,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -8141659952138215382, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -604,6 +614,7 @@ MonoBehaviour:
         value: 1
         originOffset: {x: 1, y: 0}
         radius: 1.66
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -7732095536427937690, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -643,6 +654,7 @@ MonoBehaviour:
         value: 1
         originOffset: {x: 1.75, y: 0.5}
         radius: 1.88
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -682,6 +694,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -699,7 +712,7 @@ MonoBehaviour:
       up:
         sprite: {fileID: 1014133331262204258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       durationMultiplier: 2
-      flags: 3
+      flags: 7
       motion:
         motionX:
           serializedVersion: 2
@@ -747,6 +760,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -4545133569898938739, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -756,7 +770,7 @@ MonoBehaviour:
       up:
         sprite: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       durationMultiplier: 1
-      flags: 3
+      flags: 7
       motion:
         motionX:
           serializedVersion: 2
@@ -804,6 +818,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -843,6 +858,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -882,6 +898,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -893,11 +910,11 @@ MonoBehaviour:
     - left:
         sprite: {fileID: -5744224205490318823, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
-        sprite: {fileID: 0}
+        sprite: {fileID: -5744224205490318823, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       down:
-        sprite: {fileID: 0}
+        sprite: {fileID: -5744224205490318823, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       up:
-        sprite: {fileID: 0}
+        sprite: {fileID: -5744224205490318823, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       durationMultiplier: 1
       flags: 0
       motion:
@@ -929,6 +946,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 0
     - value: 0
@@ -994,6 +1012,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -452740835619884764, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1051,6 +1070,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -846675211739738947, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1108,6 +1128,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 6760574914775220397, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1165,6 +1186,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -1212,6 +1234,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1251,6 +1274,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1290,6 +1314,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
