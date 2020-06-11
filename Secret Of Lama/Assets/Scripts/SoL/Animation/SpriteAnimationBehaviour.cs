@@ -296,7 +296,6 @@ namespace SoL.Animation
                 currentFrame = anim.frames[frame];
                 if (currentFrame.frameEvent != null)
                 {
-                    Debug.Log("Call On Frame Enter of " + currentFrame.frameEvent.name);
                     currentFrame.frameEvent.OnFrameEnter(this, currentFrame);
                 }
             }

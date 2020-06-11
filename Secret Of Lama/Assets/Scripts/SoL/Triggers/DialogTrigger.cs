@@ -14,9 +14,11 @@ namespace SoL.Triggers
         public Dialog dialog;
         public DialogPartner partner;
 
-        protected override void ExecuteAction(Collision2D collision)
+        protected override void ExecuteAction(Collider2D collider, Collision2D collision)
         {
-            var p = collision.collider.GetComponent<DialogPartner>();
+            var p = collider.GetComponent<DialogPartner>();
+
+
             if (p != null)
             {
                 DialogUI.Instance.Display(dialog, partner == null ? p : partner, p, 0);

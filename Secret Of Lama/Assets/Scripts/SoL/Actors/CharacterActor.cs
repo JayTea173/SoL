@@ -30,11 +30,14 @@ namespace SoL.Actors
         public ushort equipmentDefense;
         public ushort equipmentMagicDefense;
         public Weapon weapon;
+        public Inventory inventory;
 
         public ushort weaponDamage
         {
             get
             {
+                if (weapon == null)
+                    return 0;
                 return weapon.damage;
             }
         }
@@ -92,6 +95,12 @@ namespace SoL.Actors
         }
 
         public bool weaponCharging;
+
+        public void SwapWeapons()
+        {
+            weapon = inventory.GetNextWeapon(weapon);
+            CalculateStats();
+        }
 
         protected override void Initialize()
         {
@@ -305,6 +314,9 @@ namespace SoL.Actors
                 if (h.t == transform)
                     return false;
                 var a = h.t.GetComponent<IDamagable>();
+                if (a == null)
+                    return true;
+                
                 return !IsEnemy(a.Team);
             });
 

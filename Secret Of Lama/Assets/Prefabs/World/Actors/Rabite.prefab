@@ -276,6 +276,11 @@ MonoBehaviour:
   flyingHeight: 0
   attackChargeSpeed: 0.5
   position: {x: 0, y: 0, z: 0}
+  killMessages:
+  - bit your front legs off and you bled out
+  - ate your whole right flank
+  - ripped your head clean off your neck
+  - headbutted you too hard
   exp: 1
   gp: 2
   element: 0

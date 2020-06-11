@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SoL.UI;
+using TMPro;
 
 namespace SoL
 {
@@ -18,6 +19,9 @@ namespace SoL
                 return actor;
             }
         }
+        public CanvasGroup youDiedScreen;
+        public TMP_Text youDiedTextField;
+
         public PlayerData playerData;
         public float tilesMovePerSecond = 4f;
         public float screenNumTilesWidth = 16f;
@@ -26,6 +30,7 @@ namespace SoL
 
 
         private static PlayerController instance;
+
 
         public static PlayerController Instance
         {
@@ -41,6 +46,34 @@ namespace SoL
             actor = GetComponent<CharacterActor>();
             var p = GetComponent<DialogPartner>();
             p.displayName = System.Environment.UserName;
+
+            actor.onKilledBy += OnActorDeath;
+        }
+
+        protected void OnActorDeath(IDamageSource killer)
+        {
+            StartCoroutine(OnActorDeathCoroutine(killer));
+            
+
+        }
+
+        protected IEnumerator OnActorDeathCoroutine(IDamageSource killer)
+        {
+            youDiedTextField.text = "YOU DIED\n";
+            if (killer is MonoBehaviour)
+            {
+                var go = (killer as MonoBehaviour).gameObject;
+                youDiedTextField.text += go.name + " ";
+                youDiedTextField.text += killer.killMessages[Engine.RandomInt(0, killer.killMessages.Length)];
+            }
+            youDiedScreen.alpha = 1f;
+
+            yield return new WaitForSeconds(4f);
+            BlackMask.Instance.FadeOut(2f);
+            yield return new WaitForSeconds(2f);
+            youDiedScreen.alpha = 0f;
+            Engine.Instance.levelManager.NewGame(Engine.Instance.levelManager.Loaded.name);
+            yield return null;
         }
 
         public void ForceCenter()
@@ -54,6 +87,12 @@ namespace SoL
             Vector2 move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             if (move.sqrMagnitude < 0.2f)
                 move = Vector2.zero;
+
+            if (Input.GetButtonDown("Swap Weapon"))
+            {
+
+                actor.SwapWeapons();
+            }
 
             if (actor.CanMove)
             {

@@ -16,6 +16,17 @@ namespace SoL.ScriptedAnimations
         public Vector3 speed;
         public Dialog dialogAfterFall;
 
+        public string[] killMessages
+        {
+            get
+            {
+                return new string[]
+                {
+                    " broke every single bone in your body"
+                };
+            }
+        }
+
         // Start is called before the first frame update
         void Start()
         {

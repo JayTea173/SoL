@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd04c0de85c59e4489962a9f5fd6c6d, type: 3}
+  m_Name: WaterDonut_Pickup
+  m_EditorClassIdentifier: 
+  pages:
+  - text: Let's test this baby out.
+    delivererId: 1
+    actions:
+    - action: 3
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: 4789219768415597031, guid: 6e6069fc874a18d4e8583f0bf3406711, type: 3}
+      delay: 0
+      actionDeliverer: 0
+  - text: GO!
+    delivererId: 1
+    actions:
+    - action: 4
+      actionIntValue: 0
+      actionStringValue: Attack
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+    - action: 7
+      actionIntValue: 3
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.2
+      actionDeliverer: 1
+  - text: It's duplicating!| UN|LIM|I|TED| POWER!!!
+    delivererId: 1
+    actions: []
+  - text: Pressing L1 or TAB lets you swap to your sword again.
+    delivererId: 0
+    actions:
+    - action: 3
+      actionIntValue: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: 4789219768415597031, guid: 6e6069fc874a18d4e8583f0bf3406711, type: 3}
+      delay: 0
+      actionDeliverer: 0

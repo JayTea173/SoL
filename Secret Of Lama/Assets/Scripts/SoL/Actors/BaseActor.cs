@@ -22,6 +22,8 @@ namespace SoL.Actors
             Up
         }
 
+
+
         public static Facing InvertFacing(Facing facing)
         {
             switch (facing)
@@ -140,6 +142,8 @@ namespace SoL.Actors
         public Soundbank soundHurt;
         public Soundbank soundDodge;
 
+
+
         protected AudioSource audioSource;
 
 
@@ -167,9 +171,11 @@ namespace SoL.Actors
 
         public delegate int OnDamageTaken(int amount, IDamageSource source);
         public delegate int OnDamageDealt(int amount, IDamagable target);
+        public delegate void OnKilledBy(IDamageSource killer);
 
         public OnDamageTaken onDamageTaken, onHealed;
         public OnDamageDealt onDamageDealt;
+        public OnKilledBy onKilledBy;
 
         public float AttackCharge
         {
@@ -228,6 +234,11 @@ namespace SoL.Actors
 
         protected SpriteRenderer shadowRenderer;
 
+        public void Revive()
+        {
+            hp = hpMax;
+        }
+
 
         public virtual int Damage(int amount, IDamageSource damageSource)
         {
@@ -267,6 +278,8 @@ namespace SoL.Actors
                 timeOfDeath = Time.time;
                 damageSource.OnKill(this);
                 animation.SetAnimation("Death", true);
+                if (onKilledBy != null)
+                    onKilledBy(damageSource);
             }
             else
                 animation.SetAnimation("Hurt");
@@ -349,6 +362,16 @@ namespace SoL.Actors
             get
             {
                 return moving;
+            }
+        }
+
+        public string[] killMessages;
+
+        string[] IDamageSource.killMessages
+        {
+            get
+            {
+                return killMessages;
             }
         }
 
