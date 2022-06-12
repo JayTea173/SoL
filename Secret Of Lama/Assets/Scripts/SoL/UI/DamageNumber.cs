@@ -66,7 +66,10 @@ namespace SoL.UI
 
         private void UpdatePosition()
         {
-            transform.position = Camera.main.WorldToScreenPoint(target.position);
+            if (transform == null || target == null)
+                Destroy(gameObject);
+            else if (transform != null) 
+                transform.position = Camera.main.WorldToScreenPoint(target.position);
         }
 
         private void Update()

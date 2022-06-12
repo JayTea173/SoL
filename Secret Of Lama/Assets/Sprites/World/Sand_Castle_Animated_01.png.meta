@@ -60,6 +60,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -69,8 +70,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -91,6 +92,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -398,6 +401,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Sand_Castle_Animated_01_3: -7184479717538236319
+      Sand_Castle_Animated_01_11: 5160570941851215299
+      Sand_Castle_Animated_01_0: 4598474592399823292
+      Sand_Castle_Animated_01_7: -630855094519616533
+      Sand_Castle_Animated_01_8: 5543425883797935035
+      Sand_Castle_Animated_01_5: 7839120015370316120
+      Sand_Castle_Animated_01_10: 3040509439116525364
+      Sand_Castle_Animated_01_2: -2362267225456103618
+      Sand_Castle_Animated_01_1: -4186052167091793483
+      Sand_Castle_Animated_01_4: -384173784511300099
+      Sand_Castle_Animated_01_6: -3082935107692254748
+      Sand_Castle_Animated_01_9: -4992655123294164491
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

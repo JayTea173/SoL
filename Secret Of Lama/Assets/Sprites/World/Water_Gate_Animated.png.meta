@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,8 +82,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -103,6 +104,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -482,6 +485,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Water_Gate_Animated_0_1: 7078406194969107004
+      Water_Gate_Animated_2_0: -2859393332062756545
+      Water_Gate_Animated_2_2: 2903666485453005668
+      Water_Gate_Animated_1_3: -5241455834372655353
+      Water_Gate_Animated_1_2: -3181192196812907079
+      Water_Gate_Animated_2_3: 4409766533399430722
+      Water_Gate_Animated_1_0: 4395209277517572614
+      Water_Gate_Animated_3_1: 2368016952965533512
+      Water_Gate_Animated_2_1: -5487145254422432271
+      Water_Gate_Animated_3_2: -127251963095764040
+      Water_Gate_Animated_0_2: -8923651303730508988
+      Water_Gate_Animated_1_1: 3266868482611140735
+      Water_Gate_Animated_3_0: 4979810952349360729
+      Water_Gate_Animated_0_3: 2144800139452793571
+      Water_Gate_Animated_0_0: -8802019840169799690
+      Water_Gate_Animated_3_3: -2284678774226698163
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

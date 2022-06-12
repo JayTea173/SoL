@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 89894668}
   - component: {fileID: 89894669}
   - component: {fileID: 89894670}
+  - component: {fileID: 89894671}
   m_Layer: 0
   m_Name: MapScript
   m_TagString: Untagged
@@ -185,6 +186,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initiator: {fileID: 0}
   initiated: {fileID: 198672843}
+  delay: 2
+  rootOnStart: 1
+--- !u!114 &89894671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89894667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ec62255f1b4b747b6271d58a9d5050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song: {fileID: 11400000, guid: 73744a961fe53374db86f4b62069202a, type: 2}
+  delay: 0.25
 --- !u!114 &198672843 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2609371349789692586, guid: e457ed39092b26b47b9104a8f7217b8c, type: 3}
@@ -1210,7 +1227,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1221,7 +1238,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 10}
+  m_Size: {x: 100, y: 30}
   m_EdgeRadius: 0
 --- !u!4 &750869426
 Transform:
@@ -1250,6 +1267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Map_1_Scene
+  stopMusic: 1
 --- !u!1 &929225157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,15 +2779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b2994b8cea7ad42891fcc386af206f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCheckInterval: 0.025
-  spawnChance: 0.004
-  maxActive: 5
-  parentTo: {fileID: 0}
-  spawnAreaRadius: 3
-  prefabs:
-    entries:
-    - value: {fileID: 6076461289016289662, guid: 001fe00406a7f0d47a421457fc5047d5, type: 3}
-      weight: 1
 --- !u!4 &1629968695
 Transform:
   m_ObjectHideFlags: 0

@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd04c0de85c59e4489962a9f5fd6c6d, type: 3}
+  m_Name: Map_2_Eldiot_1
+  m_EditorClassIdentifier: 
+  pages:
+  - text: Hello?
+    delivererId: 0
+    actions: []
+  - text: Is that you,  $Name1?
+    delivererId: 0
+    actions:
+    - action: 12
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+    - action: 17
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+  - text: Ah, $Name0. I was expecting you|.|.|.
+    delivererId: 1
+    actions: []
+  - text: Really? I'm glad you still care about me after what I said about your art.
+    delivererId: 0
+    actions: []
+  - text: Oh trust me,|| I really do| care.||| But those things you've said... about
+      my "Programmer Art"! You are clearly misguided. But I can fix you.
+    delivererId: 1
+    actions:
+    - action: 1
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.8
+      actionDeliverer: 0
+    - action: 1
+      actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2.1
+      actionDeliverer: 0
+  - text: What are you saying? What are you planning to do? Kick my...|||||||||
+    delivererId: 0
+    actions:
+    - action: 15
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 3.4
+      actionDeliverer: 0
+  - text: Soon, you will realize the true value in "Programmer Art". It will take
+      over the world. One block of solid color at a time.
+    delivererId: 1
+    actions:
+    - action: 17
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 11400000, guid: 8b1fcb59fed3d4f48af26e73bb3fc3c1, type: 2}
+      delay: 0
+      actionDeliverer: 0
+  - text: I thought I was the one who fell down the waterfall and took some serious
+      damage to the head. But you're the one here talking nonsense!
+    delivererId: 0
+    actions: []
+  - text: My art has failed you. $Name0, I|| have failed you.
+    delivererId: 1
+    actions:
+    - action: 1
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2.4
+      actionDeliverer: 1
+  - text: I should have known the Programmer Artists were plotting to take over.
+    delivererId: 0
+    actions: []
+  - text: $Name0, high quality art is evil!
+    delivererId: 1
+    actions: []
+  - text: From my point of view the Programmer Artists are evil!
+    delivererId: 0
+    actions: []
+  - text: Well then you are LOST!
+    delivererId: 1
+    actions: []
+  - text: This is the end for you my llama.
+    delivererId: 0
+    actions: []
+  - text: That's the spirit. I will show you. You will experience the truest form
+      of P|R|O|G|R|A|M|M|E|R|| A|R|T|!
+    delivererId: 1
+    actions:
+    - action: 18
+      actionIntValue: 4200
+      actionIntValueOther: 0
+      actionFloatValue: 0.99
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 3
+      actionDeliverer: 0
+  - text: What have you done? Aaah! My eyes!
+    delivererId: 0
+    actions:
+    - action: 1
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 3
+      actionDeliverer: 0
+  - text: Ah,| yes.| Marvelous!|| Look at all those beautiful colors! Feel the power
+      of my shaders! True Programmer's Art!
+    delivererId: 1
+    actions:
+    - action: 1
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 2
+      actionDeliverer: 0
+  - text: Oh, and have fun fighting this giant enemy crab.
+    delivererId: 1
+    actions:
+    - action: 18
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 3
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+  - text: ...
+    delivererId: 0
+    actions:
+    - action: 21
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.5
+      actionDeliverer: 0
+    - action: 15
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+    - action: 20
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 7297943165363014110, guid: 032575d5ace9dfe438e6eb19d01a4226, type: 3}
+      delay: 2
+      actionDeliverer: 0
+    - action: 17
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 11400000, guid: 06a9f8601f55a554e94f54ef3252c59d, type: 2}
+      delay: 1.5
+      actionDeliverer: 0
+    - action: 11
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 11400000, guid: 06a9f8601f55a554e94f54ef3252c59d, type: 2}
+      delay: 5
+      actionDeliverer: 0

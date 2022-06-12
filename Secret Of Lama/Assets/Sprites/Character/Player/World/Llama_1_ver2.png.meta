@@ -90,6 +90,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -99,8 +100,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -121,6 +122,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -626,6 +629,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Llama_1_ver2_9: 4148782752559468827
+      Llama_1_ver2_16: 4686308417059684385
+      Llama_1_ver2_1: -4658046987145202484
+      Llama_1_ver2_10: 3501010151401691073
+      Llama_1_ver2_17: 3297833375137417779
+      Llama_1_ver2_20: 5552493975182755226
+      Llama_1_ver2_8: 870671013541446454
+      Llama_1_ver2_14: 4023092470947752921
+      Llama_1_ver2_18: 2431859151545061479
+      Llama_1_ver2_3: -3117346785080266002
+      Llama_1_ver2_0: -6752791919890385789
+      Llama_1_ver2_12: 1120582083384622167
+      Llama_1_ver2_15: 3928486663861227543
+      Llama_1_ver2_6: 3436520855415451022
+      Llama_1_ver2_21: 704806521082303041
+      Llama_1_ver2_7: -3259264218720280530
+      Llama_1_ver2_19: 8652660544466463753
+      Llama_1_ver2_13: -1615715709750254435
+      Llama_1_ver2_4: 6520199870778115930
+      Llama_1_ver2_2: -8535913161309648250
+      Llama_1_ver2_5: 1676892471677951277
+      Llama_1_ver2_11: 4766073980288865175
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

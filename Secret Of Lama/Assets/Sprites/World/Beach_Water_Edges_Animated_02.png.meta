@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,8 +82,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -103,6 +104,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -494,6 +497,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Beach_Water_Edges_Animated_02_3: -341328658410656935
+      Beach_Water_Edges_Animated_02_1: -2804462167631557173
+      Beach_Water_Edges_Animated_02_9: 4796822797986397085
+      Beach_Water_Edges_Animated_02_6: 8579263746797822694
+      Beach_Water_Edges_Animated_02_7: -1005802849792410246
+      Beach_Water_Edges_Animated_02_12: -204266093768743686
+      Beach_Water_Edges_Animated_02_13: -1079847826496190416
+      Beach_Water_Edges_Animated_02_5: 7219729816909750027
+      Beach_Water_Edges_Animated_02_11: 787797366147783508
+      Beach_Water_Edges_Animated_02_10: 1384374688841725734
+      Beach_Water_Edges_Animated_02_15: 5362080557857614712
+      Beach_Water_Edges_Animated_02_8: 3257219652942994760
+      Beach_Water_Edges_Animated_02_2: -2245530322913141140
+      Beach_Water_Edges_Animated_02_4: -8442883296533263732
+      Beach_Water_Edges_Animated_02_0: -1938808017598203105
+      Beach_Water_Edges_Animated_02_14: 6193221010555869564
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

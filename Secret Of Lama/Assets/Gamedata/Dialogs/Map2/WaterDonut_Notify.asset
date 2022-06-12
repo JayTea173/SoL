@@ -15,11 +15,25 @@ MonoBehaviour:
   pages:
   - text: Is that a frickin' water donut?
     delivererId: 0
-    actions: []
+    actions:
+    - action: 12
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
   - text: That will make an amazing single-use ranged weapon!
     delivererId: 0
     actions: []
   - text: I better go pick it up before somebody else makes use of this obviously
       highly dangerous weapon of massive genocide.
     delivererId: 0
-    actions: []
+    actions:
+    - action: 13
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0

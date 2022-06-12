@@ -92,6 +92,11 @@ namespace SoL.Editor
             {
                 ResizeFromTilemapGrid();
             }
+
+            if (GUILayout.Button("Resize"))
+            {
+                g.Resize(g.size.x, g.size.y);
+            }
             if (GUILayout.Button("Generate from Tilemap Grid"))
             {
                 //ResizeFromTilemapGrid();

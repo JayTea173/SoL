@@ -18,4 +18,5 @@ MonoBehaviour:
   damageIncreasePerLevel: 8
   characterData:
   - animations: {fileID: 11400000, guid: 1e7e55134c126a24fbae67ffad27a3b1, type: 2}
-    skillLevel: 9
+    skillLevel: 0
+  chargeSpeedOverride: 0.46

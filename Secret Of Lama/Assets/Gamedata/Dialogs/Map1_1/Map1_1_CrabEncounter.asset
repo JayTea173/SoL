@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd04c0de85c59e4489962a9f5fd6c6d, type: 3}
+  m_Name: Map1_1_CrabEncounter
+  m_EditorClassIdentifier: 
+  pages:
+  - text: I'm almost there! The beach is up this dirt path.
+    delivererId: 0
+    actions:
+    - action: 0
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+  - text: Huh? What are these seashells doing so far off the coast?
+    delivererId: 0
+    actions:
+    - action: 12
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.4
+      actionDeliverer: 0
+    - action: 17
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.4
+      actionDeliverer: 0
+  - text: Stop right there, malevolent mammalian!
+    delivererId: 1
+    actions:
+    - action: 4
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: Attack
+      actionObjectValue: {fileID: 0}
+      delay: 0.2
+      actionDeliverer: 0
+    - action: 8
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: Attack
+      actionObjectValue: {fileID: 0}
+      delay: 2
+      actionDeliverer: 0
+  - text: You are intruding on the programmer's territory. Turn around at once!
+    delivererId: 1
+    actions: []
+  - text: Or what? You two planning on...
+    delivererId: 0
+    actions:
+    - action: 17
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 11400000, guid: cb33b9e950a7bcd49b90612bd6d7f246, type: 2}
+      delay: 1
+      actionDeliverer: 1
+  - text: Yes. Prepare to be exterminated.
+    delivererId: 1
+    actions:
+    - action: 0
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+  - text: FIGHT
+    delivererId: 1
+    actions:
+    - action: 14
+      actionIntValue: 0
+      actionIntValueOther: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+    - action: 14
+      actionIntValue: 1
+      actionIntValueOther: 1
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+    - action: 15
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.1
+      actionDeliverer: 0
+    - action: 13
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.1
+      actionDeliverer: 0

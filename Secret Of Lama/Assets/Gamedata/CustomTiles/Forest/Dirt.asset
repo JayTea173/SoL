@@ -37,7 +37,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 7392141978946361918, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}
   fps: 0
-  destroyedTile: {fileID: 11400000, guid: 6e27b618b45a17d41b40354a5ece2497, type: 2}
+  destroyedTile: {fileID: 0}
   sharedRoundingId: 0
   tl:
   - {fileID: -7972382431943191543, guid: ea5ba42d01632234aba3818167aa1baa, type: 3}

@@ -137,7 +137,9 @@ namespace SoL.Physics
             var originLeaf = GetLeafContaining(p);
 
             foreach (var a in GetAgentsInNodeInRange(originLeaf, p, radius))
+            {
                 yield return a;
+            }
 
             int extents = Mathf.RoundToInt(radius / LeafSize);
             if (extents > 0)

@@ -153,6 +153,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -162,8 +163,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -184,6 +185,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -1130,6 +1133,50 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Water_Base_Animated_02_6: -6286355446708063399
+      Water_Base_Animated_02_20: 4810307538273755019
+      Water_Base_Animated_02_31: -78951991733607010
+      Water_Base_Animated_02_4: 5968624908283365091
+      Water_Base_Animated_02_15: 2086797631412924022
+      Water_Base_Animated_02_23: -6411081424292500235
+      Water_Base_Animated_02_35: -9042005609332821150
+      Water_Base_Animated_02_5: 2362013962900567446
+      Water_Base_Animated_02_19: -5360326381147976119
+      Water_Base_Animated_02_3: 303592581794182753
+      Water_Base_Animated_02_36: -8343693578970487518
+      Water_Base_Animated_02_10: -935235474797828884
+      Water_Base_Animated_02_30: 1459198088184906549
+      Water_Base_Animated_02_39: 7510823791538608981
+      Water_Base_Animated_02_11: 7723018896824149559
+      Water_Base_Animated_02_17: -8711436662541804361
+      Water_Base_Animated_02_22: -3368859108900954494
+      Water_Base_Animated_02_24: 6794047238357307664
+      Water_Base_Animated_02_7: -2768988121373056213
+      Water_Base_Animated_02_16: -6072105691478011609
+      Water_Base_Animated_02_29: -7752087112732612145
+      Water_Base_Animated_02_8: -6209674091919575390
+      Water_Base_Animated_02_37: -7590073696885423969
+      Water_Base_Animated_02_9: 5270423142776151656
+      Water_Base_Animated_02_32: 368701858640464148
+      Water_Base_Animated_02_41: 5986939685296554658
+      Water_Base_Animated_02_12: 8109618334484184530
+      Water_Base_Animated_02_13: -5024820713597085458
+      Water_Base_Animated_02_34: -8672925539442415985
+      Water_Base_Animated_02_2: -8350958082773620404
+      Water_Base_Animated_02_25: 4689024178451610494
+      Water_Base_Animated_02_14: 5248740712448112245
+      Water_Base_Animated_02_26: -2124474883854032461
+      Water_Base_Animated_02_27: 7546886079324962617
+      Water_Base_Animated_02_38: 1386293463732137815
+      Water_Base_Animated_02_18: -3359768057448985001
+      Water_Base_Animated_02_33: 4226526441478325166
+      Water_Base_Animated_02_1: 7991998872976780894
+      Water_Base_Animated_02_40: -2706575753695457370
+      Water_Base_Animated_02_42: 7570129131679011039
+      Water_Base_Animated_02_0: 7029125401935851162
+      Water_Base_Animated_02_21: -5470867163242150962
+      Water_Base_Animated_02_28: -6336550167189724892
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

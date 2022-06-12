@@ -54,6 +54,11 @@ namespace SoL.Actors
                 amount = 0;
             return base.Damage(amount, damageSource);
         }
+
+        public float GetHPPercent()
+        {
+            return hp / (float)hpMax;
+        }
     }
 
     

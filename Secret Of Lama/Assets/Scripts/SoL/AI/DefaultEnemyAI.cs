@@ -52,6 +52,8 @@ namespace SoL.AI
 
         protected BaseActor target;
 
+        public DefaultEnemyAI[] squadMates;
+
         public BaseActor Target
         {
             get
@@ -63,6 +65,18 @@ namespace SoL.AI
         private void Awake()
         {
             actor = GetComponent<BaseActor>();
+
+            actor.onDamageTaken += Revenge;
+        }
+
+        protected int Revenge(int amount, IDamageSource source)
+        {
+            if (source is BaseActor)
+            {
+                SetTarget(source as BaseActor);
+               
+            }
+            return amount;
         }
 
         protected void UpdatePathing()
@@ -166,7 +180,7 @@ namespace SoL.AI
                         {
                             moveDirection = ((target.transform.position + target.PhysicsAgent.b.center + Vector3.up * 0f) - transform.position).normalized;
                             actor.Move(moveDirection);
-                            Debug.Log("Attack with " + pickedAnim);
+                            //Debug.Log("Attack with " + pickedAnim);
                             actor.Attack(pickedAnim);
                             actor.AttackCharge -= bestAttack.chargeCost - 1f;
                             canMove = false;
@@ -198,11 +212,24 @@ namespace SoL.AI
                     if (newTarget != target)
                     {
                         Debug.Log(gameObject.name + ": TARGET AQUIRED");
-                        target = targets.First().t.GetComponent<BaseActor>();
-                        pathToTarget = Pathfinder.GetPath(transform.position, target.transform.position);
+                        SetTarget(targets.First().t.GetComponent<BaseActor>());
+                        
                     }
 
                 }
+            }
+
+        }
+
+        public void SetTarget(BaseActor target)
+        {
+            bool newTarget = target != this.target;
+            if (newTarget)
+            {
+                this.target = target;
+                pathToTarget = Pathfinder.GetPath(transform.position, target.transform.position);
+                foreach (var squadMate in squadMates)
+                    squadMate.SetTarget(target);
             }
 
         }

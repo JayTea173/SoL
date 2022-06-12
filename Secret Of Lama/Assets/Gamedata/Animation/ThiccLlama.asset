@@ -54,6 +54,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
@@ -176,6 +178,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 5525479289998984401, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
@@ -233,6 +236,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
@@ -290,6 +294,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -4834111966767559229, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
@@ -347,6 +352,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -1966146695396787531, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
@@ -404,6 +410,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -4834111966767559229, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
@@ -461,6 +468,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
       right:
@@ -518,6 +526,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -565,6 +574,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -8141659952138215382, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -604,6 +614,7 @@ MonoBehaviour:
         value: 1
         originOffset: {x: 1, y: 0}
         radius: 1.22
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -7732095536427937690, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -643,6 +654,7 @@ MonoBehaviour:
         value: 1
         originOffset: {x: 1.75, y: 0.5}
         radius: 1.33
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -682,6 +694,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -747,6 +760,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -4545133569898938739, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -804,6 +818,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -5255170262364334578, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -843,6 +858,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -882,6 +898,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -929,6 +946,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 0
     - value: 0
@@ -976,6 +994,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -452740835619884764, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1015,6 +1034,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -846675211739738947, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1054,6 +1074,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 6760574914775220397, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1093,6 +1114,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -1140,6 +1162,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1179,6 +1202,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: 6478759200897957258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:
@@ -1218,6 +1242,95 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
+      frameEvent: {fileID: 0}
+    mirroring:
+    - value: 1
+    - value: 0
+    - value: 0
+    - value: 0
+    fps: 8
+  - name: Talk
+    frames:
+    - left:
+        sprite: {fileID: -5190486561389316789, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
+      right:
+        sprite: {fileID: -5190486561389316789, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
+      down:
+        sprite: {fileID: 5717966634123777289, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1746498383361397632, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 2
+      flags: 5
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+      frameEvent: {fileID: 0}
+    - left:
+        sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
+      right:
+        sprite: {fileID: -1223390475702753497, guid: 18a3712fd5b7c354dbad578b4d7987ad, type: 3}
+      down:
+        sprite: {fileID: -7847207290846648294, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      up:
+        sprite: {fileID: -1095213896294712745, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
+      durationMultiplier: 2
+      flags: 5
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 16
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: -1
+        originOffset: {x: 1, y: 0}
+        radius: 1
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0

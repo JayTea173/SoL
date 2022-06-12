@@ -13,10 +13,16 @@ namespace SoL.Actors
         public Dialog dialog;
         public string displayName;
         public AudioClip voice;
+        public bool removeDialogAfterLaunch;
+
 
         public void StartDialog(DialogPartner partner)
         {
             DialogUI.Instance.Display(dialog, partner, this);
+            if (removeDialogAfterLaunch)
+                dialog = null;
+
         }
+
     }
 }

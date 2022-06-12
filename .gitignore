@@ -36,12 +36,14 @@ ExportedObj/
 *.user
 *.userprefs
 *.pidb
-*.booproj
+*.booproj 
 *.svd
 *.pdb
 *.mdb
 *.opendb
 *.VC.db
+Secret Of Lama/Temp/
+Secret Of Lama/Library/PackageCache/com.unity.burst@1.6.5/
 
 # Unity3D generated meta files
 *.pidb.meta

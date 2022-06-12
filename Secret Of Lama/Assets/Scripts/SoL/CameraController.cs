@@ -24,7 +24,9 @@ namespace SoL
 
         public void Shake(int pixels)
         {
-            shake = pixels;
+            shake += pixels;
+            if (shake > 16)
+                shake = 16;
             if (pixels > 0)
                 shaking = true;
         }

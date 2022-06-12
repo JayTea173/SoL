@@ -14,6 +14,8 @@ namespace SoL.Animation
         public Frame[] frames;
         public SpriteRenderer sr;
 
+        public bool playOnlyOnce;
+
         [Serializable]
         public class Frame
         {
@@ -33,13 +35,21 @@ namespace SoL.Animation
             {
                 timeTotal += timePerFrame * f.timeMultiplier;
             }
+
             
         }
 
         private void Update()
         {
             t += Time.deltaTime;
+
+            if (playOnlyOnce)
+            {
+                if (t > timeTotal)
+                    Destroy(gameObject);
+            }
             t %= timeTotal;
+
 
             float t0 = t;
             int i = -1;
@@ -49,10 +59,12 @@ namespace SoL.Animation
                 t0 -= frames[++i].timeMultiplier * timePerFrame;
             }
 
+
             if (currFrame != i)
             {
                 currFrame = i;
 
+                
             }
             sr.sprite = frames[currFrame].sprite;      
         }

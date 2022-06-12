@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee8b3e7cc8897d468ca700fb482493e, type: 3}
+  m_Name: Rabite_Attack
+  m_EditorClassIdentifier: 
+  soundBank: {fileID: 11400000, guid: 8b8173275ddcab14caa9a7afd5b9f519, type: 2}
+  volume: 1

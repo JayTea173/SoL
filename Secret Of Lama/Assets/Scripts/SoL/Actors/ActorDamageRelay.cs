@@ -25,6 +25,10 @@ namespace SoL.Actors
             {
                 return owningActor.Team;
             }
+            set
+            {
+                owningActor.Team = value;
+            }
         }
 
         public int Damage(int amount, IDamageSource damageSource)

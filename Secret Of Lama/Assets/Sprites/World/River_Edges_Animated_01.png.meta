@@ -96,6 +96,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -105,8 +106,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -127,6 +128,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -674,6 +677,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      River_Edges_Animated_01_11: -3249262962367425497
+      River_Edges_Animated_01_8: -6649414608742166541
+      River_Edges_Animated_01_5: -2655833479547104402
+      River_Edges_Animated_01_23: -4305296833323465559
+      River_Edges_Animated_01_2: 7812796109414474333
+      River_Edges_Animated_01_15: 7091748339345115315
+      River_Edges_Animated_01_19: 5458750259171218249
+      River_Edges_Animated_01_21: -6951925451545130337
+      River_Edges_Animated_01_6: 5761908250830762623
+      River_Edges_Animated_01_10: 1359990619611874909
+      River_Edges_Animated_01_4: -5262841621751030669
+      River_Edges_Animated_01_14: 1921932710277774724
+      River_Edges_Animated_01_18: 4636775378026000986
+      River_Edges_Animated_01_16: 611683835775206451
+      River_Edges_Animated_01_17: -3660790506649284011
+      River_Edges_Animated_01_3: -868741247147100193
+      River_Edges_Animated_01_7: -1421174344832042536
+      River_Edges_Animated_01_22: 6715968744127971339
+      River_Edges_Animated_01_1: 966157675903126772
+      River_Edges_Animated_01_0: -3473331505457121088
+      River_Edges_Animated_01_20: 457601398320798118
+      River_Edges_Animated_01_13: -8775089281538239907
+      River_Edges_Animated_01_12: 908080668297285579
+      River_Edges_Animated_01_9: -9046928611853761816
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

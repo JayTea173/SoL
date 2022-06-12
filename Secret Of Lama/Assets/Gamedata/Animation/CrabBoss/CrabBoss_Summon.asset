@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24843325db6a55d4bbf655172e587484, type: 3}
+  m_Name: CrabBoss_Summon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9159000734944264678, guid: 09c5f8048169311469ce2afcec205444, type: 3}
+  count: 2
+  timeouts:
+  - 0.4
+  soundOnFirstProjectile: {fileID: 0}
+  offset: {x: 1, y: 0}
+  initialAimAngleOffset: 0

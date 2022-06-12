@@ -1,0 +1,1768 @@
+fileFormatVersion: 2
+guid: 54947c2e2644abf41a90f6b08bd6d2ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2024824533276110988
+    second: Crab_Boss_0
+  - first:
+      213: 4552222291163553114
+    second: Crab_Boss_1
+  - first:
+      213: 5774977168541159306
+    second: Crab_Boss_2
+  - first:
+      213: -7314459618349655154
+    second: Crab_Boss_3
+  - first:
+      213: -4776613606099672546
+    second: Crab_Boss_4
+  - first:
+      213: -3236687039343443873
+    second: Crab_Boss_5
+  - first:
+      213: 4448214633960104643
+    second: Crab_Boss_6
+  - first:
+      213: 1523670629781945338
+    second: Crab_Boss_7
+  - first:
+      213: -8961260567891556478
+    second: Crab_Boss_8
+  - first:
+      213: -4069730707255964811
+    second: Crab_Boss_9
+  - first:
+      213: 1021397755873182415
+    second: Crab_Boss_10
+  - first:
+      213: -6584932611351379958
+    second: Crab_Boss_11
+  - first:
+      213: 8963007031924268396
+    second: Crab_Boss_12
+  - first:
+      213: -2458930142750778584
+    second: Crab_Boss_13
+  - first:
+      213: 2182916356671933655
+    second: Crab_Boss_14
+  - first:
+      213: 3982325801664552000
+    second: Crab_Boss_15
+  - first:
+      213: 5660397425596596942
+    second: Crab_Boss_16
+  - first:
+      213: 1802459302076815783
+    second: Crab_Boss_17
+  - first:
+      213: -3121336947778341925
+    second: Crab_Boss_18
+  - first:
+      213: 6902746334332552777
+    second: Crab_Boss_19
+  - first:
+      213: 8415604636169541375
+    second: Crab_Boss_20
+  - first:
+      213: 7106341319179799625
+    second: Crab_Boss_21
+  - first:
+      213: -78059599471320704
+    second: Crab_Boss_22
+  - first:
+      213: 8771193333778305065
+    second: Crab_Boss_23
+  - first:
+      213: 6098880308320592663
+    second: Crab_Boss_24
+  - first:
+      213: 2899812528868186025
+    second: Crab_Boss_25
+  - first:
+      213: -2399810637801602770
+    second: Crab_Boss_26
+  - first:
+      213: 546152788923391399
+    second: Crab_Boss_27
+  - first:
+      213: -2838412381040878656
+    second: Crab_Boss_28
+  - first:
+      213: -884419367022999881
+    second: Crab_Boss_29
+  - first:
+      213: 76340898628894593
+    second: Crab_Boss_30
+  - first:
+      213: 5766142009610493817
+    second: Crab_Boss_31
+  - first:
+      213: 4864925794763826603
+    second: Crab_Boss_32
+  - first:
+      213: 3540137971604474351
+    second: Crab_Boss_33
+  - first:
+      213: -4879850211132747285
+    second: Crab_Boss_34
+  - first:
+      213: 2077299653561662045
+    second: Crab_Boss_35
+  - first:
+      213: 6608531049460845062
+    second: Crab_Boss_36
+  - first:
+      213: -7218583937474778806
+    second: Crab_Boss_37
+  - first:
+      213: -7036380351855425771
+    second: Crab_Boss_38
+  - first:
+      213: 1894683289707863462
+    second: Crab_Boss_39
+  - first:
+      213: -3565305201740096456
+    second: Crab_Boss_40
+  - first:
+      213: -135771164340784284
+    second: Crab_Boss_41
+  - first:
+      213: 3812290182197747390
+    second: Crab_Boss_42
+  - first:
+      213: -1391349267964698600
+    second: Crab_Boss_43
+  - first:
+      213: -5770929585102309965
+    second: Crab_Boss_44
+  - first:
+      213: -9022599033144987650
+    second: Crab_Boss_45
+  - first:
+      213: 490402887033049588
+    second: Crab_Boss_46
+  - first:
+      213: -5558602100280923121
+    second: Crab_Boss_47
+  - first:
+      213: -4551041440578462945
+    second: Crab_Boss_48
+  - first:
+      213: -561808052864568394
+    second: Crab_Boss_49
+  - first:
+      213: -681073994106816812
+    second: Crab_Boss_50
+  - first:
+      213: -8343473420220610141
+    second: Crab_Boss_51
+  - first:
+      213: 9046938638879285467
+    second: Crab_Boss_52
+  - first:
+      213: -4073760053085917827
+    second: Crab_Boss_53
+  - first:
+      213: -192401002189849518
+    second: Crab_Boss_54
+  - first:
+      213: 4400339845300652299
+    second: Crab_Boss_55
+  - first:
+      213: -6195734664492355039
+    second: Crab_Boss_56
+  - first:
+      213: -237905698877031773
+    second: Crab_Boss_57
+  - first:
+      213: -7957316487165283460
+    second: Crab_Boss_58
+  - first:
+      213: -4520924183936592260
+    second: Crab_Boss_59
+  - first:
+      213: 199918811062483953
+    second: Crab_Boss_60
+  - first:
+      213: -7736561684151103451
+    second: Crab_Boss_61
+  - first:
+      213: 1637032871307249578
+    second: Crab_Boss_62
+  - first:
+      213: -7977906815171877336
+    second: Crab_Boss_63
+  - first:
+      213: -8103255710945841855
+    second: Crab_Boss_64
+  - first:
+      213: 6403431411805215890
+    second: Crab_Boss_65
+  - first:
+      213: 5166543685415260845
+    second: Crab_Boss_66
+  - first:
+      213: -4529715962404671146
+    second: Crab_Boss_67
+  - first:
+      213: -2141519020286953331
+    second: Crab_Boss_68
+  - first:
+      213: 6004118206486859010
+    second: Crab_Boss_69
+  - first:
+      213: -6035058429041888365
+    second: Crab_Boss_70
+  - first:
+      213: 8457054359285581260
+    second: Crab_Boss_71
+  - first:
+      213: -6230371009652991439
+    second: Crab_Boss_72
+  - first:
+      213: 1336164334395388819
+    second: Crab_Boss_73
+  - first:
+      213: 4408529476880645248
+    second: Crab_Boss_74
+  - first:
+      213: 1212071439800143365
+    second: Crab_Boss_75
+  - first:
+      213: 7287302368721749914
+    second: Crab_Boss_76
+  - first:
+      213: -4314697144651387226
+    second: Crab_Boss_77
+  - first:
+      213: -3627300487962380242
+    second: Crab_Boss_78
+  - first:
+      213: 3183317343303423293
+    second: Crab_Boss_79
+  - first:
+      213: -6092159637452400332
+    second: Crab_Boss_80
+  - first:
+      213: 8956694357582679932
+    second: Crab_Boss_81
+  - first:
+      213: 7317663406414812816
+    second: Crab_Boss_82
+  - first:
+      213: -4649750916797738597
+    second: Crab_Boss_83
+  - first:
+      213: 1978808908312578563
+    second: Crab_Boss_84
+  - first:
+      213: 4518071652966533917
+    second: Crab_Boss_85
+  - first:
+      213: -8449653469369674360
+    second: Crab_Boss_86
+  - first:
+      213: -1798302018950207244
+    second: Crab_Boss_87
+  - first:
+      213: -7784993834868703863
+    second: Crab_Boss_88
+  - first:
+      213: 2282958001651040037
+    second: Crab_Boss_89
+  - first:
+      213: 7224753338857928075
+    second: Crab_Boss_90
+  - first:
+      213: 5551238153668100367
+    second: Crab_Boss_91
+  - first:
+      213: 8290505493947544275
+    second: Crab_Boss_92
+  - first:
+      213: -5275296695801849935
+    second: Crab_Boss_93
+  - first:
+      213: -8443718114566161592
+    second: Crab_Boss_94
+  - first:
+      213: -1582117790410963446
+    second: Crab_Boss_95
+  - first:
+      213: -3561562911411597143
+    second: Crab_Boss_96
+  - first:
+      213: -3412726287683779074
+    second: Crab_Boss_97
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Crab_Boss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fc491a0d066e3e0800000000000000
+      internalID: -2024824533276110988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d1b6b1e0ebc2f30800000000000000
+      internalID: 4552222291163553114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f03ec3327d42050800000000000000
+      internalID: 5774977168541159306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b54541bb1dd7a90800000000000000
+      internalID: -7314459618349655154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12a12b9b3f06bdb0800000000000000
+      internalID: -4776613606099672546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50c2d2594af413d0800000000000000
+      internalID: -3236687039343443873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2e2e554ab3bbd30800000000000000
+      internalID: 4448214633960104643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 560
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb39d27d5a252510800000000000000
+      internalID: 1523670629781945338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287cb170ef433a380800000000000000
+      internalID: -8961260567891556478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b428eeb796587c0800000000000000
+      internalID: -4069730707255964811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2c33de8dbbc2e00800000000000000
+      internalID: 1021397755873182415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00048eadae9d94a0800000000000000
+      internalID: -6584932611351379958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d9c21586ff26c70800000000000000
+      internalID: 8963007031924268396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bd6d9201020edd0800000000000000
+      internalID: -2458930142750778584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc02dd5cd64b4e10800000000000000
+      internalID: 2182916356671933655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_15
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 480
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c9614a730144730800000000000000
+      internalID: 3982325801664552000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec28830f775cd8e40800000000000000
+      internalID: 5660397425596596942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a913667f2f930910800000000000000
+      internalID: 1802459302076815783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3be536598cea4d0800000000000000
+      internalID: -3121336947778341925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9468580083b7bcf50800000000000000
+      internalID: 6902746334332552777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6140d24db3ac470800000000000000
+      internalID: 8415604636169541375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_21
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c846e57cbce9260800000000000000
+      internalID: 7106341319179799625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081e336353daaeef0800000000000000
+      internalID: -78059599471320704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_23
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 400
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92051248dd989b970800000000000000
+      internalID: 8771193333778305065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713e211c35393a450800000000000000
+      internalID: 6098880308320592663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a75a6291243e3820800000000000000
+      internalID: 2899812528868186025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21c1ad80f822bed0800000000000000
+      internalID: -2399810637801602770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_27
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad1ed06113549700800000000000000
+      internalID: 546152788923391399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_28
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbdcfd5afeeb98d0800000000000000
+      internalID: -2838412381040878656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_29
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b64e148549e9b3f0800000000000000
+      internalID: -884419367022999881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ffb9094a73f0100800000000000000
+      internalID: 76340898628894593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_31
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 320
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f5a4f7b93750050800000000000000
+      internalID: 5766142009610493817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5688f1c30b38340800000000000000
+      internalID: 4864925794763826603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_33
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe94b5d8ab8112130800000000000000
+      internalID: 3540137971604474351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_34
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be15158661a474cb0800000000000000
+      internalID: -4879850211132747285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ab596670d04dc10800000000000000
+      internalID: 2077299653561662045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_36
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ac04ad9f736bb50800000000000000
+      internalID: 6608531049460845062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49a971972072db90800000000000000
+      internalID: -7218583937474778806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_38
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5178e1fa951c95e90800000000000000
+      internalID: -7036380351855425771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_39
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6add7ecd9644b4a10800000000000000
+      internalID: 1894683289707863462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cdd6e0fcd758ec0800000000000000
+      internalID: -3565305201740096456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463f9ba68d4ad1ef0800000000000000
+      internalID: -135771164340784284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe1b9ae8b9f7e430800000000000000
+      internalID: 3812290182197747390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_43
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810e674663fe0bce0800000000000000
+      internalID: -1391349267964698600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_44
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b53f283e1a89efa0800000000000000
+      internalID: -5770929585102309965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_45
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff2c9eabf949c280800000000000000
+      internalID: -9022599033144987650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_46
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f15e66d3d24ec600800000000000000
+      internalID: 490402887033049588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_47
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ce30d27d0ebd2b0800000000000000
+      internalID: -5558602100280923121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b1d381ce377d0c0800000000000000
+      internalID: -4551041440578462945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3bd017d8e0438f0800000000000000
+      internalID: -561808052864568394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_50
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6b1839fc65c86f0800000000000000
+      internalID: -681073994106816812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_51
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a946d24127063c80800000000000000
+      internalID: -8343473420220610141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_52
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0e72362ce2d8d70800000000000000
+      internalID: 9046938638879285467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_53
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d23afb0d81777c0800000000000000
+      internalID: -4073760053085917827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_54
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c7b02de44745df0800000000000000
+      internalID: -192401002189849518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_55
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09842a76c5211d30800000000000000
+      internalID: 4400339845300652299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122fb582624540aa0800000000000000
+      internalID: -6195734664492355039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_57
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aab460070ac2bcf0800000000000000
+      internalID: -237905698877031773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_58
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73772980dee19190800000000000000
+      internalID: -7957316487165283460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c769cf758637241c0800000000000000
+      internalID: -4520924183936592260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_60
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb3c45791146c200800000000000000
+      internalID: 199918811062483953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_61
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5209649632632a490800000000000000
+      internalID: -7736561684151103451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Crab_Boss_33: 3540137971604474351
+      Crab_Boss_9: -4069730707255964811
+      Crab_Boss_45: -9022599033144987650
+      Crab_Boss_16: 5660397425596596942
+      Crab_Boss_13: -2458930142750778584
+      Crab_Boss_0: -2024824533276110988
+      Crab_Boss_14: 2182916356671933655
+      Crab_Boss_44: -5770929585102309965
+      Crab_Boss_49: -561808052864568394
+      Crab_Boss_31: 5766142009610493817
+      Crab_Boss_1: 4552222291163553114
+      Crab_Boss_21: 7106341319179799625
+      Crab_Boss_48: -4551041440578462945
+      Crab_Boss_58: -7957316487165283460
+      Crab_Boss_54: -192401002189849518
+      Crab_Boss_38: -7036380351855425771
+      Crab_Boss_12: 8963007031924268396
+      Crab_Boss_34: -4879850211132747285
+      Crab_Boss_26: -2399810637801602770
+      Crab_Boss_32: 4864925794763826603
+      Crab_Boss_10: 1021397755873182415
+      Crab_Boss_55: 4400339845300652299
+      Crab_Boss_4: -4776613606099672546
+      Crab_Boss_46: 490402887033049588
+      Crab_Boss_30: 76340898628894593
+      Crab_Boss_57: -237905698877031773
+      Crab_Boss_5: -3236687039343443873
+      Crab_Boss_3: -7314459618349655154
+      Crab_Boss_22: -78059599471320704
+      Crab_Boss_18: -3121336947778341925
+      Crab_Boss_28: -2838412381040878656
+      Crab_Boss_42: 3812290182197747390
+      Crab_Boss_59: -4520924183936592260
+      Crab_Boss_53: -4073760053085917827
+      Crab_Boss_36: 6608531049460845062
+      Crab_Boss_43: -1391349267964698600
+      Crab_Boss_52: 9046938638879285467
+      Crab_Boss_29: -884419367022999881
+      Crab_Boss_11: -6584932611351379958
+      Crab_Boss_17: 1802459302076815783
+      Crab_Boss_56: -6195734664492355039
+      Crab_Boss_41: -135771164340784284
+      Crab_Boss_47: -5558602100280923121
+      Crab_Boss_50: -681073994106816812
+      Crab_Boss_40: -3565305201740096456
+      Crab_Boss_15: 3982325801664552000
+      Crab_Boss_7: 1523670629781945338
+      Crab_Boss_6: 4448214633960104643
+      Crab_Boss_25: 2899812528868186025
+      Crab_Boss_23: 8771193333778305065
+      Crab_Boss_27: 546152788923391399
+      Crab_Boss_20: 8415604636169541375
+      Crab_Boss_24: 6098880308320592663
+      Crab_Boss_61: -7736561684151103451
+      Crab_Boss_35: 2077299653561662045
+      Crab_Boss_37: -7218583937474778806
+      Crab_Boss_39: 1894683289707863462
+      Crab_Boss_51: -8343473420220610141
+      Crab_Boss_60: 199918811062483953
+      Crab_Boss_8: -8961260567891556478
+      Crab_Boss_2: 5774977168541159306
+      Crab_Boss_19: 6902746334332552777
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

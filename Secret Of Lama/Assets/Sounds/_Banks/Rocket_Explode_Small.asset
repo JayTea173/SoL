@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fbafbcf7f30d946b7c115c82560dee, type: 3}
+  m_Name: Rocket_Explode_Small
+  m_EditorClassIdentifier: 
+  entries:
+  - {fileID: 8300000, guid: d11471ec515f62940a54c5fb93851c9f, type: 3}
+  - {fileID: 8300000, guid: 5c83c74a4b0fa2a49889ec391a921703, type: 3}
+  - {fileID: 8300000, guid: e5a1c932b267946438424822e9de0f17, type: 3}

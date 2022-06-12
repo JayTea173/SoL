@@ -218,6 +218,16 @@ namespace SoL.Actors
                 Animation.SetAnimation("Idle", true);
         }
 
+        public override float AttackSpeedCharge
+        {
+            get
+            {
+                if (weapon == null)
+                return base.AttackSpeedCharge;
+                return weapon.chargeSpeedOverride;
+            }
+        }
+
         protected override void OnUpdate()
         {
             if (timeLeftRooted > 0f)
@@ -309,16 +319,17 @@ namespace SoL.Actors
 
             Vector2 offset = TransformDirection(Vector2.right);
             Vector3 center = transform.position + PhysicsAgent.b.center + PhysicsAgent.b.extents.x * (Vector3)offset;
-            var hits = Engine.QuadTree.GetAgentsInRange(center, 1f).Where((h) =>
+            var hits = Engine.QuadTree.GetAgentsInRange(center, 2f).Where((h) =>
             {
                 if (h.t == transform)
                     return false;
                 var a = h.t.GetComponent<IDamagable>();
-                if (a == null)
-                    return true;
-                
-                return !IsEnemy(a.Team);
+                //if (a == null)
+                return true;
+                //Debug.Log("Potential: " + (a as BaseActor).gameObject.name + " isEnemy: " + IsEnemy(a.Team).ToString());
+                //return !IsEnemy(a.Team);
             });
+
 
             foreach (var hit in hits)
             {
@@ -334,7 +345,7 @@ namespace SoL.Actors
                     }
                 }
             }
-            
+
             base.Attack();
             if (audioSource != null && weapon != null)
                 audioSource.PlayOneShot(weapon.attackSound.GetRandom(), 1f);

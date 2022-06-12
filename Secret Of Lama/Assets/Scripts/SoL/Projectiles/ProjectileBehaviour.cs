@@ -18,7 +18,14 @@ namespace SoL.Projectiles
         public float spread = 0f;
         public bool initializeInVelocityDirection = true;
 
+        public bool surviveTerrainCollision = false;
+        public bool surviveEnemyActorCollision = false;
+
+        public GameObject spawnOnHit;
+
         private float timeAlive;
+
+        private List<IDamagable> targetsDamaged = new List<IDamagable>();
 
         public string[] killMessages
         {
@@ -66,54 +73,88 @@ namespace SoL.Projectiles
         {
             timeAlive += Time.deltaTime;
             if (timeAlive > lifeTime)
+            {
+                if (spawnOnHit != null)
+                    Instantiate(spawnOnHit, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+            }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        /// <summary>
+        /// returns true if the projectile should be destroyed
+        /// </summary>
+        /// <returns></returns>
+        protected virtual bool OnHitTarget(Collider2D collider)
         {
             var ownerActor = owner.GetComponent<BaseActor>();
             if (ownerActor != null)
             {
-                var targetActor = collision.collider.GetComponent<IDamagable>();
+                var targetActor = collider.GetComponent<IDamagable>();
+                var targetProjectile = collider.GetComponent<ProjectileBehaviour>();
+                if (targetProjectile != null)
+                    return false;
+
                 if (targetActor != null)
                 {
-                    Debug.Log("Hit " + collision.collider.gameObject.name);
                     if (ownerActor.IsEnemy(targetActor.Team))
                     {
-                        targetActor.Damage(damageDealt, this);
-
-                    }
-                    else if ((IDamagable)ownerActor != targetActor)
-                    {
+                        //Debug.Log(targetActor.Team + " is enemy to " + ownerActor.gameObject.name);
                         if (targetActor is ActorDamageRelay)
                         {
-                            if ((targetActor as ActorDamageRelay).owningActor != ownerActor)
-                                Destroy(gameObject);
+                            var rl = targetActor as ActorDamageRelay;
+                            targetActor = rl.owningActor;
                         }
-                       
-                    }
 
+                        if (!targetsDamaged.Contains(targetActor))
+                        {
+                            targetActor.Damage(damageDealt, this);
+                            targetsDamaged.Add(targetActor);
+                        }
+                        return !surviveEnemyActorCollision;
+                    }
+                    else
+                    {
+                        if ((IDamagable)ownerActor != targetActor)
+                        {
+                            if (targetActor is ActorDamageRelay)
+                            {
+                                if ((targetActor as ActorDamageRelay).owningActor != ownerActor)
+                                    return false;
+                            }
+                            else
+                                return false;
+
+                        }
+                    }
+                    return false;
                 }
 
             }
+
+            return !surviveTerrainCollision;
+        }
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+
+            if (OnHitTarget(collision.collider))
+            {
+                if (spawnOnHit != null)
+                    Instantiate(spawnOnHit, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+
+
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            var ownerActor = owner.GetComponent<BaseActor>();
-            if (ownerActor != null)
+            if (OnHitTarget(collision))
             {
-                var targetActor = collision.GetComponent<IDamagable>();
-                if (targetActor != null)
-                {
-                    if (ownerActor.IsEnemy(targetActor.Team))
-                    {
-                        targetActor.Damage(damageDealt, this);
-                        Destroy(gameObject);
-                    }
-
-                }
-
+                if (spawnOnHit != null)
+                    Instantiate(spawnOnHit, transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
         }
 

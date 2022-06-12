@@ -18,49 +18,39 @@ MonoBehaviour:
     actions:
     - action: 1
       actionIntValue: 1
+      actionIntValueOther: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 3
       actionDeliverer: 0
-      managedCallback:
-        m_PersistentCalls:
-          m_Calls: []
     - action: 1
       actionIntValue: 0
+      actionIntValueOther: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 3.333
       actionDeliverer: 0
-      managedCallback:
-        m_PersistentCalls:
-          m_Calls: []
     - action: 1
       actionIntValue: 1
+      actionIntValueOther: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 3.666
       actionDeliverer: 0
-      managedCallback:
-        m_PersistentCalls:
-          m_Calls: []
     - action: 0
       actionIntValue: 2
+      actionIntValueOther: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 0.1
       actionDeliverer: 0
-      managedCallback:
-        m_PersistentCalls:
-          m_Calls: []
     - action: 1
       actionIntValue: 2
+      actionIntValueOther: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 4
       actionDeliverer: 0
-      managedCallback:
-        m_PersistentCalls:
-          m_Calls: []
   - text: Ah, yes sure. Didn't know that having a broken &&&&&& also messes with
       my head. Alright, I summon you forth my mighty llama neck muscles!
     delivererId: 1
@@ -70,22 +60,60 @@ MonoBehaviour:
     actions:
     - action: 0
       actionIntValue: 0
+      actionIntValueOther: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 0
       actionDeliverer: 0
-      managedCallback:
-        m_PersistentCalls:
-          m_Calls: []
   - text: Alright, I got it.
     delivererId: 1
     actions:
     - action: 3
       actionIntValue: 0
+      actionIntValueOther: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 0
       actionDeliverer: 0
-      managedCallback:
-        m_PersistentCalls:
-          m_Calls: []
+    - action: 11
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 0}
+      delay: 0.5
+      actionDeliverer: 1
+    - action: 16
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: Tilemap
+      actionObjectValue: {fileID: 11400000, guid: af69cecd5a527c642b8ae4b5c28698d5, type: 2}
+      delay: 0
+      actionDeliverer: 1
+    - action: 16
+      actionIntValue: -1
+      actionIntValueOther: 0
+      actionStringValue: Tilemap
+      actionObjectValue: {fileID: 11400000, guid: 6c84306057870b84daa2424b72d95444, type: 2}
+      delay: 0
+      actionDeliverer: 1
+    - action: 16
+      actionIntValue: 0
+      actionIntValueOther: 1
+      actionStringValue: Tilemap
+      actionObjectValue: {fileID: 11400000, guid: b88b351d5a1afb8489929a30b6596d21, type: 2}
+      delay: 0
+      actionDeliverer: 1
+    - action: 16
+      actionIntValue: -1
+      actionIntValueOther: 1
+      actionStringValue: Tilemap
+      actionObjectValue: {fileID: 11400000, guid: 2296ae357e8457a429be5940fa96be36, type: 2}
+      delay: 0
+      actionDeliverer: 1
+    - action: 17
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 11400000, guid: 7f2c2a7936369224a844f366fed6840a, type: 2}
+      delay: 0
+      actionDeliverer: 1

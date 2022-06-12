@@ -20,6 +20,7 @@ namespace SoL.Animation.FrameEvents
         public float[] timeouts;
         public AudioClip soundOnFirstProjectile;
         public Vector2 offset;
+        public float initialAimAngleOffset;
 
 
 
@@ -62,7 +63,7 @@ namespace SoL.Animation.FrameEvents
                     yield return new WaitForSeconds(timeout);
 
                 Vector3 pos = animated.transform.position + (Vector3)actor.TransformDirection(offset);
-
+                ProjectileBehaviour proj = null;
                 if (isActor)
                 {
                     var go = Instantiate(prefab, pos, Quaternion.identity);
@@ -70,9 +71,11 @@ namespace SoL.Animation.FrameEvents
                     ac.Move(actor.movementDirection);
                     ac.transform.right = Vector3.right;
                 } else if (isHoming)
-                    HomingProjectileBehaviour.Fire(prefab, animated.gameObject, pos, actor.movementDirection, Mathf.FloorToInt(frame.damage.value * actor.GetDamageDealt()), animated.GetComponent<AI.DefaultEnemyAI>().Target.transform);
+                    proj = HomingProjectileBehaviour.Fire(prefab, animated.gameObject, pos, actor.movementDirection, Mathf.FloorToInt(frame.damage.value * actor.GetDamageDealt()), animated.GetComponent<AI.DefaultEnemyAI>().Target.transform);
                 else
-                    ProjectileBehaviour.Fire(prefab, animated.gameObject, pos, actor.movementDirection, Mathf.FloorToInt(frame.damage.value * actor.GetDamageDealt()));
+                    proj = ProjectileBehaviour.Fire(prefab, animated.gameObject, pos, Quaternion.Euler(0f, 0f, initialAimAngleOffset) * actor.movementDirection, Mathf.FloorToInt(frame.damage.value * actor.GetDamageDealt()));
+
+
             }
         }
     }

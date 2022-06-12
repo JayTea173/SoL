@@ -84,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -93,8 +94,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -115,6 +116,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -578,6 +581,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Small_Crab_15: 5322133600478158564
+      Small_Crab_19: 3956245805521005091
+      Small_Crab_17: 6793983814801467206
+      Small_Crab_9: -9053911664922097964
+      Small_Crab_11: -3248613911952606570
+      Small_Crab_14: -7837658071522573397
+      Small_Crab_16: -1813838070226926912
+      Small_Crab_3: -7708851040140726762
+      Small_Crab_6: -8551517339414479407
+      Small_Crab_7: 2285572961670449370
+      Small_Crab_18: 7797433006698221630
+      Small_Crab_5: -4266938292670134117
+      Small_Crab_8: -4162344127926795323
+      Small_Crab_0: 5371563077619437689
+      Small_Crab_10: 7643419594401677113
+      Small_Crab_4: -3762517933660341062
+      Small_Crab_2: -2754407458319501930
+      Small_Crab_13: -4624246719779789632
+      Small_Crab_12: 879195872526550257
+      Small_Crab_1: -544862361937442881
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

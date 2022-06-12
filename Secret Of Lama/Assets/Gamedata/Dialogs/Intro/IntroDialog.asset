@@ -18,27 +18,35 @@ MonoBehaviour:
     actions:
     - action: 1
       actionIntValue: 2
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 0
       actionDeliverer: 0
     - action: 5
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -6569085115419798033, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
-      delay: 0
+      delay: 0.4
       actionDeliverer: 0
   - text: What?! I can't hear you! The waterfall is too loud!
     delivererId: 1
     actions:
     - action: 5
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 0.5
       actionDeliverer: 0
     - action: 5
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 3401712690424167018, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 0
@@ -48,12 +56,16 @@ MonoBehaviour:
     actions:
     - action: 7
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 0.5
       actionDeliverer: 1
     - action: 8
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 1.1
@@ -63,12 +75,16 @@ MonoBehaviour:
     actions:
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 0.5
       actionDeliverer: 0
     - action: 1
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -8743024609378438304, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 0.1
@@ -81,24 +97,32 @@ MonoBehaviour:
     actions:
     - action: 7
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 1.5
       actionDeliverer: 1
     - action: 8
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 2.1
       actionDeliverer: 1
     - action: 8
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 2.3
       actionDeliverer: 0
     - action: 1
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 2.4
@@ -112,12 +136,16 @@ MonoBehaviour:
     actions:
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 3859585090309970161, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 2.5
       actionDeliverer: 0
     - action: 5
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 3.8
@@ -130,37 +158,61 @@ MonoBehaviour:
     actions:
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 3859585090309970161, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 0
       actionDeliverer: 0
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 3326594898743561712, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 2.8
       actionDeliverer: 0
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 3859585090309970161, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
-      delay: 3.4
+      delay: 3.9
       actionDeliverer: 0
     - action: 5
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
-      delay: 3.6
+      delay: 4.55
       actionDeliverer: 0
   - text: Think so? Check out this one then!
     delivererId: 0
-    actions: []
+    actions:
+    - action: 22
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 1
+      actionStringValue: Shittorio
+      actionObjectValue: {fileID: 0}
+      delay: 2
+      actionDeliverer: 0
   - text: So you are actually serious about this? Uhm, this isn't "Programmer Art".
     delivererId: 1
     actions: []
   - text: It feels like low effort to me, where's all the detail?
     delivererId: 1
-    actions: []
+    actions:
+    - action: 22
+      actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
+      actionStringValue: Shittorio
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
   - text: It's not done yet! It's a prototype for a big thing I'm planning.
     delivererId: 0
     actions: []
@@ -169,12 +221,16 @@ MonoBehaviour:
     actions:
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 5341627953312478744, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.2
       actionDeliverer: 0
     - action: 5
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 3.2
@@ -184,12 +240,16 @@ MonoBehaviour:
     actions:
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 5341627953312478744, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.2
       actionDeliverer: 0
     - action: 5
       actionIntValue: 1
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: -1058212373141279964, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.7
@@ -199,12 +259,16 @@ MonoBehaviour:
     actions:
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 1014133331262204258, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.2
       actionDeliverer: 0
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.7
@@ -214,30 +278,40 @@ MonoBehaviour:
     actions:
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 1172398085379306001, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 0.8
       actionDeliverer: 0
     - action: 5
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 5717966634123777289, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.5
       actionDeliverer: 0
     - action: 9
       actionIntValue: 0
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.5
       actionDeliverer: 0
     - action: 10
       actionIntValue: 16
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 8194552075021095641, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       delay: 1.4
       actionDeliverer: 0
-    - action: 11
+    - action: 15
       actionIntValue: 180
+      actionIntValueOther: 0
+      actionFloatValue: 0
       actionStringValue: 
       actionObjectValue: {fileID: 0}
       delay: 1.4

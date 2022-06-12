@@ -59,7 +59,6 @@ namespace SoL.UI
 
         private void Awake()
         {
-            Debug.Log("DialogUI init");
             instance = this;
             originalSize = transform.localScale;
             cg = GetComponent<CanvasGroup>();
@@ -101,6 +100,11 @@ namespace SoL.UI
         public void OnNextDown()
         {
             skip = true;
+#if UNITY_EDITOR
+            if (Input.GetKey(KeyCode.Escape))
+                NextPage();
+#endif
+
             if (!animatingPage)
                 NextPage();
         }
@@ -110,7 +114,7 @@ namespace SoL.UI
             skip = false;
         }
 
-        protected void NextPage()
+        public void NextPage()
         {
             currentPageId++;
             if (currentPageId >= dialog.pages.Count)
@@ -122,6 +126,7 @@ namespace SoL.UI
         protected void Close()
         {
             SetVisibility(false);
+            PlayerController.Instance.ResetCameraToActor();
         }
 
         protected SpriteAnimationBehaviour SpeakingAnimator
@@ -149,7 +154,7 @@ namespace SoL.UI
             if (anim != null)
                 anim.SetAnimation("Talk", true);
 
-            currentPage.RunActions(this);
+            currentPage.RunActions(this, dialog);
             currentPage.PostProcess(initiated, initiator);
 
             StartCoroutine(AnimateTextCoroutine());
@@ -211,7 +216,12 @@ namespace SoL.UI
 
                 while (pagePosition < l)
                 {
-                    
+
+                    if (pagePosition >= currentPage.ProcessedText.Length || pagePosition < 0)
+                    {
+                        Close();
+                        yield break;
+                    }
                     char c = currentPage.ProcessedText[pagePosition];
                     pagePosition++;
                     float waitMultiplier = 1f;

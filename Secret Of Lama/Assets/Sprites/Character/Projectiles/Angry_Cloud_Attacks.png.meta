@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -141,8 +142,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -163,6 +164,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -962,6 +965,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Angry_Cloud_Attacks_14: -8820488562311572822
+      Angry_Cloud_Attacks_20: -7855827431203653858
+      Angry_Cloud_Attacks_8: -7371233026087543997
+      Angry_Cloud_Attacks_5: 792344476006595233
+      Angry_Cloud_Attacks_33: -941905122148941348
+      Angry_Cloud_Attacks_0: 8407506639387204234
+      Angry_Cloud_Attacks_6: 5282877393440684835
+      Angry_Cloud_Attacks_7: 1970370803286176130
+      Angry_Cloud_Attacks_13: 964971698245380594
+      Angry_Cloud_Attacks_21: -4044479266803751270
+      Angry_Cloud_Attacks_19: -2048259803868716480
+      Angry_Cloud_Attacks_24: 8147421578973485816
+      Angry_Cloud_Attacks_25: -3569466507615014635
+      Angry_Cloud_Attacks_26: -123884032134750518
+      Angry_Cloud_Attacks_35: -7030409508375653728
+      Angry_Cloud_Attacks_31: -5184926204380429518
+      Angry_Cloud_Attacks_16: -4349984433319710554
+      Angry_Cloud_Attacks_10: 8372874087734589316
+      Angry_Cloud_Attacks_11: 196353585178355847
+      Angry_Cloud_Attacks_28: -5818998237390275271
+      Angry_Cloud_Attacks_32: -5837287440031988318
+      Angry_Cloud_Attacks_15: -1196634519977491680
+      Angry_Cloud_Attacks_2: -1906429367687968813
+      Angry_Cloud_Attacks_23: 9110053233655695732
+      Angry_Cloud_Attacks_18: -3687961421562022148
+      Angry_Cloud_Attacks_4: -14657610057777321
+      Angry_Cloud_Attacks_17: -6877804541227730702
+      Angry_Cloud_Attacks_3: 6959015077231102301
+      Angry_Cloud_Attacks_30: 7909704812187891476
+      Angry_Cloud_Attacks_29: -6040044328968629090
+      Angry_Cloud_Attacks_27: -499000402165928773
+      Angry_Cloud_Attacks_1: -7342528807454210367
+      Angry_Cloud_Attacks_9: -8955547019810596352
+      Angry_Cloud_Attacks_12: 2997113762327482620
+      Angry_Cloud_Attacks_22: 6136002167121155183
+      Angry_Cloud_Attacks_34: 5515968255225267398
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

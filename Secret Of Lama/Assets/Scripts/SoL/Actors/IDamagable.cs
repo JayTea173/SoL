@@ -13,6 +13,7 @@ namespace SoL.Actors
         EnumTeam Team
         {
             get;
+            set;
         }
 
         bool IsDead

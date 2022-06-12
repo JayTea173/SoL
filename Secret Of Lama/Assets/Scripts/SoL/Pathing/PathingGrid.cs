@@ -220,7 +220,7 @@ namespace SoL.Pathing
                         int xMin = xOrigin + cx * chunkSizeX;
                         int xMax = xMin + chunkSizeX;
 
-                        if (chunks[cy * chunksY + cx].Empty)
+                        if (chunks[cy * chunksX + cx].Empty)
                         {
                             Gizmos.color = new Color(1f, 1f, 1f, 0.2f);
                             Gizmos.DrawMesh(gizmosQuadMesh, 0, new Vector3(xMin + chunkSizeX / 2, yMin + chunkSizeY / 2, 5f), Quaternion.identity, new Vector3(chunkSizeX, chunkSizeY));

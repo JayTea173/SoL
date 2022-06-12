@@ -19,6 +19,7 @@ namespace SoL.Items
         protected ushort damageIncreasePerLevel;
         [Tooltip("Array index are Player Character ids")]
         public CharacterData[] characterData;
+        public float chargeSpeedOverride;
 
 
         [Serializable]

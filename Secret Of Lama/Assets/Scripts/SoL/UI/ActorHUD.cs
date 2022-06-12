@@ -22,6 +22,8 @@ namespace SoL.UI
         public RectTransform attackGaugeRect;
         public GameObject attackGauge;
         public Transform attackGaugeParent;
+        public Image levelGauge;       
+        public Image weaponLevelGauge;
 
         private float timeGaugeAtFull = 0f;
 
@@ -66,13 +68,22 @@ namespace SoL.UI
         {
             yield return new WaitForEndOfFrame();
             hpDisplay.text = actor.Hitpoints.ToString() + "/" + actor.HitpointsMax.ToString();
-            levelDisplay.text = actor.level.ToString();
-
+            
         }
 
         private void Update()
         {
             float chargeLevel = 0f;
+            levelDisplay.text = actor.level.ToString();
+            levelGauge.fillAmount = (actor.xp - actor.xpNext[actor.level - 1]) / (float)(actor.xpNext[actor.level] - actor.xpNext[actor.level - 1]);
+            if (actor.weapon != null)
+            {
+                weaponLevelGauge.fillAmount = PlayerController.Instance.Actor.weapon.characterData[0].SkillProgress;
+            }
+            else
+            {
+                weaponLevelGauge.fillAmount = 0f;
+            }           
             cg.alpha = actor.weapon == null ? 0f : 1f;
             if (actor.AttackCharge > 0f)
             {

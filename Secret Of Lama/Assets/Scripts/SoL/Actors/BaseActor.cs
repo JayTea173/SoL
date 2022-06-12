@@ -60,6 +60,10 @@ namespace SoL.Actors
             {
                 return team;
             }
+            set
+            {
+                team = value;
+            }
         }
 
         public bool IsEnemy(EnumTeam other)
@@ -212,6 +216,14 @@ namespace SoL.Actors
         [SerializeField]
         private float attackChargeSpeed = .5f;
 
+        public virtual float AttackSpeedCharge
+        {
+            get
+            {
+                return attackChargeSpeed;
+            }
+        }
+
 
         public Vector3 position;
 
@@ -246,6 +258,8 @@ namespace SoL.Actors
                 return 0;
 
 
+            bool wasDead = IsDead;
+
             if (amount > 0)
             {
                 if (onDamageTaken != null)
@@ -275,11 +289,15 @@ namespace SoL.Actors
 
             if (IsDead)
             {
-                timeOfDeath = Time.time;
-                damageSource.OnKill(this);
                 animation.SetAnimation("Death", true);
-                if (onKilledBy != null)
-                    onKilledBy(damageSource);
+                if (!wasDead)
+                {
+                    timeOfDeath = Time.time;
+                    damageSource.OnKill(this);
+
+                    if (onKilledBy != null)
+                        onKilledBy(damageSource);
+                }
             }
             else
                 animation.SetAnimation("Hurt");
@@ -454,6 +472,8 @@ namespace SoL.Actors
                 Animation.SetAnimation(0);
         }
 
+        public bool hasUpDownAnimation;
+
         public void Move(Vector2 move)
         {
             if (move.sqrMagnitude > 0f)
@@ -461,10 +481,20 @@ namespace SoL.Actors
                 moving = true;
                 this.movement = move;
                 transform.hasChanged = true;
-                if (move.x != 0f)
-                    SetFacing(move.x > 0f ? BaseActor.Facing.Right : BaseActor.Facing.Left);
-                else if (move.y != 0f)
-                    SetFacing(move.y > 0f ? BaseActor.Facing.Up : BaseActor.Facing.Down);
+                if (hasUpDownAnimation)
+                {
+                    if (move.x != 0f && Mathf.Abs(move.x) > Mathf.Abs(move.y))
+                        SetFacing(move.x > 0f ? BaseActor.Facing.Right : BaseActor.Facing.Left);
+                    else if (move.y != 0f)
+                        SetFacing(move.y > 0f ? BaseActor.Facing.Up : BaseActor.Facing.Down);
+                }
+                else
+                {
+                    if (move.x != 0f)
+                        SetFacing(move.x > 0f ? BaseActor.Facing.Right : BaseActor.Facing.Left);
+                    else if (move.y != 0f)
+                        SetFacing(move.y > 0f ? BaseActor.Facing.Up : BaseActor.Facing.Down);
+                }
 
                 PlayMovementAnimation();
 
@@ -556,7 +586,7 @@ namespace SoL.Actors
         {
             if (charging && !animation.GetCurrentFrameFlags().HasFlag(FrameFlags.CHARGING_BLOCKED))
             {
-                attackCharge += Time.deltaTime * attackChargeSpeed;
+                attackCharge += Time.deltaTime * AttackSpeedCharge;
                 if (attackCharge >= MaxAttackCharge)
                 {
                     attackCharge = MaxAttackCharge;

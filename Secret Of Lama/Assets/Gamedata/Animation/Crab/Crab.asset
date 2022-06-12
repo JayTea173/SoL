@@ -284,7 +284,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
-      frameEvent: {fileID: 0}
+      frameEvent: {fileID: 11400000, guid: 703708e7076fcf144bbe7a43a1bfd497, type: 2}
     - left:
         sprite: {fileID: 2285572961670449370, guid: d2ffda15d9f09554cb5e5bc92eb2a60a, type: 3}
       right:
@@ -666,7 +666,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
-      frameEvent: {fileID: 0}
+      frameEvent: {fileID: 11400000, guid: d9ec032cafd55a9479bdd65e1b3b0794, type: 2}
     - left:
         sprite: {fileID: -9053911664922097964, guid: d2ffda15d9f09554cb5e5bc92eb2a60a, type: 3}
       right:

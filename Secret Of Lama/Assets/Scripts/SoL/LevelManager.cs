@@ -16,6 +16,8 @@ namespace SoL
 
         protected Scene loaded;
 
+        protected bool loading = false;
+
         public Scene Loaded
         {
             get
@@ -26,7 +28,9 @@ namespace SoL
 
         public void Load(string name, bool fadeInAndOut = false)
         {
-
+            if (loading)
+                return;
+            loading = true;
             if (DialogUI.Instance.visible)
             {
                 DialogUI.Instance.visible = false;
@@ -46,7 +50,10 @@ namespace SoL
         private void OnSceneLoaded(Scene sc, LoadSceneMode m)
         {
             if (sc.name != "Game")
+            {
                 loaded = sc;
+                SceneManager.SetActiveScene(loaded);
+            }
         }
 
         private void LoadAction(string name)
@@ -56,6 +63,7 @@ namespace SoL
                     SceneManager.UnloadSceneAsync(loaded);
 
             SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
+            loading = false;
         }
 
         public IEnumerator TransitionedLoad(string name)

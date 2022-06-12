@@ -22,7 +22,13 @@ MonoBehaviour:
       actionObjectValue: {fileID: 4789219768415597031, guid: 6e6069fc874a18d4e8583f0bf3406711, type: 3}
       delay: 0
       actionDeliverer: 0
-  - text: GO!
+    - action: 11
+      actionIntValue: 0
+      actionStringValue: 
+      actionObjectValue: {fileID: 4789219768415597031, guid: 6e6069fc874a18d4e8583f0bf3406711, type: 3}
+      delay: 0.5
+      actionDeliverer: 1
+  - text: GO!|| Huh, I still have the donut with me. What's happening?
     delivererId: 1
     actions:
     - action: 4
@@ -31,15 +37,27 @@ MonoBehaviour:
       actionObjectValue: {fileID: 0}
       delay: 0
       actionDeliverer: 0
-    - action: 7
+    - action: 8
       actionIntValue: 3
       actionStringValue: 
       actionObjectValue: {fileID: 0}
-      delay: 0.2
-      actionDeliverer: 1
-  - text: It's duplicating!| UN|LIM|I|TED| POWER!!!
+      delay: 0.25
+      actionDeliverer: 0
+  - text: HAAA!! It's duplicating!| UN|LIM|I|TED| POWER!!!
     delivererId: 1
-    actions: []
+    actions:
+    - action: 4
+      actionIntValue: 0
+      actionStringValue: Attack
+      actionObjectValue: {fileID: 0}
+      delay: 0
+      actionDeliverer: 0
+    - action: 8
+      actionIntValue: 0
+      actionStringValue: Attack
+      actionObjectValue: {fileID: 0}
+      delay: 1.25
+      actionDeliverer: 0
   - text: Pressing L1 or TAB lets you swap to your sword again.
     delivererId: 0
     actions:

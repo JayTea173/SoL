@@ -21,7 +21,7 @@ namespace SoL.Audio
 
         public AudioClip GetRandom()
         {
-            return entries[UnityEngine.Random.Range(0, l - 1)];
+            return entries[UnityEngine.Random.Range(0, l)];
         }
     }
 }

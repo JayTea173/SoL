@@ -210,11 +210,13 @@ MonoBehaviour:
   flyingHeight: 0
   attackChargeSpeed: 0.5
   position: {x: 0, y: 0, z: 0}
+  killMessages: []
   exp: 1
   gp: 2
   element: 0
   typeFlags: 0
   attack: 20
+  defense: 0
 --- !u!114 &2609371349789692586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 675bcef3bf8bf0147aabddd21eecf66f, type: 2}
   displayName: El'Diot
-  voice: {fileID: 8300000, guid: 06e206e1e7cedd84cbb31fb0c18328fd, type: 3}
+  voice: {fileID: 8300000, guid: 8d1e8d32dbae9f64dbf985c92d0dd1af, type: 3}
 --- !u!210 &2609371349789692757
 SortingGroup:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ namespace SoL.Projectiles
             base.OnUpdate();
             if (target != null)
             {
-                Debug.Log("ROT!");
                 //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(target.transform.position - transform.position), Time.deltaTime * turnRate);
                 Vector3 diff = (target.transform.position - transform.position);
                 diff.z = 0f;
@@ -48,6 +47,16 @@ namespace SoL.Projectiles
                 AudioSource.PlayClipAtPoint(explosionSound.GetRandom(), transform.position);
         }
 
+        protected override bool OnHitTarget(Collider2D collider)
+        {
+            bool b = base.OnHitTarget(collider);
+
+            //if (explosionSound != null && b)
+            //    AudioSource.PlayClipAtPoint(explosionSound.GetRandom(), transform.position);
+
+            return b;
+        }
+
         public static HomingProjectileBehaviour Fire(GameObject prefab, GameObject owner, Vector3 position, Vector3 direction, int damage, Transform target)
         {
             var go = Instantiate(prefab, position, Quaternion.identity);
@@ -56,6 +65,7 @@ namespace SoL.Projectiles
             proj.damageDealt += damage;
             proj.owner = owner;
             proj.target = target;
+            proj.lifeTime *= Engine.RandomFloat(0.9f, 1.1f);
             var rb = proj.GetComponent<Rigidbody2D>();
             Vector3 dir = go.transform.right;
 

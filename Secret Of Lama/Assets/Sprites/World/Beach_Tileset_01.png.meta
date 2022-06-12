@@ -204,6 +204,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -213,8 +214,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -235,6 +236,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -1550,6 +1553,67 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Beach_Tileset_01_4: -818138403957333405
+      Beach_Tileset_01_15: -5300949796242713076
+      Beach_Tileset_01_44: -4401044179672685365
+      Beach_Tileset_01_42: -5231143978560120938
+      Beach_Tileset_01_2: 6543626266372254878
+      Beach_Tileset_01_58: -1859723378263736904
+      Beach_Tileset_01_38: 9082029316287895741
+      Beach_Tileset_01_30: 9019302175855225192
+      Beach_Tileset_01_26: -1970921122914807435
+      Beach_Tileset_01_10: 6391359745309828797
+      Beach_Tileset_01_7: 768807146717593288
+      Beach_Tileset_01_33: 543487112240878992
+      Beach_Tileset_01_52: -2856589678719243205
+      Beach_Tileset_01_57: -405637057781892889
+      Beach_Tileset_01_54: -8499981862243775388
+      Beach_Tileset_01_8: -4469294508633069813
+      Beach_Tileset_01_6: -8271904174022753592
+      Beach_Tileset_01_3: -5529647171206866485
+      Beach_Tileset_01_11: 4776334959537133881
+      Beach_Tileset_01_18: -8825340242463630691
+      Beach_Tileset_01_31: 4311966267289961995
+      Beach_Tileset_01_40: -2313432034349773654
+      Beach_Tileset_01_55: 2041548283318758364
+      Beach_Tileset_01_48: -472888474928818227
+      Beach_Tileset_01_22: 6882171418316173333
+      Beach_Tileset_01_34: -2194484690076673383
+      Beach_Tileset_01_0: -7685356544719533894
+      Beach_Tileset_01_14: 2460691738044342892
+      Beach_Tileset_01_56: 911366245089802605
+      Beach_Tileset_01_9: -7246622433620316562
+      Beach_Tileset_01_12: -505974105903916205
+      Beach_Tileset_01_53: 5069790575408532067
+      Beach_Tileset_01_19: -2129796192429049458
+      Beach_Tileset_01_5: -4678766638033800869
+      Beach_Tileset_01_16: 3893337534584840813
+      Beach_Tileset_01_20: -5309790809068281095
+      Beach_Tileset_01_46: 8215744161931015589
+      Beach_Tileset_01_23: -2964615505120439929
+      Beach_Tileset_01_37: 2025161935721793646
+      Beach_Tileset_01_41: 7071908699759733268
+      Beach_Tileset_01_36: 3583496563292831271
+      Beach_Tileset_01_27: -6116531108142665998
+      Beach_Tileset_01_24: -746669388148959550
+      Beach_Tileset_01_29: -6921442133306158292
+      Beach_Tileset_01_32: 530898921703426561
+      Beach_Tileset_01_35: 4561798358516764620
+      Beach_Tileset_01_50: -3965197626231828123
+      Beach_Tileset_01_13: 5862295816678712367
+      Beach_Tileset_01_17: 1151903047800477961
+      Beach_Tileset_01_47: -7961557107886385493
+      Beach_Tileset_01_43: -1531286264755038137
+      Beach_Tileset_01_59: 4320987977461305937
+      Beach_Tileset_01_1: 411365407508141229
+      Beach_Tileset_01_39: -883947390419833013
+      Beach_Tileset_01_49: -446938140489313614
+      Beach_Tileset_01_28: -5657164884293662755
+      Beach_Tileset_01_21: 4867770095172984013
+      Beach_Tileset_01_45: 5766376163972656250
+      Beach_Tileset_01_25: -339568689492369542
+      Beach_Tileset_01_51: 6653807716867416325
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

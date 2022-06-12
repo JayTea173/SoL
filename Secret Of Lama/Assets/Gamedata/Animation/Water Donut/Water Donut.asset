@@ -255,10 +255,10 @@ MonoBehaviour:
         invertMotionSamplingX: 0
         invertMotionSamplingY: 0
       damage:
-        value: -1
-        originOffset: {x: 1, y: 0}
-        radius: 1
-      frameEvent: {fileID: 0}
+        value: 1
+        originOffset: {x: 0, y: 0}
+        radius: -1
+      frameEvent: {fileID: 11400000, guid: 91ce6ad928880cc48909e8bf1879164c, type: 2}
     - left:
         sprite: {fileID: 4182252478188714253, guid: 653e2f80a306922478c26068ade01e2a, type: 3}
       right:

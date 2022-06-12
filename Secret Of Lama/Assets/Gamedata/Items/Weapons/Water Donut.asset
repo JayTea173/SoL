@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Water Donut
   m_EditorClassIdentifier: 
   damage: 2
-  attackSound: {fileID: 11400000, guid: 8b56d947291055e42baa82d9a9677f71, type: 2}
+  attackSound: {fileID: 11400000, guid: 8a88ec3fbad0f194cba8bdb50e52bd33, type: 2}
   upgradeLevel: 0
   damageIncreasePerLevel: 8
   characterData:
   - animations: {fileID: 11400000, guid: 365c95e5d5dafef4bb83ff94421f248c, type: 2}
-    skillLevel: 1.73
+    skillLevel: 0
+  chargeSpeedOverride: 0.6

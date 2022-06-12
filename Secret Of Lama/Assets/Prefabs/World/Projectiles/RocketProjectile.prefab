@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 8011586657064558419}
   - component: {fileID: 8011586657064558444}
   - component: {fileID: 5188563392023090704}
+  - component: {fileID: 6859917198316915891}
   m_Layer: 0
   m_Name: RocketProjectile
   m_TagString: Untagged
@@ -233,12 +234,15 @@ MonoBehaviour:
   startSpeed: 4
   lifeTime: 10
   spread: 0
+  initializeInVelocityDirection: 1
+  surviveTerrainCollision: 0
+  spawnOnHit: {fileID: 5901082014441082441, guid: 2ba703f77bd56554492f69313a9a1491, type: 3}
   target: {fileID: 0}
   turnRate: 10
   thrust: 400
   launchSound: {fileID: 11400000, guid: b62927707bd95ab42a916ad107791bdf, type: 2}
   projectileLoop: {fileID: 8300000, guid: 8258b98de8f070440bb09010351aa778, type: 3}
-  explosionSound: {fileID: 11400000, guid: b81628a074413b840bf42d71fb3e74e1, type: 2}
+  explosionSound: {fileID: 11400000, guid: b123a4911f057984e9b4a0fd1a604445, type: 2}
 --- !u!61 &8011586657064558419
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -382,3 +386,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6859917198316915891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011586657064558445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4400e22450998264699772d4fb0eea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fps: 8
+  frames:
+  - sprite: {fileID: -1813838070226926912, guid: d2ffda15d9f09554cb5e5bc92eb2a60a, type: 3}
+    timeMultiplier: 1
+  - sprite: {fileID: 6793983814801467206, guid: d2ffda15d9f09554cb5e5bc92eb2a60a, type: 3}
+    timeMultiplier: 1
+  sr: {fileID: 8011586657064558418}
+  playOnlyOnce: 0

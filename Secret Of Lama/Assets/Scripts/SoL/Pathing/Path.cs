@@ -33,6 +33,8 @@ namespace SoL.Pathing
         {
             if (currentTarget >= 0 && currentTarget < positions.Length)
                 return positions[currentTarget];
+            else if (positions.Count() <= 0)
+                return Vector3.zero;
             else
                 return positions[0];
         }

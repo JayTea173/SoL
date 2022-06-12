@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,79 @@ namespace SoL
                 if (tm.gameObject.layer == (tm.gameObject.layer | 1 << collisionLayer))
                     collidingLayers.Add(tm);
         }
+
+        public Tilemap FindLayerByName(string name)
+        {
+            foreach (var l in tilemapLayers)
+            {
+                if (l.name == name)
+                    return l;
+            }
+            return null;
+        }
+
+        
+
+        public void SetColorDownsampling(float value, float seconds)
+        {
+            StartCoroutine(SetColorDownsamplingCoroutine(value, seconds));
+        }
+
+        public void SetUVDownsampling(float value, float seconds)
+        {
+            StartCoroutine(SetUVDownsamplingCoroutine(value, seconds));
+        }
+
+        private TilemapRenderer[] GetTileMapRenderers()
+        {
+            TilemapRenderer[] r = new TilemapRenderer[tilemapLayers.Length];
+            for (int i = 0; i < tilemapLayers.Length; i++)
+            {
+                r[i] = tilemapLayers[i].GetComponent<TilemapRenderer>();
+            }
+            return r;
+        }
+
+        public IEnumerator SetColorDownsamplingCoroutine(float value, float seconds)
+        {
+            var r = GetTileMapRenderers();
+            var mat = r[0].sharedMaterial;
+            float v = mat.GetFloat("_ColorDownsamplingSteps");
+            value = Mathf.Clamp01(value) * 16f;
+
+
+            float t = 0f;
+            while (t < seconds)
+            {
+
+                yield return new WaitForEndOfFrame();
+                mat.SetFloat("_ColorDownsamplingSteps", v + (value - v) * (t / seconds));
+                t += Time.deltaTime;
+            }
+            mat.SetFloat("_ColorDownsamplingSteps", value);
+            yield break;
+        }
+
+        public IEnumerator SetUVDownsamplingCoroutine(float value, float seconds)
+        {
+            var r = GetTileMapRenderers();
+            var mat = r[0].sharedMaterial;
+            value = Mathf.Clamp01(value);
+            float v = mat.GetFloat("_UVDownsampling");
+
+            float t = 0f;
+            while (t < seconds)
+            {
+
+                yield return new WaitForEndOfFrame();
+                mat.SetFloat("_UVDownsampling", v + (value - v) * (t / seconds));
+                t += Time.deltaTime;
+            }
+            mat.SetFloat("_UVDownsampling", value);
+            yield break;
+        }
+
+
 
         public IEnumerable<Vector3Int> GetTilesInRadius(int layer, Vector3 point, float radius)
         {
