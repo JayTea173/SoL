@@ -82,6 +82,7 @@ namespace SoL.Physics
         private int numLeaves;
 
         private List<Agent>[] nodeInhabitants;
+        private List<Agent> allInhabitants = new List<Agent>(32);
 
 
         public QuadTree(uint size, uint leafSize)
@@ -132,6 +133,11 @@ namespace SoL.Physics
             yield break;
         }
 
+        public List<Agent> GetAllAgents()
+        {
+            return allInhabitants;
+        }
+
         public IEnumerable<Agent> GetAgentsInRange(Vector3 p, float radius)
         {
             var originLeaf = GetLeafContaining(p);
@@ -171,12 +177,18 @@ namespace SoL.Physics
 
         public bool RemoveAgent(Agent physicsAgent)
         {
-            return nodeInhabitants[physicsAgent.ab.node].Remove(physicsAgent);
+            bool b = nodeInhabitants[physicsAgent.ab.node].Remove(physicsAgent);
+            if (b)
+                allInhabitants.Remove(physicsAgent);
+
+            return b;
         }
 
         private int RemoveNullAgents(int nodeId)
         {
-            return nodeInhabitants[nodeId].RemoveAll((agent) => agent.t == null);
+            int c = nodeInhabitants[nodeId].RemoveAll((agent) => agent.t == null);
+            allInhabitants.RemoveAll(agent => agent.t == null);
+            return c;
         }
 
         private IEnumerable<Agent> GetAgentsInNodeInRange(int nodeId, Vector3 p, float radius)
@@ -255,6 +267,7 @@ namespace SoL.Physics
                     nodeInhabitants[a.ab.node].Remove(a);
                 }
                 nodeInhabitants[nodeId].Add(a);
+                allInhabitants.Add(a);
                 a.ab.node = nodeId;
             }
         }

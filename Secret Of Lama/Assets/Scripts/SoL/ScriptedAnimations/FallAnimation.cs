@@ -38,6 +38,7 @@ namespace SoL.ScriptedAnimations
 
         protected IEnumerator Play()
         {
+            
             player.RootForSeconds(2f);
             player.weapon = null;
             player.Rigidbody.isKinematic = true;

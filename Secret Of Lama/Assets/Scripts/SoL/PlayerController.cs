@@ -137,7 +137,7 @@ namespace SoL
                     }
 
 
-                    if (Input.GetButtonUp("Sprint"))
+                    if (!Input.GetButton("Sprint") && actor.sprinting)
                         actor.sprinting = false;
 
                     if (move.sqrMagnitude <= 0f && actor.sprinting)

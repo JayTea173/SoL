@@ -4,16 +4,34 @@ using SoL.Tiles;
 using SoL.UI;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Sirenix.OdinInspector;
+using SoL.Serialization;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace SoL.Actors
 {
     [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D), typeof(AudioSource))]
-    public class BaseActor : MonoBehaviour, IDamagable, IDamageSource
+    public class BaseActor : MonoBehaviour, IDamagable, IDamageSource, IIdentifyable, ISerializationCallbackReceiver
     {
+        [Sirenix.OdinInspector.ReadOnly]
+        public string guid;
+        
+        [Sirenix.OdinInspector.ReadOnly]
+        public ulong prefabId;
+
+        public float animationSpeedMultiplier = 1f;
+
+        
         public enum Facing
         {
             Left,
@@ -245,6 +263,38 @@ namespace SoL.Actors
         }
 
         protected SpriteRenderer shadowRenderer;
+        
+        public virtual void Serialize(BinaryWriter bw)
+        {
+            bw.Write(transform.position.x);
+            bw.Write(transform.position.y);
+            bw.Write(transform.position.z);
+            bw.Write((byte)facing);
+            bw.Write(hp);
+            bw.Write(hpMax);
+            bw.Write(mp);
+            bw.Write(mpMax);
+            bw.Write(attackCharge);
+        }
+
+        public virtual void Deserialize(BinaryReader br)
+        {
+            transform.position = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
+            SetFacing((Facing)br.ReadByte());
+            hp = br.ReadInt32();
+            hpMax = br.ReadInt32();
+            mp = br.ReadInt32();
+            mpMax = br.ReadInt32();
+            attackCharge = br.ReadSingle();
+
+            if (IsDead)
+            {
+                animation.SetAnimation("Death", true);
+                timeOfDeath = Time.time;
+            }
+            else
+                timeOfDeath = default;
+        }
 
         public void Revive()
         {
@@ -279,7 +329,9 @@ namespace SoL.Actors
                 amount = hp;
 
             if (amount > 0)
+            {
                 audioSource.PlayOneShot(soundHurt.GetRandom());
+            }
 
             hp -= amount;
 
@@ -565,11 +617,13 @@ namespace SoL.Actors
                     foreach (var p in positions)
                     {
                         var tile = tm.GetTile(p);
-                        if (tile is DestructibleTile)
+                        if (tile is DestructibleTile dt)
                         {
-                            (tile as DestructibleTile).Kill(p, tm);
+                            dt.Kill(p, tm);
                         }
+                        tm.RefreshTile(p);
                     }
+                    
 
                 }
             }
@@ -586,16 +640,11 @@ namespace SoL.Actors
         {
             if (charging && !animation.GetCurrentFrameFlags().HasFlag(FrameFlags.CHARGING_BLOCKED))
             {
-                attackCharge += Time.deltaTime * AttackSpeedCharge;
-                if (attackCharge >= MaxAttackCharge)
-                {
-                    attackCharge = MaxAttackCharge;
-                    charging = false;
-                }
+                Recharge();
             }
 
             if (animation != null)
-                animation.Advance(Time.deltaTime);
+                animation.Advance(Time.deltaTime * animationSpeedMultiplier);
 
             if (IsDead)
             {
@@ -609,6 +658,16 @@ namespace SoL.Actors
             {
                 UpdateLiquid();
 
+            }
+        }
+
+        protected virtual void Recharge()
+        {
+            attackCharge += Time.deltaTime * AttackSpeedCharge;
+            if (attackCharge >= MaxAttackCharge)
+            {
+                attackCharge = MaxAttackCharge;
+                charging = false;
             }
         }
 
@@ -692,5 +751,28 @@ namespace SoL.Actors
         {
 
         }
+
+
+        public string Guid { get => guid; set => guid = value; }
+        public ulong PrefabId { get => prefabId; set => prefabId = value; }
+        public void OnBeforeSerialize()
+        {
+            this.OnBeforeSerializeGetId(gameObject);
+        }
+
+        public void OnAfterDeserialize()
+        {
+
+        }
+
+        
+        #if UNITY_EDITOR
+        [Button]
+        public void RegenerateGUID()
+        {
+            this.CalcGUID();
+        }
+        
+        #endif
     }
 }

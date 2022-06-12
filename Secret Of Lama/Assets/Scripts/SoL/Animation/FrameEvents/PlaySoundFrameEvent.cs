@@ -18,6 +18,7 @@ namespace SoL.Animation.FrameEvents
         public override void OnFrameEnter(SpriteAnimationBehaviour animated, SpriteFrame frame)
         {
             base.OnFrameEnter(animated, frame);
+            Debug.LogError("PlaySoundFrameEvent by " + animated.gameObject.name + ", anim: " + animated.CurrentAnimation.name + " audio loops: " + animated.GetComponent<AudioSource>().loop);
             animated.GetComponent<AudioSource>().PlayOneShot(soundBank.GetRandom(), volume);
         }
     }

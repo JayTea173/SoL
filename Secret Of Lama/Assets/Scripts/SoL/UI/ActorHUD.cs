@@ -71,6 +71,12 @@ namespace SoL.UI
             
         }
 
+        public void ForceUpdate()
+        {
+            hpDisplay.text = actor.Hitpoints.ToString() + "/" + actor.HitpointsMax.ToString();
+            Update();
+        }
+
         private void Update()
         {
             float chargeLevel = 0f;

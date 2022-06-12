@@ -1034,6 +1034,73 @@ MonoBehaviour:
         originOffset: {x: 1, y: 0}
         radius: 1
       frameEvent: {fileID: 0}
+    - left:
+        sprite: {fileID: -4776613606099672546, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
+      right:
+        sprite: {fileID: -4776613606099672546, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
+      down:
+        sprite: {fileID: 4864925794763826603, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
+      up:
+        sprite: {fileID: 490402887033049588, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
+      durationMultiplier: 0.5
+      flags: 4
+      motion:
+        motionX:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionY:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        motionMultiplier: 0
+        invertMotionSamplingX: 0
+        invertMotionSamplingY: 0
+      damage:
+        value: 1
+        originOffset: {x: 0, y: 0}
+        radius: 5
+      frameEvent: {fileID: 0}
     mirroring:
     - value: 1
     - value: 0
@@ -1348,7 +1415,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
-      frameEvent: {fileID: 0}
+      frameEvent: {fileID: 11400000, guid: 3738492a03ee864478091760bd2c6936, type: 2}
     - left:
         sprite: {fileID: 1523670629781945338, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
       right:
@@ -1357,7 +1424,7 @@ MonoBehaviour:
         sprite: {fileID: -884419367022999881, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
       up:
         sprite: {fileID: -561808052864568394, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
-      durationMultiplier: 0.5
+      durationMultiplier: 0.75
       flags: 7
       motion:
         motionX:
@@ -1406,7 +1473,7 @@ MonoBehaviour:
         value: 1
         originOffset: {x: 2, y: 0}
         radius: 2.8
-      frameEvent: {fileID: 11400000, guid: 3738492a03ee864478091760bd2c6936, type: 2}
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -4069730707255964811, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
       right:
@@ -1415,7 +1482,7 @@ MonoBehaviour:
         sprite: {fileID: 76340898628894593, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
       up:
         sprite: {fileID: -681073994106816812, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
-      durationMultiplier: 0.5
+      durationMultiplier: 0.75
       flags: 7
       motion:
         motionX:
@@ -1735,7 +1802,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
-      frameEvent: {fileID: 11400000, guid: 95a9e79b29599a345a83adf1e22ba19a, type: 2}
+      frameEvent: {fileID: 0}
     - left:
         sprite: {fileID: -4069730707255964811, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
       right:
@@ -1775,7 +1842,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
-      frameEvent: {fileID: 0}
+      frameEvent: {fileID: 11400000, guid: 95a9e79b29599a345a83adf1e22ba19a, type: 2}
     mirroring:
     - value: 1
     - value: 0
@@ -2727,7 +2794,7 @@ MonoBehaviour:
         value: -1
         originOffset: {x: 1, y: 0}
         radius: 1
-      frameEvent: {fileID: 0}
+      frameEvent: {fileID: 11400000, guid: 2b8305ff66d725d4ea01efed43af61ae, type: 2}
     - left:
         sprite: {fileID: 6902746334332552777, guid: 54947c2e2644abf41a90f6b08bd6d2ff, type: 3}
       right:

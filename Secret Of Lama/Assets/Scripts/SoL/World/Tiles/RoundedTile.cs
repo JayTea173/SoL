@@ -1,6 +1,7 @@
 ﻿using SoL.Animation;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,7 @@ namespace SoL.Tiles
             tileAnimationData.animatedSprites = animatedTiles;
             tileAnimationData.animationSpeed = fps;
             tileAnimationData.animationStartTime = 0f;
+
             return true;
         }
 
@@ -55,7 +57,6 @@ namespace SoL.Tiles
             bool tl = DisconnectedFrom(position.MoveUpLeft(), tilemap);
             bool t = DisconnectedFrom(position.MoveUp(), tilemap);
             bool tr = DisconnectedFrom(position.MoveUpRight(), tilemap);
-
 
             animatedTiles = sprites;
             if (b)
@@ -114,5 +115,28 @@ namespace SoL.Tiles
 
         }
 
+
+
+        public override void Revive(Vector3Int location, Tilemap tilemap)
+        {
+            base.Revive(location, tilemap);
+            
+        }
+
+        public override void Serialize(BinaryWriter bw, Vector3Int location, Tilemap tilemap)
+        {
+            base.Serialize(bw, location, tilemap);
+            //bw.Write(this.sharedRoundingId);
+            
+        }
+
+        public override void Deserialize(BinaryReader br, Vector3Int location, Tilemap tilemap)
+        {
+            base.Deserialize(br, location, tilemap);
+            //this.sharedRoundingId = br.ReadInt32();
+            
+            
+            tilemap.RefreshTile(location);
+        }
     }
 }

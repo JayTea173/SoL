@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CrabBoss_Bubblebeam
   m_EditorClassIdentifier: 
   prefab: {fileID: 6306147287350584802, guid: 6a76972872c34e74cbb62354512662f6, type: 3}
-  count: 40
+  count: 35
   timeouts:
-  - 0.04
+  - 0.035
   soundOnFirstProjectile: {fileID: 0}
   offset: {x: 0, y: 2}
   initialAimAngleOffset: 0

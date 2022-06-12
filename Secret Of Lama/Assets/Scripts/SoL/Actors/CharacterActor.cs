@@ -1,13 +1,16 @@
 ﻿using SoL.Items;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using SoL.Animation;
+using SoL.Serialization;
 using UnityEngine.Tilemaps;
 using SoL.Tiles;
+using SoL.UI;
 
 namespace SoL.Actors
 {
@@ -62,6 +65,7 @@ namespace SoL.Actors
 
 
         protected bool sprint;
+        public float timeSprintStart = 0f;
 
         public bool sprinting
         {
@@ -71,8 +75,12 @@ namespace SoL.Actors
             }
             set
             {
+                if (!sprinting && value)
+                    timeSprintStart = Time.time;
+                
                 sprint = value;
                 charging = !sprint;
+            
             }
         }
 
@@ -95,6 +103,26 @@ namespace SoL.Actors
         }
 
         public bool weaponCharging;
+        
+        public override void Serialize(BinaryWriter bw)
+        {
+            base.Serialize(bw);
+            bw.Write(level);
+            bw.Write(xp);
+            
+            inventory.Serialize(bw);
+        }
+
+        public override void Deserialize(BinaryReader br)
+        {
+            base.Deserialize(br);
+            br.ReadByte();
+            br.ReadUInt32();
+            ulong weaponPrefabId = br.ReadUInt64();
+            inventory.Deserialize(br);
+            weapon = inventory.weapons.FirstOrDefault();
+
+        }
 
         public void SwapWeapons()
         {
@@ -171,14 +199,15 @@ namespace SoL.Actors
 
         public override int Damage(int amount, IDamageSource damageSource)
         {
-            if (timeLeftRooted < 0f)
+            if (timeLeftRooted <= 0f)
             {
                 byte rnd = (byte)UnityEngine.Random.Range(0, 100);
-                if (rnd < evadeChance)
+                if (!this.IsDead && rnd < evadeChance || (this.sprinting && (Time.time - timeSprintStart) < 0.35f))
                 {
                     Animation.SetAnimation("Dodge", true);
                     UI.DamageNumber.Display(transform, "dodge");
                     audioSource.PlayOneShot(soundDodge.GetRandom());
+                    this.attackCharge = Mathf.Clamp(this.attackCharge + 0.33f, 0f, this.MaxAttackCharge);
                     return 0;
                 }
 
@@ -187,7 +216,9 @@ namespace SoL.Actors
                     CreatureActor creature = damageSource as CreatureActor;
                     Move(-creature.movementDirection);
                 }
-            }
+            } else
+                Debug.LogError("ROOTED!");
+            
             int dmg = System.Math.Max(amount - (int)defense, 0);
             return base.Damage(dmg, damageSource);
         }
@@ -297,7 +328,10 @@ namespace SoL.Actors
                                     {
 
                                         if (audioSource != null)
+                                        {
+                                            Debug.LogError("PLAY STEP SOUND " + gameObject.name);
                                             audioSource.PlayOneShot(stair.stepSound.GetRandom());
+                                        }
                                     }
                                 }
 
@@ -348,7 +382,9 @@ namespace SoL.Actors
 
             base.Attack();
             if (audioSource != null && weapon != null)
+            {
                 audioSource.PlayOneShot(weapon.attackSound.GetRandom(), 1f);
+            }
 
         }
 

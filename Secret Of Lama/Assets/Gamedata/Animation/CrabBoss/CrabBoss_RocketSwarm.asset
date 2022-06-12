@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CrabBoss_RocketSwarm
   m_EditorClassIdentifier: 
   prefab: {fileID: 8011586657064558445, guid: 09e87ec451e30174496bf766079be34b, type: 3}
-  count: 8
+  count: 13
   timeouts:
   - 0.08
   soundOnFirstProjectile: {fileID: 0}

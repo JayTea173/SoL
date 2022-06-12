@@ -143,6 +143,7 @@ namespace SoL.UI
                     case DialogActionEnum.GAIN_WEAPON:
                         if (actor is CharacterActor)
                         {
+                            
                             var ch = actor as CharacterActor;
                             var w = Items.WeaponDatabase.Instance.weapons[actionIntValue];
                             if (ch.inventory.weapons == null)
@@ -150,6 +151,7 @@ namespace SoL.UI
                             if (!ch.inventory.weapons.Contains(w))
                                 ch.inventory.weapons.Add(w);
                             ch.weapon = w;
+                            
                         }
                         break;
                     case DialogActionEnum.ATTACK:

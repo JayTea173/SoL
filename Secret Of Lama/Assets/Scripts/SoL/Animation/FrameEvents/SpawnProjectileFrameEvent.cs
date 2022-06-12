@@ -47,6 +47,7 @@ namespace SoL.Animation.FrameEvents
                         if (src != null)
                         {
                             src.pitch = Engine.RandomFloat(0.9f, 1.1f);
+                            Debug.LogError("PLAY PROJECTILE SOUND " + actor.gameObject.name);
                             src.PlayOneShot(soundOnFirstProjectile);
                             src.pitch = 1.0f;
 

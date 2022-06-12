@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Map_1_Scene.unity
     guid: 38029e99675b6064f82cf613da23f450
   - enabled: 1
-    path: Assets/Scenes/Map_1_1.unity
-    guid: b92964c184b4a6f4aa2ce6fc4a0bff11
+    path: Assets/Scenes/ForestScene2.unity
+    guid: 567674598a6cf0d4da7f10ee3a9ae278
   - enabled: 1
     path: Assets/Scenes/Map_2_Scene.unity
     guid: 31626daf5e624014a9d8d774240be349

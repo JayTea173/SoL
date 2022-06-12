@@ -270,6 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718d811bb80a49042b441d4735290ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guid: 77805eae60e29874cb52bce92f8fc63c
+  prefabId: 3074457345618258791
   team: 0
   hp: 20
   hpMax: 20

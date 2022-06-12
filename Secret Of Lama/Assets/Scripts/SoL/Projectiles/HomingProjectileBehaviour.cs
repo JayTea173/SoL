@@ -86,6 +86,7 @@ namespace SoL.Projectiles
                 {
                     proj.audioSource.clip = proj.projectileLoop;
                     proj.audioSource.Play();
+                    Debug.LogError("PLAY HOMING PROJECTILE SOUND");
                 }
             }
 

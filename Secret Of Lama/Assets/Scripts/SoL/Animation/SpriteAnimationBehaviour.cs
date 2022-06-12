@@ -69,7 +69,7 @@ namespace SoL.Animation
 
                 Vector3 delta = (Vector3)actor.TransformForwardX(new Vector2(currentFrame.motion.motionX.Evaluate(sampleTimeX), 0f));
 
-                Vector3 targetPosition = transform.position + delta * rootMotionMultiplier;
+                Vector3 targetPosition = transform.position + delta * rootMotionMultiplier * actor.animationSpeedMultiplier;
 
                 float flyDelta = currentFrame.motion.motionY.Evaluate(sampleTimeY) * rootMotionMultiplier;
                 if (flyDelta == 0f)

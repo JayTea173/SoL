@@ -3,11 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Sirenix.OdinInspector;
+using SoL.Actors;
+using SoL.Items;
+using SoL.Serialization;
+using SoL.UI;
 using UnityEngine.SceneManagement;
 
 namespace SoL
 {
-    public class Engine : MonoBehaviour
+    public class Engine : SerializedMonoBehaviour
     {
         public static readonly float pixelsPerUnit = 16f;
 
@@ -19,6 +24,10 @@ namespace SoL
         public static int airborneActorLayer;
 
         public LevelManager levelManager;
+        public PrefabRegistry<BaseActor> prefabRegistry;
+        public PrefabRegistry<ItemBase> itemRegistry;
+
+        public List<ActorHUD> actorHuds;
 
         private void Awake()
         {

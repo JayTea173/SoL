@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,31 @@ namespace SoL.Actors
         {
             return hp / (float)hpMax;
         }
+
+        public override void Serialize(BinaryWriter bw)
+        {
+            base.Serialize(bw);
+            bw.Write(attack);
+            bw.Write(defense);
+        }
+
+        public override void Deserialize(BinaryReader br)
+        {
+            base.Deserialize(br);
+            attack = br.ReadInt32();
+            defense = br.ReadInt32();
+        }
+
+        protected override void Recharge()
+        {
+            attackCharge += Time.deltaTime * AttackSpeedCharge * this.animationSpeedMultiplier;
+            if (attackCharge >= MaxAttackCharge)
+            {
+                attackCharge = MaxAttackCharge;
+                charging = false;
+            }
+        }
+        
     }
 
     
@@ -82,4 +108,6 @@ namespace SoL.Actors
         Luna = 64,
         Dryad = 128
     }
+    
+    
 }

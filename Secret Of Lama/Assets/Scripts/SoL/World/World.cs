@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sirenix.Utilities;
+using SoL.Serialization;
+using SoL.Tiles;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace SoL
 {
-    public class World : MonoBehaviour
+    public class World : MonoBehaviour, ISerializable
     {
         public Tilemap[] tilemapLayers;
         public Tilemap[] dataLayers;
@@ -183,6 +187,72 @@ namespace SoL
                 if (t != null)
                     if (t is T)
                         yield return (T)t;
+            }
+        }
+
+        public void Serialize(BinaryWriter bw)
+        {
+
+            int numTilemapLayers = tilemapLayers.Length;
+            bw.Write(numTilemapLayers);
+
+            foreach (var tilemapLayer in tilemapLayers)
+            {
+                int numWritten = 0;
+                var p0 = bw.BaseStream.Position;
+                bw.Write(numWritten);
+
+                var tiles = tilemapLayer.GetTilesBlock(tilemapLayer.cellBounds);
+
+                for (int y = 0; y < tilemapLayer.cellBounds.size.y; y++)
+                {
+                    for (int x = 0; x < tilemapLayer.cellBounds.size.x; x++)
+                    {
+                        var t = tiles[x + tilemapLayer.cellBounds.size.x * y];
+                        if (t == null)
+                            continue;
+
+                        if (t is ISerializableTile dt)
+                        {
+                            bw.Write(x);
+                            bw.Write(y);
+                            dt.Serialize(bw, new Vector3Int(x, y, 0), tilemapLayer);
+                            numWritten++;
+                        } 
+                    }
+                }
+
+                var p1 = bw.BaseStream.Position;
+                bw.BaseStream.Position = p0;
+                bw.Write(numWritten);
+                bw.BaseStream.Position = p1;
+
+            }
+        }
+
+        public void Deserialize(BinaryReader br)
+        {
+            int numTilemapLayers = br.ReadInt32();
+            for (int i = 0; i < numTilemapLayers; i++)
+            {
+                var tml = tilemapLayers[i];
+                int numTilesLoadedFromThisLayer = br.ReadInt32();
+                for (int j = 0; j < numTilesLoadedFromThisLayer; j++)
+                {
+                    int x = br.ReadInt32() + tml.cellBounds.xMin;
+                    int y = br.ReadInt32() + tml.cellBounds.yMin;
+                    var tile = tml.GetTile(new Vector3Int(x, y, 0));
+                    if (tile == null)
+                    {
+                        Debug.LogError("data for map at position is null");
+                        return;
+                    }
+
+                    if (tile is ISerializableTile s)
+                    {
+                        s.Deserialize(br, new Vector3Int(x, y, 0), tml);
+                    }
+                }
             }
         }
     }

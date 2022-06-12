@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CrabBoss_Lunge
   m_EditorClassIdentifier: 
   soundBank: {fileID: 11400000, guid: 5647e8447cd99c74994274c3fa47fdab, type: 2}
-  volume: 0
+  volume: 0.8
