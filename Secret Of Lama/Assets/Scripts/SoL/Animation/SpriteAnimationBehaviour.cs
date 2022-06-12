@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Codice.CM.WorkspaceServer;
 using UnityEngine;
 
 
@@ -141,15 +142,23 @@ namespace SoL.Animation
             int hc = name.GetHashCode();
             if (currentCollection == null)
                 currentCollection = animations;
-            int index = currentCollection.GetIndexByName(name);
-            if (index < 0)
+            try
             {
-                //Debug.LogError("Unable to find an animation called " + name + " on " + gameObject.name);
-                return false;
+                int index = currentCollection.GetIndexByName(name);
+                if (index < 0)
+                {
+                    //Debug.LogError("Unable to find an animation called " + name + " on " + gameObject.name);
+                    return false;
+                }
+
+                targetsHitWithThisAnimation.Clear();
+                SetAnimation(index, playFromStart);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"failed to set {gameObject.name}'s animation to {name}\n{ex}");
             }
 
-            targetsHitWithThisAnimation.Clear();
-            SetAnimation(index, playFromStart);
             return true;
 
         }

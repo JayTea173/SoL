@@ -19,4 +19,4 @@ MonoBehaviour:
   characterData:
   - animations: {fileID: 11400000, guid: 365c95e5d5dafef4bb83ff94421f248c, type: 2}
     skillLevel: 0
-  chargeSpeedOverride: 0.6
+  chargeSpeedOverride: 0.4

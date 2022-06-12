@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SoL.UI;
 using UnityEngine;
 
 namespace SoL.AI
@@ -108,6 +109,7 @@ namespace SoL.AI
 
         private void Update()
         {
+            
             aiTime += Time.deltaTime;
 
             bool canMove = actor.CanMove;
@@ -157,7 +159,7 @@ namespace SoL.AI
                         }
 
                         string pickedAnim = null;
-                        if (bestAttack != null)
+                        if (bestAttack != null && !DialogUI.Instance.visible)
                         {
                             if (UnityEngine.Random.value < 0.65f * agressiveness)
                             {
