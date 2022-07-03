@@ -47,3 +47,321 @@ D:/SoL/Secret Of Lama
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 81.13 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.3f1 (af2e63e8f9bd)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/SoL/Secret Of Lama/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4043 MB
+    Driver:   31.0.15.1659
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56576
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010978 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 80.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.097 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1097ms)
+		BeginReloadAssembly (231ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (669ms)
+			LoadAssemblies (224ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (169ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (38ms)
+			SetupLoadedEditorAssemblies (394ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (81ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (217ms)
+				ProcessInitializeOnLoadMethodAttributes (81ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006854 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 59.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.407 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1408ms)
+		BeginReloadAssembly (155ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (1091ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (297ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (67ms)
+			SetupLoadedEditorAssemblies (551ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (60ms)
+				BeforeProcessingInitializeOnLoad (99ms)
+				ProcessInitializeOnLoadAttributes (314ms)
+				ProcessInitializeOnLoadMethodAttributes (57ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2553 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 32 unused Assets / (30.2 KB). Loaded Objects now: 3018.
+Memory consumption went from 114.0 MB to 113.9 MB.
+Total: 7.655100 ms (FindLiveObjects: 0.245100 ms CreateObjectMapping: 0.194900 ms MarkObjects: 7.181900 ms  DeleteObjects: 0.031900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 113716.681130 seconds.
+  path: Assets/Sprites/World/LavaFallBottom_01_Animated.png
+  artifactKey: Guid(6777d758d5574ae49b95aaaef8ecfcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/LavaFallBottom_01_Animated.png using Guid(6777d758d5574ae49b95aaaef8ecfcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c46c359ea8b31c37bd5c5e1f8b3dedd5') in 0.156547 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.670986 seconds.
+  path: Assets/Sprites/World/LavaFallBottom_01_Animated.png
+  artifactKey: Guid(6777d758d5574ae49b95aaaef8ecfcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/LavaFallBottom_01_Animated.png using Guid(6777d758d5574ae49b95aaaef8ecfcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '388f8089b8f1777769bdc679426a0f25') in 0.021521 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.769371 seconds.
+  path: Assets/Sprites/World/LavaFallBottom_01_Animated.png
+  artifactKey: Guid(6777d758d5574ae49b95aaaef8ecfcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/LavaFallBottom_01_Animated.png using Guid(6777d758d5574ae49b95aaaef8ecfcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dd5b1cd70b57e008a0cf6a347759797') in 0.037034 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.364974 seconds.
+  path: Assets/Sprites/World/LavaFallTop_01_Animated.png
+  artifactKey: Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/LavaFallTop_01_Animated.png using Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87842de4b5ee87f7baf3ca9fae7040b7') in 0.020562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.755548 seconds.
+  path: Assets/Sprites/World/LavaFallTop_01_Animated.png
+  artifactKey: Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/LavaFallTop_01_Animated.png using Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f647e866e2a680883f4751976ad31fbf') in 0.017190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.937380 seconds.
+  path: Assets/Sprites/World/LavaFallTop_01_Animated.png
+  artifactKey: Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/LavaFallTop_01_Animated.png using Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae85e69054b58a37456078cadb4e8e3e') in 0.017044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.445888 seconds.
+  path: Assets/Sprites/World/LavaFallTop_01_Animated.png
+  artifactKey: Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/LavaFallTop_01_Animated.png using Guid(9e897a3f6984a474db9703a0947fcef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3b1074e9f9d8a010beb6a1230e1e6d7') in 0.035087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.797384 seconds.
+  path: Assets/Gamedata/CustomTiles/Cave/LavaFall_01 1.asset
+  artifactKey: Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gamedata/CustomTiles/Cave/LavaFall_01 1.asset using Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96dd8483d44f2be6920374030aa791f3') in 0.016937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.657702 seconds.
+  path: Assets/Gamedata/CustomTiles/Cave/LavaFallTop_01.asset
+  artifactKey: Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gamedata/CustomTiles/Cave/LavaFallTop_01.asset using Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a402ec2e9aeaa8ffe03e1180720f387') in 0.010698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.404182 seconds.
+  path: Assets/Gamedata/CustomTiles/Cave/LavaFallTop_01 1.asset
+  artifactKey: Guid(f62df7e3ad9022548a4087c729e58f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gamedata/CustomTiles/Cave/LavaFallTop_01 1.asset using Guid(f62df7e3ad9022548a4087c729e58f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1aaf51086b23f99fc4b398a632166936') in 0.007507 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gamedata/CustomTiles/Cave/LavaFallTop_01.asset
+  artifactKey: Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gamedata/CustomTiles/Cave/LavaFallTop_01.asset using Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbfde7dc3453d1627202ce4a7df94201') in 0.002532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.673053 seconds.
+  path: Assets/Gamedata/CustomTiles/Cave/LavaFallBottom_01.asset
+  artifactKey: Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gamedata/CustomTiles/Cave/LavaFallBottom_01.asset using Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '411ae0291d58f3cfa612a9109f28fa13') in 0.009268 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.518659 seconds.
+  path: Assets/Tile Palettes/Cave.prefab
+  artifactKey: Guid(db04e62585402d64180594eb63c0904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile Palettes/Cave.prefab using Guid(db04e62585402d64180594eb63c0904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdbda02dafe3b420352fe81f6ae03453') in 0.447633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 170.498417 seconds.
+  path: Assets/Gamedata/CustomTiles/Cave/LavaFallBottom_01.asset
+  artifactKey: Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gamedata/CustomTiles/Cave/LavaFallBottom_01.asset using Guid(1284be71221331b47b18ccc651942090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a5aae96fb9c96691dba96685b4edcef') in 0.005117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 466.017831 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_bl.asset
+  artifactKey: Guid(105a2f208d370494a8feb826b678bff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_bl.asset using Guid(105a2f208d370494a8feb826b678bff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cd67318d4280dfda53c90c6bce1322b') in 0.012645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.074151 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_bm.asset
+  artifactKey: Guid(9832a34eebde8de4cba0ef4e64ad49d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_bm.asset using Guid(9832a34eebde8de4cba0ef4e64ad49d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af9421618937c1637572aa2b0209c577') in 0.006228 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.407862 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_br.asset
+  artifactKey: Guid(f4430735f5b0e5a4b85a393f09ff869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_br.asset using Guid(f4430735f5b0e5a4b85a393f09ff869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad9c384ceaf9e7d168de03cc91057bba') in 0.009019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.222740 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_ml.asset
+  artifactKey: Guid(30ff0efba1c83ef44b1b3e0099e5f108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_ml.asset using Guid(30ff0efba1c83ef44b1b3e0099e5f108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8fe35571ed39a24cbf171fe962e39c0') in 0.006973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.465403 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_mm.asset
+  artifactKey: Guid(c4aaa79414e57d14f9ebf9be56443c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_mm.asset using Guid(c4aaa79414e57d14f9ebf9be56443c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ae3b6cf85ce4e677e08fbc26a1aed0b') in 0.009220 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.250437 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_mr.asset
+  artifactKey: Guid(6cc3c70e6c6a1c04ba873e0de04868cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_mr.asset using Guid(6cc3c70e6c6a1c04ba873e0de04868cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c933b3d3b93271569bfb8420a41026c') in 0.008817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.421169 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_tl.asset
+  artifactKey: Guid(af446a59a4753a14e95231473da938db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_tl.asset using Guid(af446a59a4753a14e95231473da938db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af6d0806f6047e0ecd505c92b38efa61') in 0.009714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.331035 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_tm.asset
+  artifactKey: Guid(a42303da2577c6e499ef5751e4256804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_tm.asset using Guid(a42303da2577c6e499ef5751e4256804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf95024bca7e0ce253339a2f155b1950') in 0.008373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.120630 seconds.
+  path: Assets/Sprites/World/Cave_Ceiling_tr.asset
+  artifactKey: Guid(af2b5d4dd9fd31b41b15b58d46699248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/Cave_Ceiling_tr.asset using Guid(af2b5d4dd9fd31b41b15b58d46699248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d0166df9f8ae93a3fe3d17c4cd41dca') in 0.009758 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1557.709957 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_bl.png
+  artifactKey: Guid(e13576bfe7e9afe45969b677169c58b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_bl.png using Guid(e13576bfe7e9afe45969b677169c58b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2ffef31c5d0615e1c7a78851bce8ac0') in 0.021801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.536035 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_bl.png
+  artifactKey: Guid(e13576bfe7e9afe45969b677169c58b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_bl.png using Guid(e13576bfe7e9afe45969b677169c58b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea625496a5d9f6a6f38bf743ece0785') in 0.729811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.449138 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_br.png
+  artifactKey: Guid(7b681f206bd09b6418698d1cd8ad1234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_br.png using Guid(7b681f206bd09b6418698d1cd8ad1234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b85b10100bd2600bb76301ed118aaec') in 0.015073 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.587723 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_br.png
+  artifactKey: Guid(7b681f206bd09b6418698d1cd8ad1234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_br.png using Guid(7b681f206bd09b6418698d1cd8ad1234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ada343eff0eb02b28519f43d57d952a9') in 0.067363 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.930184 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_tl.png
+  artifactKey: Guid(7875b8321a2faad4aaa8506216f2859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_tl.png using Guid(7875b8321a2faad4aaa8506216f2859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b9845c2fff90c6f008073b3fea31f87') in 0.014116 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.570236 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_tl.png
+  artifactKey: Guid(7875b8321a2faad4aaa8506216f2859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_tl.png using Guid(7875b8321a2faad4aaa8506216f2859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b95bc01fd44b5256fdecc79a40645f5') in 0.052544 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.776908 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_tr.png
+  artifactKey: Guid(677b5bf2acf5c7d4c9ac0a96252cade8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_tr.png using Guid(677b5bf2acf5c7d4c9ac0a96252cade8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21787008b2d39640b0f6c0495deaa213') in 0.086156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.676995 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_tr.png
+  artifactKey: Guid(677b5bf2acf5c7d4c9ac0a96252cade8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_tr.png using Guid(677b5bf2acf5c7d4c9ac0a96252cade8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f903b865485120b3910913d29464c3f') in 0.027253 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.872566 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_bl.asset
+  artifactKey: Guid(ac703860259611347a917ae0fa1e118b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_bl.asset using Guid(ac703860259611347a917ae0fa1e118b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90b6d090854602de97db04839d6eedcc') in 0.003949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.641187 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_br.asset
+  artifactKey: Guid(a6f06e2e511a9d447817a715ace8c7bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_br.asset using Guid(a6f06e2e511a9d447817a715ace8c7bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '040b05af0bd124379cfe60c9dde71c08') in 0.003207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.908947 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_tl.asset
+  artifactKey: Guid(8fb20ca9fd4f3f94f878161ebc921330) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_tl.asset using Guid(8fb20ca9fd4f3f94f878161ebc921330) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9085b87baee53763aa7174abe99560e1') in 0.003203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.862215 seconds.
+  path: Assets/Sprites/World/CaveDirtToLava_Inverted_tr.asset
+  artifactKey: Guid(7df48cd175ba8dc4ea35b2da7412bc00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/World/CaveDirtToLava_Inverted_tr.asset using Guid(7df48cd175ba8dc4ea35b2da7412bc00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd945cd0f8295e70da164d0c6fef29443') in 0.002779 seconds 
